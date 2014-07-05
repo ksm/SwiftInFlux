@@ -16,6 +16,7 @@ To contribute just fork this project and add a section below (don't forget to up
 * [Optionals for values conforming to the LogicValue protocol](#optionals-for-values-conforming-to-the-logicvalue-protocol-eg-bool)
 * [Access control](#access-control)
 * [C++ support](#c-support)
+* [Exceptions](#exceptions)
 
 ### Arrays
 
@@ -81,3 +82,10 @@ Sources: https://devforums.apple.com/thread/228324?start=50&tstart=0
 >-- Chris Lattner
 
 Sources: https://devforums.apple.com/thread/228324?start=50&tstart=0
+
+### Exceptions
+
+>We're aware of the opportunity and also desire better error handling features in Swift, but they didn't make it in time for 1.0. 
+>-- Chris Lattner
+
+Sources: We're aware of the opportunity and also desire better error handling features in Swift, but they didn't make it in time for 1.0. 
