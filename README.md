@@ -17,7 +17,6 @@ To contribute just fork this project and add a section below (don't forget to up
 
 ### Arrays
 
-How?
 >Array semantics were in flux at the time of Beta 1, and have been revised to provide full value semantics like Dictionary and String.  This will be available in later betas.
 >
 >-- Chris Lattner
@@ -25,8 +24,6 @@ How?
 Sources: https://devforums.apple.com/thread/228695?start=75&tstart=
 
 ### Character
-
-How?
 
 >Note that Character is still evolving and will settle down by the final release of 1.0. One of the reasons that we use double quote syntax to initialize Characters is that they are expected to be able to hold full grapheme clusters, which are composed of multiple code points. This will roll out in a later beta.
 >
@@ -36,7 +33,6 @@ Sources: https://devforums.apple.com/message/997759#997759 http://oleb.net/blog/
 
 ### Access modifier
 
-How?
 >We don't usually promise anything for the future, but in this case we are making an exception. Swift will have access control mechanisms.
 >
 >-- Greg Parker
@@ -45,7 +41,6 @@ Sources: https://devforums.apple.com/message/970220#970220
 
 ### Numerical data type conversion, e.g. CGFloat and Swift Double/Swift Float
 
-How?
 >What is happening here is that CGFloat is a typealias for either Float or Double depending on whether you're building for 32 or 64-bits.  This is exactly how Objective-C works, but is problematic in Swift because Swift doesn't allow implicit conversions.
 > 
 >We're aware of this problem and consider it to be serious: we are evaluating several different solutions right now and will roll one out in a later beta.  As you notice, you can cope with this today by casting to Double.  This is inelegant but effective :-)
