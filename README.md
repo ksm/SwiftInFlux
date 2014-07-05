@@ -1,6 +1,6 @@
 Swift InFlux
 ===========
-The community is creating some incredible analyses and writing about Swift. What I keep asking myself whenever learning and reading about Swift is: how likely is this to be out of date soon or subject to change? 
+The community is creating some incredible analyses and writing about Swift. What I keep asking myself whenever learning and reading about Swift is: how likely is this to be out of date or subject to change soon? 
 
 This document is an attempt to gather all the Swift features that are still in flux and likely to change.
 
