@@ -64,4 +64,4 @@ if foo {
 >This problem exists with any optional of something that conforms to the LogicValue protocol (e.g. nested optionals, optional of bool, etc).  We consider it serious issue that needs to be fixed for 1.0 and have some ideas, but haven't settled on a solution yet.
 >-- Chris Lattner
 
-Sources: https://devforums.apple.com/message/998443#998443
+Sources: https://devforums.apple.com/thread/234399?tstart=0
