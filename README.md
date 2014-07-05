@@ -11,6 +11,7 @@ To contribute just fork this project and add a section below (don't forget to up
 
 * [Arrays](#arrays)
 * [Character](#character)
+* [Access modifiers](#access-modifiers)
 
 ### Arrays
 
@@ -26,8 +27,16 @@ Sources: https://devforums.apple.com/thread/228695?start=75&tstart=
 How?
 
 >Note that Character is still evolving and will settle down by the final release of 1.0. One of the reasons that we use double quote syntax to initialize Characters is that they are expected to be able to hold full grapheme clusters, which are composed of multiple code points. This will roll out in a later beta.
-
->--
->Chris Lattner
+>
+>-- Chris Lattner
 
 Sources: https://devforums.apple.com/message/997759#997759 http://oleb.net/blog/2014/07/swift-strings/
+
+### Access modifier
+
+How?
+>We don't usually promise anything for the future, but in this case we are making an exception. Swift will have access control mechanisms.
+>
+>-- Greg Parker
+
+Sources: https://devforums.apple.com/message/970220#970220
