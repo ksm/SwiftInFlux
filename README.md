@@ -14,6 +14,7 @@ To contribute just fork this project and add a section below (don't forget to up
 * [Access modifiers](#access-modifiers)
 * [Numerical data type conversion](#numerical-data-type-conversion-eg-cgfloat-and-swift-doubleswift-float)
 * [Optionals for values conforming to the LogicValue protocol](#optionals-for-values-conforming-to-the-logicvalue-protocol-eg-bool)
+* [Access control](#access-control)
 
 ### Arrays
 
@@ -65,3 +66,10 @@ if foo {
 >-- Chris Lattner
 
 Sources: https://devforums.apple.com/thread/234399?tstart=0
+
+### Access control
+
+>Access control (public/private/etc) is coming in a later beta, this is mentioned in the Xcode release notes.
+>-- Chris Lattner
+
+Sources: https://devforums.apple.com/thread/228324?start=50&tstart=0
