@@ -52,3 +52,20 @@ How?
 >-- Chris Lattner
 
 Sources: https://devforums.apple.com/message/998222#998222
+
+### Optionals conforming to the LogicValue protocol (e.g. Bool)
+
+Optional Bools in a boolean context are confusing.
+
+```swift
+var foo: Bool? = false
+// This will print bar
+if foo {
+    println("bar")
+}
+```
+
+>This problem exists with any optional of something that conforms to the LogicValue protocol (e.g. nested optionals, optional of bool, etc).  We consider it serious issue that needs to be fixed for 1.0 and have some ideas, but haven't settled on a solution yet.
+>-- Chris Lattner
+
+Sources: https://devforums.apple.com/message/998443#998443
