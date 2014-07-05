@@ -75,7 +75,7 @@ Sources: https://devforums.apple.com/thread/234399?tstart=0
 >Access control (public/private/etc) is coming in a later beta, this is mentioned in the Xcode release notes.
 >-- Chris Lattner
 
-Sources: https://devforums.apple.com/thread/228324?start=50&tstart=0
+Sources: https://devforums.apple.com/thread/228324?start=50&tstart=0 https://devforums.apple.com/message/996725#996725
 
 ### C++ support
 
