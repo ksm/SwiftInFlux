@@ -15,7 +15,7 @@ To contribute just fork this project and add a section below (don't forget to up
 * [Numerical data type conversion](#numerical-data-type-conversion-eg-cgfloat-and-swift-doubleswift-float)
 * [Optionals for values conforming to the LogicValue protocol](#optionals-for-values-conforming-to-the-logicvalue-protocol-eg-bool)
 * [Access control](#access-control)
-* [C++ support](#c++-support)
+* [C++ support](#c-support)
 
 ### Arrays
 
