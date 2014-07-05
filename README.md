@@ -88,4 +88,5 @@ Sources: https://devforums.apple.com/thread/228324?start=50&tstart=0
 >We're aware of the opportunity and also desire better error handling features in Swift, but they didn't make it in time for 1.0. 
 >-- Chris Lattner
 
-Sources: We're aware of the opportunity and also desire better error handling features in Swift, but they didn't make it in time for 1.0. 
+Sources: https://devforums.apple.com/thread/228324?start=50&tstart=0
+
