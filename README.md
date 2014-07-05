@@ -13,6 +13,7 @@ To contribute just fork this project and add a section below (don't forget to up
 * [Character](#character)
 * [Access modifiers](#access-modifiers)
 * [Numerical data type conversion](#numerical-data-type-conversion-eg-cgfloat-and-swift-doubleswift-float)
+* [Optionals for values conforming to the LogicValue protocol](#optionals-conforming-to-the-logicvalue-protocol-eg-bool)
 
 ### Arrays
 
@@ -53,7 +54,7 @@ How?
 
 Sources: https://devforums.apple.com/message/998222#998222
 
-### Optionals conforming to the LogicValue protocol (e.g. Bool)
+### Optionals for values conforming to the LogicValue protocol (e.g. Bool)
 
 Optional Bools in a boolean context are confusing.
 
