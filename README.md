@@ -40,3 +40,14 @@ How?
 >-- Greg Parker
 
 Sources: https://devforums.apple.com/message/970220#970220
+
+### Numerical data type conversion, e.g. CGFloat and Swift Double/Swift Float
+
+How?
+>What is happening here is that CGFloat is a typealias for either Float or Double depending on whether you're building for 32 or 64-bits.  This is exactly how Objective-C works, but is problematic in Swift because Swift doesn't allow implicit conversions.
+> 
+>We're aware of this problem and consider it to be serious: we are evaluating several different solutions right now and will roll one out in a later beta.  As you notice, you can cope with this today by casting to Double.  This is inelegant but effective :-)
+>
+>-- Chris Lattner
+
+Sources: https://devforums.apple.com/message/998222#998222
