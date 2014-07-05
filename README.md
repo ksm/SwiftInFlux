@@ -17,6 +17,7 @@ To contribute just fork this project and add a section below (don't forget to up
 * [Access control](#access-control)
 * [C++ support](#c-support)
 * [Exceptions](#exceptions)
+* Usage of @-sign in front of keywords
 
 ### Arrays
 
@@ -90,3 +91,9 @@ Sources: https://devforums.apple.com/thread/228324?start=50&tstart=0
 
 Sources: https://devforums.apple.com/thread/228324?start=50&tstart=0
 
+### Usage of @-sign in front of keywords
+
+>This is something we're continuing to evaluate, expect @ signs to change in subsequent betas.
+>-- Chris Lattner
+
+Sources: https://devforums.apple.com/thread/228324?start=25&tstart=0
