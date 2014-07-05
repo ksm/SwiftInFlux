@@ -13,7 +13,7 @@ To contribute just fork this project and add a section below (don't forget to up
 * [Character](#character)
 * [Access modifiers](#access-modifiers)
 * [Numerical data type conversion](#numerical-data-type-conversion-eg-cgfloat-and-swift-doubleswift-float)
-* [Optionals for values conforming to the LogicValue protocol](#optionals-conforming-to-the-logicvalue-protocol-eg-bool)
+* [Optionals for values conforming to the LogicValue protocol](#optionals-for-values-conforming-to-the-logicvalue-protocol-eg-bool)
 
 ### Arrays
 
