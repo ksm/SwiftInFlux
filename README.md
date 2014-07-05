@@ -12,7 +12,7 @@ To contribute just fork this project and add a section below (don't forget to up
 * [Arrays](#arrays)
 * [Character](#character)
 * [Access modifiers](#access-modifiers)
-* [Numerical data type conversion](##numerical-data-type-conversion-eg-cgfloat-and-swift-doubleswift-float)
+* [Numerical data type conversion](#numerical-data-type-conversion-eg-cgfloat-and-swift-doubleswift-float)
 
 ### Arrays
 
