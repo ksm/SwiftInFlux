@@ -11,7 +11,6 @@ To contribute just fork this project and add a section below (don't forget to up
 
 * [Arrays](#arrays)
 * [Character](#character)
-* [Access modifiers](#access-modifiers)
 * [Numerical data type conversion](#numerical-data-type-conversion-eg-cgfloat-and-swift-doubleswift-float)
 * [Optionals for values conforming to the LogicValue protocol](#optionals-for-values-conforming-to-the-logicvalue-protocol-eg-bool)
 * [Access control](#access-control)
@@ -34,14 +33,6 @@ Sources: https://devforums.apple.com/thread/228695?start=75&tstart=
 >-- Chris Lattner
 
 Sources: https://devforums.apple.com/message/997759#997759 http://oleb.net/blog/2014/07/swift-strings/
-
-### Access modifiers
-
->We don't usually promise anything for the future, but in this case we are making an exception. Swift will have access control mechanisms.
->
->-- Greg Parker
-
-Sources: https://devforums.apple.com/message/970220#970220
 
 ### Numerical data type conversion, e.g. CGFloat and Swift Double/Swift Float
 
@@ -72,10 +63,13 @@ Sources: https://devforums.apple.com/thread/234399?tstart=0
 
 ### Access control
 
+>We don't usually promise anything for the future, but in this case we are making an exception. Swift will have access control mechanisms.
+>-- Greg Parker
+
 >Access control (public/private/etc) is coming in a later beta, this is mentioned in the Xcode release notes.
 >-- Chris Lattner
 
-Sources: https://devforums.apple.com/thread/228324?start=50&tstart=0 https://devforums.apple.com/message/996725#996725
+Sources: https://devforums.apple.com/thread/228324?start=50&tstart=0 https://devforums.apple.com/message/996725#996725 https://devforums.apple.com/message/970220#970220
 
 ### C++ support
 
