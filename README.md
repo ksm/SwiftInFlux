@@ -31,7 +31,7 @@ Sources: https://devforums.apple.com/thread/228695?start=75&tstart=
 
 Sources: https://devforums.apple.com/message/997759#997759 http://oleb.net/blog/2014/07/swift-strings/
 
-### Access modifier
+### Access modifiers
 
 >We don't usually promise anything for the future, but in this case we are making an exception. Swift will have access control mechanisms.
 >
