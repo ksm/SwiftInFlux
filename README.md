@@ -17,6 +17,7 @@ To contribute just fork this project and add a section below (don't forget to up
 * [C++ support](#c-support)
 * [Exceptions](#exceptions)
 * [Usage of @-sign in front of keywords](#usage-of--sign-in-front-of-keywords)
+* [Absence of math.h macros](#absence-of-mathh-macros)
 
 ### Arrays
 
@@ -97,3 +98,11 @@ Sources: https://devforums.apple.com/thread/228324?start=50&tstart=0
 >-- Chris Lattner
 
 Sources: https://devforums.apple.com/thread/228324?start=25&tstart=0
+
+### Absence of math.h macros
+
+>This is a known problem, it will be fixed in later betas.
+>
+>-- Chris Lattner
+
+Soruces: https://devforums.apple.com/message/989902#989902
