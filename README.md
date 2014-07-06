@@ -17,6 +17,7 @@ To contribute just fork this project and add a section below (don't forget to up
 * [C++ support](#c-support)
 * [Exceptions](#exceptions)
 * [Usage of @-sign in front of keywords](#usage-of--sign-in-front-of-keywords)
+* [Absence of math.h macros](#absence-of-mathh-macros)
 
 ### Arrays
 
@@ -57,6 +58,7 @@ if foo {
 ```
 
 >This problem exists with any optional of something that conforms to the LogicValue protocol (e.g. nested optionals, optional of bool, etc).  We consider it serious issue that needs to be fixed for 1.0 and have some ideas, but haven't settled on a solution yet.
+>
 >-- Chris Lattner
 
 Sources: https://devforums.apple.com/thread/234399?tstart=0
@@ -64,9 +66,11 @@ Sources: https://devforums.apple.com/thread/234399?tstart=0
 ### Access control
 
 >We don't usually promise anything for the future, but in this case we are making an exception. Swift will have access control mechanisms.
+>
 >-- Greg Parker
 
 >Access control (public/private/etc) is coming in a later beta, this is mentioned in the Xcode release notes.
+>
 >-- Chris Lattner
 
 Sources: https://devforums.apple.com/thread/228324?start=50&tstart=0 https://devforums.apple.com/message/996725#996725 https://devforums.apple.com/message/970220#970220
@@ -74,13 +78,15 @@ Sources: https://devforums.apple.com/thread/228324?start=50&tstart=0 https://dev
 ### C++ support
 
 >This is another obviously desirable feature, it is just a lot of work and didn't make it in 1.0 either.
+>
 >-- Chris Lattner
 
 Sources: https://devforums.apple.com/thread/228324?start=50&tstart=0
 
 ### Exceptions
 
->We're aware of the opportunity and also desire better error handling features in Swift, but they didn't make it in time for 1.0. 
+>We're aware of the opportunity and also desire better error handling features in Swift, but they didn't make it in time for 1.0.
+>
 >-- Chris Lattner
 
 Sources: https://devforums.apple.com/thread/228324?start=50&tstart=0
@@ -88,6 +94,15 @@ Sources: https://devforums.apple.com/thread/228324?start=50&tstart=0
 ### Usage of @-sign in front of keywords
 
 >This is something we're continuing to evaluate, expect @ signs to change in subsequent betas.
+>
 >-- Chris Lattner
 
 Sources: https://devforums.apple.com/thread/228324?start=25&tstart=0
+
+### Absence of math.h macros
+
+>This is a known problem, it will be fixed in later betas.
+>
+>-- Chris Lattner
+
+Soruces: https://devforums.apple.com/message/989902#989902
