@@ -18,6 +18,7 @@ To contribute just fork this project and add a section below (don't forget to up
 * [Exceptions](#exceptions)
 * [Usage of @-sign in front of keywords](#usage-of--sign-in-front-of-keywords)
 * [Absence of math.h macros](#absence-of-mathh-macros)
+* [Unowned references breaking in Beta 2](#unowned-references-breaking-in-beta-2)
 
 ### Arrays
 
@@ -106,3 +107,12 @@ Sources: https://devforums.apple.com/thread/228324?start=25&tstart=0
 >-- Chris Lattner
 
 Soruces: https://devforums.apple.com/message/989902#989902
+
+### Unowned References [Breaking](http://openradar.appspot.com/radar?id=5300501415460864) in Beta 2
+
+>This should be fixed in Beta 3.
+>
+>-- Chris Lattner
+
+Sources: https://devforums.apple.com/message/997278#997278
+
