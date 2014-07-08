@@ -102,11 +102,13 @@ Sources: https://devforums.apple.com/thread/228324?start=25&tstart=0
 
 Soruces: https://devforums.apple.com/message/989902#989902
 
-### Unowned References [Breaking](http://openradar.appspot.com/radar?id=5300501415460864) in Beta 2
+### Unowned References [Breaking](http://openradar.appspot.com/radar?id=5300501415460864) in Beta 2 and 3
 
 > This should be fixed in Beta 3.
 >
 >-- Chris Lattner
+
+Still doesn't work in beta 3: see [#5](#5)
 
 Sources: https://devforums.apple.com/message/997278#997278
 
