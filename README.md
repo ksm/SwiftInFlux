@@ -17,7 +17,7 @@ To contribute just fork this project and add a section below (don't forget to up
 * [Exceptions](#exceptions)
 * [Usage of @-sign in front of keywords](#usage-of--sign-in-front-of-keywords)
 * [Absence of math.h macros](#absence-of-mathh-macros)
-* [Unowned references breaking in Beta 2](#unowned-references-breaking-in-beta-2)
+* [Unowned references breaking in Beta 2 and 3](#unowned-references-breaking-in-beta-2-and-3)
 * [Set of legal operator characters](#set-of-legal-operator-characters)
 * [Mutable optional value types](#mutable-optional-value-types)
 * [Recursive nested functions](#recursive-nested-functions)
@@ -108,7 +108,7 @@ Soruces: https://devforums.apple.com/message/989902#989902
 >
 >-- Chris Lattner
 
-Still doesn't work in beta 3: see [#5](#5)
+Still doesn't work in beta 3: see [#5](https://github.com/ksm/SwiftInFlux/pull/5)
 
 Sources: https://devforums.apple.com/message/997278#997278
 
