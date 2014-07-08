@@ -19,7 +19,8 @@ To contribute just fork this project and add a section below (don't forget to up
 * [Usage of @-sign in front of keywords](#usage-of--sign-in-front-of-keywords)
 * [Absence of math.h macros](#absence-of-mathh-macros)
 * [Unowned references breaking in Beta 2](#unowned-references-breaking-in-beta-2)
-
+* [Set of legal operator characters](#set-of-legal-operator-characters)
+ 
 ### Arrays
 
 >Array semantics were in flux at the time of Beta 1, and have been revised to provide full value semantics like Dictionary and String.  This will be available in later betas.
@@ -115,4 +116,13 @@ Soruces: https://devforums.apple.com/message/989902#989902
 >-- Chris Lattner
 
 Sources: https://devforums.apple.com/message/997278#997278
+
+### Set of legal operator characters
+
+> The set of characters is in flux, but yes, most unicode symbol characters in the BMP that are classified as 'symbol' and 'math' are available as operator characters.
+>
+>-- Joe Groff
+
+Sources: https://devforums.apple.com/thread/231723?tstart=450
+
 
