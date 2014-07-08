@@ -19,6 +19,7 @@ To contribute just fork this project and add a section below (don't forget to up
 * [Absence of math.h macros](#absence-of-mathh-macros)
 * [Unowned references breaking in Beta 2](#unowned-references-breaking-in-beta-2)
 * [Set of legal operator characters](#set-of-legal-operator-characters)
+* [Mutable optional value types](#mutable-optional-value-types)
 
 ### Character
 
@@ -102,7 +103,7 @@ Soruces: https://devforums.apple.com/message/989902#989902
 
 ### Unowned References [Breaking](http://openradar.appspot.com/radar?id=5300501415460864) in Beta 2
 
->This should be fixed in Beta 3.
+> This should be fixed in Beta 3.
 >
 >-- Chris Lattner
 
@@ -116,4 +117,18 @@ Sources: https://devforums.apple.com/message/997278#997278
 
 Sources: https://devforums.apple.com/thread/231723?tstart=450
 
+### Mutable optional value types
 
+> The issue here is that optional forcing and binding operators (postfix ! and ?) return an immutable rvalue, even when the operand is a mutable lvalue.  This means that you cannot perform mutating operations on the result, which is why optional arrays, dictionaries and other value types are pretty useless right now.
+> Unfortunately there isn't a great solution or workaround right now: one approach is to wrap the value in a class and use the optional on the class wrapper:
+```
+class StringArray {
+    var elts : String[]
+}
+var myArray: StringArray?
+```
+> We consider this a significant problem and are investigating various solutions to incorporate in a later Beta.
+>
+>-- Chris Lattner
+
+Sources: https://devforums.apple.com/message/998882#998882
