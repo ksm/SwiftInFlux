@@ -9,7 +9,6 @@ To contribute just fork this project and add a section below (don't forget to up
 
 ### Table of Contents
 
-* [Arrays](#arrays)
 * [Character](#character)
 * [Numerical data type conversion](#numerical-data-type-conversion-eg-cgfloat-and-swift-doubleswift-float)
 * [Optionals for values conforming to the LogicValue protocol](#optionals-for-values-conforming-to-the-logicvalue-protocol-eg-bool)
@@ -20,14 +19,6 @@ To contribute just fork this project and add a section below (don't forget to up
 * [Absence of math.h macros](#absence-of-mathh-macros)
 * [Unowned references breaking in Beta 2](#unowned-references-breaking-in-beta-2)
 * [Set of legal operator characters](#set-of-legal-operator-characters)
- 
-### Arrays
-
->Array semantics were in flux at the time of Beta 1, and have been revised to provide full value semantics like Dictionary and String.  This will be available in later betas.
->
->-- Chris Lattner
-
-Sources: https://devforums.apple.com/thread/228695?start=75&tstart=
 
 ### Character
 
