@@ -20,6 +20,7 @@ To contribute just fork this project and add a section below (don't forget to up
 * [Unowned references breaking in Beta 2](#unowned-references-breaking-in-beta-2)
 * [Set of legal operator characters](#set-of-legal-operator-characters)
 * [Mutable optional value types](#mutable-optional-value-types)
+* [Recursive nested functions](#recursive-nested-functions)
 
 ### Character
 
@@ -132,3 +133,11 @@ var myArray: StringArray?
 >-- Chris Lattner
 
 Sources: https://devforums.apple.com/message/998882#998882
+
+### Recursive nested functions
+
+> This is due to a known bug with recursive nested functions.  You can fix this by pulling them out to the top level.
+>
+>-- Chris Lattner
+
+Sources: https://devforums.apple.com/message/997536#997536
