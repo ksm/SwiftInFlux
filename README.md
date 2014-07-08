@@ -14,7 +14,7 @@ To contribute just fork this project and add a section below (don't forget to up
 * [Optionals for values conforming to the LogicValue protocol](#optionals-for-values-conforming-to-the-logicvalue-protocol-eg-bool)
 * [Access control](#access-control)
 * [C++ support](#c-support)
-* [Exceptions](#exceptions)
+* [Better error handling](#better-error-handling-features-possibly-exceptions)
 * [Usage of @-sign in front of keywords](#usage-of--sign-in-front-of-keywords)
 * [Absence of math.h macros](#absence-of-mathh-macros)
 * [Unowned references breaking in Beta 2 and 3](#unowned-references-breaking-in-beta-2-and-3)
@@ -78,7 +78,7 @@ Sources: https://devforums.apple.com/thread/228324?start=50&tstart=0 https://dev
 
 Sources: https://devforums.apple.com/thread/228324?start=50&tstart=0
 
-### Exceptions
+### Better error handling features (possibly exceptions)
 
 >We're aware of the opportunity and also desire better error handling features in Swift, but they didn't make it in time for 1.0.
 >
