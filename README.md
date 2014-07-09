@@ -68,7 +68,11 @@ Sources: https://devforums.apple.com/thread/234399?tstart=0
 >
 >-- Chris Lattner
 
-Sources: https://devforums.apple.com/thread/228324?start=50&tstart=0 https://devforums.apple.com/message/996725#996725 https://devforums.apple.com/message/970220#970220
+>The design is based around inline access-decorators (e.g. marking something public), not by adding headers back.  Please wait for it to come out in a later beta for details (yes, it is coming).
+>
+>-- Chris Lattner
+
+Sources: https://devforums.apple.com/thread/228324?start=50&tstart=0 https://devforums.apple.com/message/996725#996725 https://devforums.apple.com/message/970220#970220 https://devforums.apple.com/message/1000948#1000948
 
 ### C++ support
 
