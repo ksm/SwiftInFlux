@@ -21,6 +21,7 @@ To contribute just fork this project and add a section below (don't forget to up
 * [Set of legal operator characters](#set-of-legal-operator-characters)
 * [Mutable optional value types](#mutable-optional-value-types)
 * [Recursive nested functions](#recursive-nested-functions)
+* [Structs with both @lazy and non-lazy properties crashes compiler](#structs-with-both-@lazy-and-non-lazy-properties-crashes-compiler)
 
 ### Character
 
@@ -151,3 +152,14 @@ Sources: https://devforums.apple.com/message/998882#998882
 >-- Chris Lattner
 
 Sources: https://devforums.apple.com/message/997536#997536
+
+### Structs with both @lazy and non-lazy properties crashes compiler
+
+structs with a @lazy property followed by a non-lazy property crashes
+the compiler.
+
+> This is fixed, but didn't make it into Beta 3. Stay tuned for a later Beta,
+>
+> --Chris Lattner
+
+Source: https://devforums.apple.com/message/1000950#1000950
