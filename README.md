@@ -176,8 +176,7 @@ ___
 Items that were previously "in flux", but were resolved in one of later Betas are listed here.
 
 ### Arrays
-Fixed in Beta 3, by completely new Array semantics. Syntax also changed from `Type[]`, to `[Type]`, e.g. `[String]`.
-
+Since Beta 3, Array has full value semantics to match Dictionary, String and other value types. Type declaration syntax also changed from `Type[]`, to `[Type]`, e.g. `[String]`.
 
 >Array semantics were in flux at the time of Beta 1, and have been revised to provide full value semantics like Dictionary and String.  This will be available in later betas.
 >
