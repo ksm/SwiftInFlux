@@ -118,7 +118,11 @@ Sources: https://devforums.apple.com/message/997278#997278
 >
 >-- Joe Groff
 
-Sources: https://devforums.apple.com/thread/231723?tstart=450
+> It's not documented yet, but the set of allowed operator characters includes 'math' and 'symbol' characters in the Unicode BMP, and operator characters can be augmented with combining characters. The full set of supported characters will be documented in one of the following seeds.
+>
+>-- Joe Groff
+
+Sources: https://devforums.apple.com/thread/231723?tstart=450 https://devforums.apple.com/message/1000934#1000934
 
 ### Mutable optional value types
 
