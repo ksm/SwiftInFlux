@@ -22,6 +22,7 @@ To contribute just fork this project and add a section below (don't forget to up
 * [Mutable optional value types](#mutable-optional-value-types)
 * [Recursive nested functions](#recursive-nested-functions)
 * [Structs with both @lazy and non-lazy properties crashes compiler](#structs-with-both-lazy-and-non-lazy-properties-crashes-compiler)
+* [C union support is coming](#c-union-support-is-coming)
 
 ___
 
