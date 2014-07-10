@@ -169,10 +169,17 @@ the compiler.
 
 > This is fixed, but didn't make it into Beta 3. Stay tuned for a later Beta,
 >
-> --Chris Lattner
+> -- Chris Lattner
 
 Source: https://devforums.apple.com/message/1000950#1000950
 
+### C union support is coming
+
+> We'll have at least partial support for importing unions in a future seed.
+> 
+>-- Joe Groff
+
+Source: https://devforums.apple.com/message/1002630#1002630
 ___
 
 ## Changed in Beta 3
