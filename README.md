@@ -25,9 +25,12 @@ To contribute just fork this project and add a section below (don't forget to up
 
 ___
 
-* [Resolved](#resolved)
-  * [Arrays](#arrays)
+* [Changed in Beta 3](#changed-in-beta-3)
+  * [Array value semantics](#array-value-semantics)
+  * [Array and Dictionary type declaration syntax](#array-and-dictionary-type-declaration-syntax)
+  * [Range operators](#range-operators)
 
+---
 
 ### Character
 
@@ -169,17 +172,37 @@ the compiler.
 > --Chris Lattner
 
 Source: https://devforums.apple.com/message/1000950#1000950
+
 ___
 
-## Resolved
+## Changed in Beta 3
 
-Items that were previously "in flux", but were resolved in one of later Betas are listed here.
-
-### Arrays
-Since Beta 3, Array has full value semantics to match Dictionary, String and other value types. Type declaration syntax also changed from `Type[]`, to `[Type]`, e.g. `[String]`.
+### Array value semantics
+Since Beta 3, Array has full value semantics to match Dictionary, String and other value types.
 
 >Array semantics were in flux at the time of Beta 1, and have been revised to provide full value semantics like Dictionary and String.  This will be available in later betas.
 >
 >-- Chris Lattner
 
 Sources: https://devforums.apple.com/thread/228695?start=75&tstart=
+
+### Array and Dictionary type declaration syntax
+Before Beta 3, the shorthand for an Array type was `Type[]`, and Dictionary types were written `Dictionary<KeyType, ValueType>`. Array type shorthand was changed to `[Type]` and Dictionaries types now have a shorthand syntax `[KeyType: ValueType]` (e.g. `[String: Bool]`)
+
+### Range operators
+The half-closed range operator was changed from `..` to `..<`.
+
+> We considered this carefully.  As you can see from this thread, small syntactic issues like this are polarizing, subject to personal preferences, and have no one right answer.  See also http://en.wikipedia.org/wiki/Bikeshed
+>  
+> For what it's worth, this approach is precendented in the groovy language.  It optimizes for readability and clarity: you're unlikely to mistake one operator for the other when skimming code, and new people coming to Swift are unlikely to assume that ..< is an inclusive range operator (like most assumed when they saw "0..5")
+> 
+> --Chris Lattner
+> 
+> I'd really like it if there was only a single range operator, but that isn't possible (AFAIK):
+> 
+> - You need to have a half-open range operator to be able to represent an empty range.
+> - You need an inclusive range operator to represent finite enumerated sequences when you want to include the last element (e.g. enums, but also integers that you want to include the largest integer value in)..
+> 
+> --Chris Lattner
+
+Sources: https://devforums.apple.com/message/1000100#1000100, https://devforums.apple.com/message/999669#999669
