@@ -23,6 +23,7 @@ To contribute just fork this project and add a section below (don't forget to up
 * [Recursive nested functions](#recursive-nested-functions)
 * [Structs with both @lazy and non-lazy properties crashes compiler](#structs-with-both-lazy-and-non-lazy-properties-crashes-compiler)
 * [C union support](#c-union-support)
+* [IBOutlet](#iboutlet)
 
 ___
 
@@ -181,6 +182,17 @@ Source: https://devforums.apple.com/message/1000950#1000950
 >-- Joe Groff
 
 Source: https://devforums.apple.com/message/1002630#1002630
+
+### IBOutlet
+
+> In Beta 3 (and earlier) the @IBOutlet attribute implicitly makes the variable weak, and implicitly makes it an implicitly unwrapped optional (unless it's explicitly marked with ?).  We added the 'strong' modifier in Beta 3.
+>
+> This is super confusing, too magic, leads to problems (like this) where "retains" are lost for types like arrays because the only reference is weak, and isn't even best practice on iOS where most outlets should be strong.  For all of these reasons, in a future Beta, @IBOutlet will become "just" an annotation for IB, without any implicit behavior.
+>
+>-- Chris Lattner
+
+Source: https://devforums.apple.com/message/1002722#1002722
+
 ___
 
 ## Changed in Beta 3
