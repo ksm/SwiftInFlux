@@ -22,7 +22,7 @@ To contribute just fork this project and add a section below (don't forget to up
 * [Mutable optional value types](#mutable-optional-value-types)
 * [Recursive nested functions](#recursive-nested-functions)
 * [Structs with both @lazy and non-lazy properties crashes compiler](#structs-with-both-lazy-and-non-lazy-properties-crashes-compiler)
-* [C union support is coming](#c-union-support-is-coming)
+* [C union support](#c-union-support)
 
 ___
 
@@ -174,7 +174,7 @@ the compiler.
 
 Source: https://devforums.apple.com/message/1000950#1000950
 
-### C union support is coming
+### C union support
 
 > We'll have at least partial support for importing unions in a future seed.
 > 
