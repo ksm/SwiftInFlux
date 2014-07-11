@@ -24,6 +24,7 @@ To contribute just fork this project and add a section below (don't forget to up
 * [Structs with both @lazy and non-lazy properties crashes compiler](#structs-with-both-lazy-and-non-lazy-properties-crashes-compiler)
 * [C union support](#c-union-support)
 * [IBOutlet](#iboutlet)
+* [Ranges](#ranges)
 
 ___
 
@@ -192,6 +193,21 @@ Source: https://devforums.apple.com/message/1002630#1002630
 >-- Chris Lattner
 
 Source: https://devforums.apple.com/message/1002722#1002722
+
+### Ranges
+
+> Ranges aren't in a good place in the current betas.  Among known bugs:
+  - "5 ... 1" does the wrong thing.
+  - "1.0 ... 2.1" produces an infinite range.
+  - The "by()" method on ranges is "unprincipled" and doesn't always work
+  - Subscripting a range produces the wrong results
+  - Inclusive ranges including the max values "0...UInt8.max" do the wrong thing
+> 
+> We have a cohesive rework of this entire area coming in a later Beta.
+> 
+>-- Chris Lattner
+
+Source: https://devforums.apple.com/message/1002719#1002719
 
 ___
 
