@@ -32,6 +32,7 @@ ___
   * [Array value semantics](#array-value-semantics)
   * [Array and Dictionary type declaration syntax](#array-and-dictionary-type-declaration-syntax)
   * [Range operators](#range-operators)
+  * Modifying constant properties in designated vs. convenience initializers
 
 ---
 
@@ -242,3 +243,25 @@ The half-closed range operator was changed from `..` to `..<`.
 > --Chris Lattner
 
 Sources: https://devforums.apple.com/message/1000100#1000100, https://devforums.apple.com/message/999669#999669
+
+### Modifying constant properties in designated vs. convenience initializers
+
+> What is going on here is that initializers have privledged access to 'let' properties while they run: these properties are actually mutable when accessed directly within the initializer.  This is very useful when you're configurating an object during its setup, but it is absolutely required when you have an immutable property dependent on some argument to the initializer, e.g.:
+>
+```swift
+class C {
+  let x : Int   // immutable property
+  init(input : Int) {
+    x = input     // mutating an immutable property!
+  }
+}
+```
+> This is an important part of making immutable properties (as opposed to random other immutable variables) useful and functional, but it is dangerous, and potentially allows extensions to a type to violate invariants.
+> 
+> Beta 3 fixes this by only allowing mutation within non-convenience initializers.  Convenience inits must delegate to some other initializer anyway, so that initializer can take an argument and do the mutation.
+>  
+> Long story short, this is a feature, not a bug :-)
+>
+> --Chris Lattner
+
+Source: https://devforums.apple.com/message/1003240#1003240
