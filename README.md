@@ -32,7 +32,7 @@ ___
   * [Array value semantics](#array-value-semantics)
   * [Array and Dictionary type declaration syntax](#array-and-dictionary-type-declaration-syntax)
   * [Range operators](#range-operators)
-  * Modifying constant properties in designated vs. convenience initializers
+  * [Modifying constant properties in designated vs. convenience initializers](#modifying-constant-properties-in-designated-vs-convenience-initializers)
 
 ---
 
