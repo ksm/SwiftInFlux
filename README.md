@@ -214,6 +214,7 @@ Source: https://devforums.apple.com/message/1002719#1002719
 ### Enumerating enum types
 
 > > Does anyone else think this would be fundamentally useful?  Or is their a good way of apporaoching this in Swift currently that I'm missing?
+> 
 > Yes.  All of this would be super useful.  We have a large number of radars asking for similar functionality, thanks!
 > 
 >-- Chris Lattner
