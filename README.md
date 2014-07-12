@@ -5,7 +5,7 @@ The community is creating some incredible analyses and writing about Swift. What
 This document is an attempt to gather the Swift features that are still in flux and likely to change.
 
 ### Contributing
-To contribute just fork this project and add a section below (don't forget to update the Table of Contents!).
+To contribute: fork this project, add a section below (don't forget to update the Table of Contents!), and create a pull request.
 
 ### Table of Contents
 
