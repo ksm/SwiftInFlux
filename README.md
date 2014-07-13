@@ -26,6 +26,7 @@ To contribute: fork this project, add a section below (don't forget to update th
 * [IBOutlet](#iboutlet)
 * [Ranges](#ranges)
 * [Enumerating enum types](#enumerating-enum-types)
+* [Reflection API](#reflection-api)
 
 ___
 
@@ -220,6 +221,12 @@ Source: https://devforums.apple.com/message/1002719#1002719
 >-- Chris Lattner
 
 Source: https://devforums.apple.com/message/1003674#1003674
+
+### Reflection API
+
+There's an undocumented API in Swift. There's no official word from anyone inside Apple as to whether it's gonna go public before 1.0, but it's there. 
+
+There's great [Brent Simmons post about it](http://inessential.com/2014/07/13/swift_reflection), and [gist by Jason Peebles](https://gist.github.com/peebsjs/9288f79322ed3119ece4) showing how to use it.
 
 ___
 
