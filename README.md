@@ -175,7 +175,7 @@ the compiler.
 
 > This is fixed, but didn't make it into Beta 3. Stay tuned for a later Beta,
 >
-> -- Chris Lattner
+>-- Chris Lattner
 
 Source: https://devforums.apple.com/message/1000950#1000950
 
@@ -255,14 +255,14 @@ The half-closed range operator was changed from `..` to `..<`.
 >  
 > For what it's worth, this approach is precendented in the groovy language.  It optimizes for readability and clarity: you're unlikely to mistake one operator for the other when skimming code, and new people coming to Swift are unlikely to assume that ..< is an inclusive range operator (like most assumed when they saw "0..5")
 > 
-> --Chris Lattner
+>-- Chris Lattner
 > 
 > I'd really like it if there was only a single range operator, but that isn't possible (AFAIK):
 > 
 > - You need to have a half-open range operator to be able to represent an empty range.
 > - You need an inclusive range operator to represent finite enumerated sequences when you want to include the last element (e.g. enums, but also integers that you want to include the largest integer value in)..
 > 
-> --Chris Lattner
+>-- Chris Lattner
 
 Sources: https://devforums.apple.com/message/1000100#1000100, https://devforums.apple.com/message/999669#999669
 
@@ -284,6 +284,6 @@ class C {
 >  
 > Long story short, this is a feature, not a bug :-)
 >
-> --Chris Lattner
+>-- Chris Lattner
 
 Source: https://devforums.apple.com/message/1003240#1003240
