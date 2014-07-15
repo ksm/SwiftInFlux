@@ -27,6 +27,7 @@ To contribute: fork this project, add a section below (don't forget to update th
 * [Ranges](#ranges)
 * [Enumerating enum types](#enumerating-enum-types)
 * [Reflection](#reflection)
+* [Flow-sensitive optional unwrapping](#flow-sensitive-optional-unwrapping)
 
 ___
 
@@ -231,6 +232,24 @@ Source: https://devforums.apple.com/message/1003674#1003674
 No official word from anyone inside Apple as to whether it's gonna go public before 1.0.
 
 Sources: http://inessential.com/2014/07/13/swift_reflection https://gist.github.com/peebsjs/9288f79322ed3119ece4
+
+### Flow-sensitive optional unwrapping
+
+With this feature, optional types would be implicitly unwrapped in the context of a block checking if an optional has a value, like so:
+
+```swift
+let x: Type?
+
+if exists x {
+   x.doSomething() // works without ? or !
+}
+```
+
+> We're definitely aware of the advantages of control-flow sensitive type refinement for optionals (and also for other subtype relationships).  This would be particularly handy in ternary operators, but isn't something on the books for 1.0.  We have several radars requesting that and tracking it for consideration in a future release.
+> 
+>-- Chris Lattner
+
+Source: https://devforums.apple.com/message/1005148#1005148
 
 ___
 
