@@ -9,35 +9,92 @@ To contribute: fork this project, add a section below (don't forget to update th
 
 ### Table of Contents
 
+* [Absence of math.h macros](#absence-of-mathh-macros)
+* [Abstract methods](#abstract-methods)
+* [Access control](#access-control)
+* [Better error handling](#better-error-handling-features-possibly-exceptions)
+* [C++ support](#c-support)
+* [C union support](#c-union-support)
 * [Character](#character)
+* [Enumerating enum types](#enumerating-enum-types)
+* [Flow-sensitive optional unwrapping](#flow-sensitive-optional-unwrapping)
+* [IBOutlet](#iboutlet)
+* [Mutable optional value types](#mutable-optional-value-types)
 * [Numerical data type conversion](#numerical-data-type-conversion-eg-cgfloat-and-swift-doubleswift-float)
 * [Optionals for values conforming to the LogicValue protocol](#optionals-for-values-conforming-to-the-logicvalue-protocol-eg-bool)
-* [Access control](#access-control)
-* [C++ support](#c-support)
-* [Better error handling](#better-error-handling-features-possibly-exceptions)
-* [Usage of @-sign in front of keywords](#usage-of--sign-in-front-of-keywords)
-* [Absence of math.h macros](#absence-of-mathh-macros)
-* [Unowned references breaking in Beta 2 and 3](#unowned-references-breaking-in-beta-2-and-3)
-* [Set of legal operator characters](#set-of-legal-operator-characters)
-* [Mutable optional value types](#mutable-optional-value-types)
-* [Recursive nested functions](#recursive-nested-functions)
-* [Structs with both @lazy and non-lazy properties crashes compiler](#structs-with-both-lazy-and-non-lazy-properties-crashes-compiler)
-* [C union support](#c-union-support)
-* [IBOutlet](#iboutlet)
 * [Ranges](#ranges)
-* [Enumerating enum types](#enumerating-enum-types)
+* [Recursive nested functions](#recursive-nested-functions)
 * [Reflection](#reflection)
-* [Flow-sensitive optional unwrapping](#flow-sensitive-optional-unwrapping)
+* [Set of legal operator characters](#set-of-legal-operator-characters)
+* [Structs with both @lazy and non-lazy properties crashes compiler](#structs-with-both-lazy-and-non-lazy-properties-crashes-compiler)
+* [Usage of @-sign in front of keywords](#usage-of--sign-in-front-of-keywords)
+* [Unowned references breaking in Beta 2 and 3](#unowned-references-breaking-in-beta-2-and-3)
 
 ___
 
 * [Changed in Beta 3](#changed-in-beta-3)
-  * [Array value semantics](#array-value-semantics)
   * [Array and Dictionary type declaration syntax](#array-and-dictionary-type-declaration-syntax)
-  * [Range operators](#range-operators)
+  * [Array value semantics](#array-value-semantics)
   * [Modifying constant properties in designated vs. convenience initializers](#modifying-constant-properties-in-designated-vs-convenience-initializers)
+  * [Range operators](#range-operators)
 
 ---
+
+### Absence of math.h macros
+
+>This is a known problem, it will be fixed in later betas.
+>
+>-- Chris Lattner
+
+Source: https://devforums.apple.com/message/989902#989902
+
+### Abstract methods
+
+> FWIW, we already have many bugs tracking the idea of adding abstract methods to swift.  We'll consider it in future releases, we understand the value :-)
+>
+>-- Chris Lattner
+
+Source: https://devforums.apple.com/message/1006592#1006592
+
+### Access control
+
+>We don't usually promise anything for the future, but in this case we are making an exception. Swift will have access control mechanisms.
+>
+>-- Greg Parker
+
+>Access control (public/private/etc) is coming in a later beta, this is mentioned in the Xcode release notes.
+>
+>-- Chris Lattner
+
+>The design is based around inline access-decorators (e.g. marking something public), not by adding headers back.  Please wait for it to come out in a later beta for details (yes, it is coming).
+>
+>-- Chris Lattner
+
+Sources: https://devforums.apple.com/thread/228324?start=50&tstart=0 https://devforums.apple.com/message/996725#996725 https://devforums.apple.com/message/970220#970220 https://devforums.apple.com/message/1000948#1000948
+
+### Better error handling features (possibly exceptions)
+
+>We're aware of the opportunity and also desire better error handling features in Swift, but they didn't make it in time for 1.0.
+>
+>-- Chris Lattner
+
+Source: https://devforums.apple.com/thread/228324?start=50&tstart=0
+
+### C++ support
+
+>This is another obviously desirable feature, it is just a lot of work and didn't make it in 1.0 either.
+>
+>-- Chris Lattner
+
+Source: https://devforums.apple.com/thread/228324?start=50&tstart=0
+
+### C union support
+
+> We'll have at least partial support for importing unions in a future seed.
+> 
+>-- Joe Groff
+
+Source: https://devforums.apple.com/message/1002630#1002630
 
 ### Character
 
@@ -46,6 +103,60 @@ ___
 >-- Chris Lattner
 
 Sources: https://devforums.apple.com/message/997759#997759 http://oleb.net/blog/2014/07/swift-strings/
+
+### Enumerating enum types
+
+> > Does anyone else think this would be fundamentally useful?  Or is their a good way of apporaoching this in Swift currently that I'm missing?
+> 
+> Yes.  All of this would be super useful.  We have a large number of radars asking for similar functionality, thanks!
+> 
+>-- Chris Lattner
+
+Source: https://devforums.apple.com/message/1003674#1003674
+
+### Flow-sensitive optional unwrapping
+
+With this feature, optional types would be implicitly unwrapped in the context of a block checking if an optional has a value, like so:
+
+```swift
+let x: Type?
+
+if exists x {
+   x.doSomething() // works without ? or !
+}
+```
+
+> We're definitely aware of the advantages of control-flow sensitive type refinement for optionals (and also for other subtype relationships).  This would be particularly handy in ternary operators, but isn't something on the books for 1.0.  We have several radars requesting that and tracking it for consideration in a future release.
+> 
+>-- Chris Lattner
+
+Source: https://devforums.apple.com/message/1005148#1005148
+
+### IBOutlet
+
+> In Beta 3 (and earlier) the @IBOutlet attribute implicitly makes the variable weak, and implicitly makes it an implicitly unwrapped optional (unless it's explicitly marked with ?).  We added the 'strong' modifier in Beta 3.
+>
+> This is super confusing, too magic, leads to problems (like this) where "retains" are lost for types like arrays because the only reference is weak, and isn't even best practice on iOS where most outlets should be strong.  For all of these reasons, in a future Beta, @IBOutlet will become "just" an annotation for IB, without any implicit behavior.
+>
+>-- Chris Lattner
+
+Source: https://devforums.apple.com/message/1002722#1002722
+
+### Mutable optional value types
+
+> The issue here is that optional forcing and binding operators (postfix ! and ?) return an immutable rvalue, even when the operand is a mutable lvalue.  This means that you cannot perform mutating operations on the result, which is why optional arrays, dictionaries and other value types are pretty useless right now.
+> Unfortunately there isn't a great solution or workaround right now: one approach is to wrap the value in a class and use the optional on the class wrapper:
+```
+class StringArray {
+    var elts : String[]
+}
+var myArray: StringArray?
+```
+> We consider this a significant problem and are investigating various solutions to incorporate in a later Beta.
+>
+>-- Chris Lattner
+
+Source: https://devforums.apple.com/message/998882#998882
 
 ### Numerical data type conversion, e.g. CGFloat and Swift Double/Swift Float
 
@@ -75,129 +186,6 @@ if foo {
 
 Sources: https://devforums.apple.com/thread/234399?tstart=0
 
-### Access control
-
->We don't usually promise anything for the future, but in this case we are making an exception. Swift will have access control mechanisms.
->
->-- Greg Parker
-
->Access control (public/private/etc) is coming in a later beta, this is mentioned in the Xcode release notes.
->
->-- Chris Lattner
-
->The design is based around inline access-decorators (e.g. marking something public), not by adding headers back.  Please wait for it to come out in a later beta for details (yes, it is coming).
->
->-- Chris Lattner
-
-Sources: https://devforums.apple.com/thread/228324?start=50&tstart=0 https://devforums.apple.com/message/996725#996725 https://devforums.apple.com/message/970220#970220 https://devforums.apple.com/message/1000948#1000948
-
-### C++ support
-
->This is another obviously desirable feature, it is just a lot of work and didn't make it in 1.0 either.
->
->-- Chris Lattner
-
-Sources: https://devforums.apple.com/thread/228324?start=50&tstart=0
-
-### Better error handling features (possibly exceptions)
-
->We're aware of the opportunity and also desire better error handling features in Swift, but they didn't make it in time for 1.0.
->
->-- Chris Lattner
-
-Sources: https://devforums.apple.com/thread/228324?start=50&tstart=0
-
-### Usage of @-sign in front of keywords
-
->This is something we're continuing to evaluate, expect @ signs to change in subsequent betas.
->
->-- Chris Lattner
-
-Sources: https://devforums.apple.com/thread/228324?start=25&tstart=0
-
-### Absence of math.h macros
-
->This is a known problem, it will be fixed in later betas.
->
->-- Chris Lattner
-
-Soruces: https://devforums.apple.com/message/989902#989902
-
-### Unowned References [Breaking](http://openradar.appspot.com/radar?id=5300501415460864) in Beta 2 and 3
-
-> This should be fixed in Beta 3.
->
->-- Chris Lattner
-
-Still doesn't work in beta 3: see [#5](https://github.com/ksm/SwiftInFlux/pull/5)
-
-Sources: https://devforums.apple.com/message/997278#997278
-
-### Set of legal operator characters
-
-> The set of characters is in flux, but yes, most unicode symbol characters in the BMP that are classified as 'symbol' and 'math' are available as operator characters.
->
->-- Joe Groff
-
-> It's not documented yet, but the set of allowed operator characters includes 'math' and 'symbol' characters in the Unicode BMP, and operator characters can be augmented with combining characters. The full set of supported characters will be documented in one of the following seeds.
->
->-- Joe Groff
-
-Sources: https://devforums.apple.com/thread/231723?tstart=450 https://devforums.apple.com/message/1000934#1000934
-
-### Mutable optional value types
-
-> The issue here is that optional forcing and binding operators (postfix ! and ?) return an immutable rvalue, even when the operand is a mutable lvalue.  This means that you cannot perform mutating operations on the result, which is why optional arrays, dictionaries and other value types are pretty useless right now.
-> Unfortunately there isn't a great solution or workaround right now: one approach is to wrap the value in a class and use the optional on the class wrapper:
-```
-class StringArray {
-    var elts : String[]
-}
-var myArray: StringArray?
-```
-> We consider this a significant problem and are investigating various solutions to incorporate in a later Beta.
->
->-- Chris Lattner
-
-Sources: https://devforums.apple.com/message/998882#998882
-
-### Recursive nested functions
-
-> This is due to a known bug with recursive nested functions.  You can fix this by pulling them out to the top level.
->
->-- Chris Lattner
-
-Sources: https://devforums.apple.com/message/997536#997536
-
-### Structs with both @lazy and non-lazy properties crashes compiler
-
-structs with a @lazy property followed by a non-lazy property crashes
-the compiler.
-
-> This is fixed, but didn't make it into Beta 3. Stay tuned for a later Beta,
->
->-- Chris Lattner
-
-Source: https://devforums.apple.com/message/1000950#1000950
-
-### C union support
-
-> We'll have at least partial support for importing unions in a future seed.
-> 
->-- Joe Groff
-
-Source: https://devforums.apple.com/message/1002630#1002630
-
-### IBOutlet
-
-> In Beta 3 (and earlier) the @IBOutlet attribute implicitly makes the variable weak, and implicitly makes it an implicitly unwrapped optional (unless it's explicitly marked with ?).  We added the 'strong' modifier in Beta 3.
->
-> This is super confusing, too magic, leads to problems (like this) where "retains" are lost for types like arrays because the only reference is weak, and isn't even best practice on iOS where most outlets should be strong.  For all of these reasons, in a future Beta, @IBOutlet will become "just" an annotation for IB, without any implicit behavior.
->
->-- Chris Lattner
-
-Source: https://devforums.apple.com/message/1002722#1002722
-
 ### Ranges
 
 > Ranges aren't in a good place in the current betas.  Among known bugs:
@@ -213,15 +201,13 @@ Source: https://devforums.apple.com/message/1002722#1002722
 
 Source: https://devforums.apple.com/message/1002719#1002719
 
-### Enumerating enum types
+### Recursive nested functions
 
-> > Does anyone else think this would be fundamentally useful?  Or is their a good way of apporaoching this in Swift currently that I'm missing?
-> 
-> Yes.  All of this would be super useful.  We have a large number of radars asking for similar functionality, thanks!
-> 
+> This is due to a known bug with recursive nested functions.  You can fix this by pulling them out to the top level.
+>
 >-- Chris Lattner
 
-Source: https://devforums.apple.com/message/1003674#1003674
+Sources: https://devforums.apple.com/message/997536#997536
 
 ### Reflection
 
@@ -233,27 +219,53 @@ No official word from anyone inside Apple as to whether it's gonna go public bef
 
 Sources: http://inessential.com/2014/07/13/swift_reflection https://gist.github.com/peebsjs/9288f79322ed3119ece4
 
-### Flow-sensitive optional unwrapping
+### Set of legal operator characters
 
-With this feature, optional types would be implicitly unwrapped in the context of a block checking if an optional has a value, like so:
+> The set of characters is in flux, but yes, most unicode symbol characters in the BMP that are classified as 'symbol' and 'math' are available as operator characters.
+>
+>-- Joe Groff
 
-```swift
-let x: Type?
+> It's not documented yet, but the set of allowed operator characters includes 'math' and 'symbol' characters in the Unicode BMP, and operator characters can be augmented with combining characters. The full set of supported characters will be documented in one of the following seeds.
+>
+>-- Joe Groff
 
-if exists x {
-   x.doSomething() // works without ? or !
-}
-```
+Sources: https://devforums.apple.com/thread/231723?tstart=450 https://devforums.apple.com/message/1000934#1000934
 
-> We're definitely aware of the advantages of control-flow sensitive type refinement for optionals (and also for other subtype relationships).  This would be particularly handy in ternary operators, but isn't something on the books for 1.0.  We have several radars requesting that and tracking it for consideration in a future release.
-> 
+### Structs with both @lazy and non-lazy properties crashes compiler
+
+structs with a @lazy property followed by a non-lazy property crashes
+the compiler.
+
+> This is fixed, but didn't make it into Beta 3. Stay tuned for a later Beta,
+>
 >-- Chris Lattner
 
-Source: https://devforums.apple.com/message/1005148#1005148
+Source: https://devforums.apple.com/message/1000950#1000950
+
+### Usage of @-sign in front of keywords
+
+>This is something we're continuing to evaluate, expect @ signs to change in subsequent betas.
+>
+>-- Chris Lattner
+
+Source: https://devforums.apple.com/thread/228324?start=25&tstart=0
+
+### Unowned References [Breaking](http://openradar.appspot.com/radar?id=5300501415460864) in Beta 2 and 3
+
+> This should be fixed in Beta 3.
+>
+>-- Chris Lattner
+
+Still doesn't work in beta 3: see [#5](https://github.com/ksm/SwiftInFlux/pull/5)
+
+Source: https://devforums.apple.com/message/997278#997278
 
 ___
 
 ## Changed in Beta 3
+
+### Array and Dictionary type declaration syntax
+Before Beta 3, the shorthand for an Array type was `Type[]`, and Dictionary types were written `Dictionary<KeyType, ValueType>`. Array type shorthand was changed to `[Type]` and Dictionaries types now have a shorthand syntax `[KeyType: ValueType]` (e.g. `[String: Bool]`)
 
 ### Array value semantics
 Since Beta 3, Array has full value semantics to match Dictionary, String and other value types.
@@ -263,27 +275,6 @@ Since Beta 3, Array has full value semantics to match Dictionary, String and oth
 >-- Chris Lattner
 
 Sources: https://devforums.apple.com/thread/228695?start=75&tstart=
-
-### Array and Dictionary type declaration syntax
-Before Beta 3, the shorthand for an Array type was `Type[]`, and Dictionary types were written `Dictionary<KeyType, ValueType>`. Array type shorthand was changed to `[Type]` and Dictionaries types now have a shorthand syntax `[KeyType: ValueType]` (e.g. `[String: Bool]`)
-
-### Range operators
-The half-closed range operator was changed from `..` to `..<`.
-
-> We considered this carefully.  As you can see from this thread, small syntactic issues like this are polarizing, subject to personal preferences, and have no one right answer.  See also http://en.wikipedia.org/wiki/Bikeshed
->  
-> For what it's worth, this approach is precendented in the groovy language.  It optimizes for readability and clarity: you're unlikely to mistake one operator for the other when skimming code, and new people coming to Swift are unlikely to assume that ..< is an inclusive range operator (like most assumed when they saw "0..5")
-> 
->-- Chris Lattner
-> 
-> I'd really like it if there was only a single range operator, but that isn't possible (AFAIK):
-> 
-> - You need to have a half-open range operator to be able to represent an empty range.
-> - You need an inclusive range operator to represent finite enumerated sequences when you want to include the last element (e.g. enums, but also integers that you want to include the largest integer value in)..
-> 
->-- Chris Lattner
-
-Sources: https://devforums.apple.com/message/1000100#1000100, https://devforums.apple.com/message/999669#999669
 
 ### Modifying constant properties in designated vs. convenience initializers
 
@@ -306,3 +297,22 @@ class C {
 >-- Chris Lattner
 
 Source: https://devforums.apple.com/message/1003240#1003240
+
+### Range operators
+
+The half-closed range operator was changed from `..` to `..<`.
+
+> We considered this carefully.  As you can see from this thread, small syntactic issues like this are polarizing, subject to personal preferences, and have no one right answer.  See also http://en.wikipedia.org/wiki/Bikeshed
+>  
+> For what it's worth, this approach is precendented in the groovy language.  It optimizes for readability and clarity: you're unlikely to mistake one operator for the other when skimming code, and new people coming to Swift are unlikely to assume that ..< is an inclusive range operator (like most assumed when they saw "0..5")
+> 
+>-- Chris Lattner
+> 
+> I'd really like it if there was only a single range operator, but that isn't possible (AFAIK):
+> 
+> - You need to have a half-open range operator to be able to represent an empty range.
+> - You need an inclusive range operator to represent finite enumerated sequences when you want to include the last element (e.g. enums, but also integers that you want to include the largest integer value in)..
+> 
+>-- Chris Lattner
+
+Sources: https://devforums.apple.com/message/1000100#1000100 https://devforums.apple.com/message/999669#999669
