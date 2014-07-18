@@ -17,6 +17,7 @@ To contribute: fork this project, add a section below (don't forget to update th
 * [C union support](#c-union-support)
 * [Character](#character)
 * [Enumerating enum types](#enumerating-enum-types)
+* [Enums nested in generic classes broken](#enums-nested-in-generic-classes-broken)
 * [Flow-sensitive optional unwrapping](#flow-sensitive-optional-unwrapping)
 * [IBOutlet](#iboutlet)
 * [Mutable optional value types](#mutable-optional-value-types)
@@ -113,6 +114,14 @@ Sources: https://devforums.apple.com/message/997759#997759 http://oleb.net/blog/
 >-- Chris Lattner
 
 Source: https://devforums.apple.com/message/1003674#1003674
+
+### Enums nested in generic classes broken
+
+> That's another frequently reported bug.  Unfortunately, we likely won't have time to make it work for the 1.0 release, but we intend to produce a decent compiler error message saying that it isn't supported (yet).  A workaround is to define the enums outside of generic classes.
+>
+>-- Chris Lattner
+
+Source: https://devforums.apple.com/thread/236195?start=25&tstart=0
 
 ### Flow-sensitive optional unwrapping
 
