@@ -1,6 +1,6 @@
 Swift InFlux
 ===========
-The community is creating some incredible analyses and writing about Swift. What I keep asking myself whenever learning and reading about Swift is: how likely is this to change soon? 
+The community is creating some incredible analyses and writing about Swift. What I keep asking myself whenever learning and reading about Swift is: how likely is this to change soon?
 
 This document is an attempt to gather the Swift features that are still in flux and likely to change.
 
@@ -28,6 +28,7 @@ To contribute: fork this project, add a section below (don't forget to update th
 * [Reflection](#reflection)
 * [Set of legal operator characters](#set-of-legal-operator-characters)
 * [Structs with both @lazy and non-lazy properties crashes compiler](#structs-with-both-lazy-and-non-lazy-properties-crashes-compiler)
+* [Systems programming features](#systems-programming-features)
 * [Usage of @-sign in front of keywords](#usage-of--sign-in-front-of-keywords)
 * [Unowned references breaking in Beta 2 and 3](#unowned-references-breaking-in-beta-2-and-3)
 
@@ -92,7 +93,7 @@ Source: https://devforums.apple.com/thread/228324?start=50&tstart=0
 ### C union support
 
 > We'll have at least partial support for importing unions in a future seed.
-> 
+>
 >-- Joe Groff
 
 Source: https://devforums.apple.com/message/1002630#1002630
@@ -108,9 +109,9 @@ Sources: https://devforums.apple.com/message/997759#997759 http://oleb.net/blog/
 ### Enumerating enum types
 
 > > Does anyone else think this would be fundamentally useful?  Or is their a good way of apporaoching this in Swift currently that I'm missing?
-> 
+>
 > Yes.  All of this would be super useful.  We have a large number of radars asking for similar functionality, thanks!
-> 
+>
 >-- Chris Lattner
 
 Source: https://devforums.apple.com/message/1003674#1003674
@@ -136,7 +137,7 @@ if exists x {
 ```
 
 > We're definitely aware of the advantages of control-flow sensitive type refinement for optionals (and also for other subtype relationships).  This would be particularly handy in ternary operators, but isn't something on the books for 1.0.  We have several radars requesting that and tracking it for consideration in a future release.
-> 
+>
 >-- Chris Lattner
 
 Source: https://devforums.apple.com/message/1005148#1005148
@@ -170,7 +171,7 @@ Source: https://devforums.apple.com/message/998882#998882
 ### Numerical data type conversion, e.g. CGFloat and Swift Double/Swift Float
 
 >What is happening here is that CGFloat is a typealias for either Float or Double depending on whether you're building for 32 or 64-bits.  This is exactly how Objective-C works, but is problematic in Swift because Swift doesn't allow implicit conversions.
-> 
+>
 >We're aware of this problem and consider it to be serious: we are evaluating several different solutions right now and will roll one out in a later beta.  As you notice, you can cope with this today by casting to Double.  This is inelegant but effective :-)
 >
 >-- Chris Lattner
@@ -203,9 +204,9 @@ Sources: https://devforums.apple.com/thread/234399?tstart=0
   - The "by()" method on ranges is "unprincipled" and doesn't always work
   - Subscripting a range produces the wrong results
   - Inclusive ranges including the max values "0...UInt8.max" do the wrong thing
-> 
+>
 > We have a cohesive rework of this entire area coming in a later Beta.
-> 
+>
 >-- Chris Lattner
 
 Source: https://devforums.apple.com/message/1002719#1002719
@@ -250,6 +251,14 @@ the compiler.
 >-- Chris Lattner
 
 Source: https://devforums.apple.com/message/1000950#1000950
+
+### Systems Programming Features
+
+> The focus of Swift 1.0 is definitely on improving general app development, but we do expect Swift to grow capabilities (e.g. perhaps even the ability to write inline assembly code) that allow it to fully span the gamut of programming: from writing the lowest level firmware up to the highest level application programming.  We prefer to do this carefully and deliberately over time, rather than attempting to solve all the world's problems at once.
+>
+> -Chris
+
+Source: https://devforums.apple.com/message/1007178#1007178
 
 ### Usage of @-sign in front of keywords
 
@@ -298,9 +307,9 @@ class C {
 }
 ```
 > This is an important part of making immutable properties (as opposed to random other immutable variables) useful and functional, but it is dangerous, and potentially allows extensions to a type to violate invariants.
-> 
+>
 > Beta 3 fixes this by only allowing mutation within non-convenience initializers.  Convenience inits must delegate to some other initializer anyway, so that initializer can take an argument and do the mutation.
->  
+>
 > Long story short, this is a feature, not a bug :-)
 >
 >-- Chris Lattner
@@ -312,16 +321,16 @@ Source: https://devforums.apple.com/message/1003240#1003240
 The half-closed range operator was changed from `..` to `..<`.
 
 > We considered this carefully.  As you can see from this thread, small syntactic issues like this are polarizing, subject to personal preferences, and have no one right answer.  See also http://en.wikipedia.org/wiki/Bikeshed
->  
+>
 > For what it's worth, this approach is precendented in the groovy language.  It optimizes for readability and clarity: you're unlikely to mistake one operator for the other when skimming code, and new people coming to Swift are unlikely to assume that ..< is an inclusive range operator (like most assumed when they saw "0..5")
-> 
+>
 >-- Chris Lattner
-> 
+>
 > I'd really like it if there was only a single range operator, but that isn't possible (AFAIK):
-> 
+>
 > - You need to have a half-open range operator to be able to represent an empty range.
 > - You need an inclusive range operator to represent finite enumerated sequences when you want to include the last element (e.g. enums, but also integers that you want to include the largest integer value in)..
-> 
+>
 >-- Chris Lattner
 
 Sources: https://devforums.apple.com/message/1000100#1000100 https://devforums.apple.com/message/999669#999669
