@@ -27,7 +27,6 @@ To contribute: fork this project, add a section below (don't forget to update th
 * [Set of legal operator characters](#set-of-legal-operator-characters)
 * [Structs with both @lazy and non-lazy properties crashes compiler](#structs-with-both-lazy-and-non-lazy-properties-crashes-compiler)
 * [Systems programming features](#systems-programming-features)
-* [Usage of @-sign in front of keywords](#usage-of--sign-in-front-of-keywords)
 * [Unowned references breaking in Beta 2 and 3](#unowned-references-breaking-in-beta-2-and-3)
 
 ___
@@ -35,6 +34,7 @@ ___
 * [Changed in Beta 4](#changed-in-beta-4)
   * [Access control](#access-control)
   * [Character](#character)
+  * [Revised declaration modifiers](#revised-declaration-modifiers)
 
 * [Changed in Beta 3](#changed-in-beta-3)
   * [Array and Dictionary type declaration syntax](#array-and-dictionary-type-declaration-syntax)
@@ -238,14 +238,6 @@ Source: https://devforums.apple.com/message/1000950#1000950
 
 Source: https://devforums.apple.com/message/1007178#1007178
 
-### Usage of @-sign in front of keywords
-
->This is something we're continuing to evaluate, expect @ signs to change in subsequent betas.
->
->-- Chris Lattner
-
-Source: https://devforums.apple.com/thread/228324?start=25&tstart=0
-
 ### Unowned References [Breaking](http://openradar.appspot.com/radar?id=5300501415460864) in Beta 2 and 3
 
 > This should be fixed in Beta 3.
@@ -279,6 +271,12 @@ Character was changed in Beta 4 to hold a full grapheme cluster instead of a sin
 Before Beta 4, é achieved using "e" and a combining mark would be treated as two Character instances. Now, every character is a single Character. The change helps avoid a class of bugs when dealing with complex Unicode strings.
 
 Sources: http://oleb.net/blog/2014/07/swift-strings/ https://devforums.apple.com/message/1007773#1007773
+
+## Revised declaration modifiers
+
+> The @final, @lazy, @optional, and @required attributes have been converted to declaration modifiers, specified without an @ sign.
+
+Source: http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_4_o2p8fz/xcode_6_beta_4_release_notes.pdf
 
 ## Changed in Beta 3
 
