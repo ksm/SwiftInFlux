@@ -262,21 +262,13 @@ ___
 
 ### Access control
 
->We don't usually promise anything for the future, but in this case we are making an exception. Swift will have access control mechanisms.
->
->-- Greg Parker
+Beta 4 adds three levels of access control to user-defined entities: `public` (available anywhere), `internal` (available within the target where they're defined) and `private` (available only within the file where they're defined).
 
->Access control (public/private/etc) is coming in a later beta, this is mentioned in the Xcode release notes.
->
->-- Chris Lattner
+> By default, most entities in a source file have internal access. This allows application developers to largely ignore access control while allowing framework developers full control over a framework's API.
 
->The design is based around inline access-decorators (e.g. marking something public), not by adding headers back.  Please wait for it to come out in a later beta for details (yes, it is coming).
->
->-- Chris Lattner
+It's also possible to define attributes with public getters but private setters.
 
-Sources: https://devforums.apple.com/thread/228324?start=50&tstart=0 https://devforums.apple.com/message/996725#996725 https://devforums.apple.com/message/970220#970220 https://devforums.apple.com/message/1000948#1000948
-
-
+Sources: https://devforums.apple.com/thread/228324?start=50&tstart=0 https://devforums.apple.com/message/996725#996725 https://devforums.apple.com/message/970220#970220 https://devforums.apple.com/message/1000948#1000948 http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_4_o2p8fz/xcode_6_beta_4_release_notes.pdf
 
 ### Character
 
