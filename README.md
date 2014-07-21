@@ -11,11 +11,9 @@ To contribute: fork this project, add a section below (don't forget to update th
 
 * [Absence of math.h macros](#absence-of-mathh-macros)
 * [Abstract methods](#abstract-methods)
-* [Access control](#access-control)
 * [Better error handling](#better-error-handling-features-possibly-exceptions)
 * [C++ support](#c-support)
 * [C union support](#c-union-support)
-* [Character](#character)
 * [Enumerating enum types](#enumerating-enum-types)
 * [Enums nested in generic classes broken](#enums-nested-in-generic-classes-broken)
 * [Flow-sensitive optional unwrapping](#flow-sensitive-optional-unwrapping)
@@ -29,10 +27,15 @@ To contribute: fork this project, add a section below (don't forget to update th
 * [Set of legal operator characters](#set-of-legal-operator-characters)
 * [Structs with both @lazy and non-lazy properties crashes compiler](#structs-with-both-lazy-and-non-lazy-properties-crashes-compiler)
 * [Systems programming features](#systems-programming-features)
-* [Usage of @-sign in front of keywords](#usage-of--sign-in-front-of-keywords)
 * [Unowned references breaking in Beta 2 and 3](#unowned-references-breaking-in-beta-2-and-3)
+* [Usage of @-sign in front of keywords](#usage-of--sign-in-front-of-keywords)
 
 ___
+
+* [Changed in Beta 4](#changed-in-beta-4)
+  * [Access control](#access-control)
+  * [Character](#character)
+  * [Revised declaration modifiers](#revised-declaration-modifiers)
 
 * [Changed in Beta 3](#changed-in-beta-3)
   * [Array and Dictionary type declaration syntax](#array-and-dictionary-type-declaration-syntax)
@@ -58,22 +61,6 @@ Source: https://devforums.apple.com/message/989902#989902
 
 Source: https://devforums.apple.com/message/1006592#1006592
 
-### Access control
-
->We don't usually promise anything for the future, but in this case we are making an exception. Swift will have access control mechanisms.
->
->-- Greg Parker
-
->Access control (public/private/etc) is coming in a later beta, this is mentioned in the Xcode release notes.
->
->-- Chris Lattner
-
->The design is based around inline access-decorators (e.g. marking something public), not by adding headers back.  Please wait for it to come out in a later beta for details (yes, it is coming).
->
->-- Chris Lattner
-
-Sources: https://devforums.apple.com/thread/228324?start=50&tstart=0 https://devforums.apple.com/message/996725#996725 https://devforums.apple.com/message/970220#970220 https://devforums.apple.com/message/1000948#1000948
-
 ### Better error handling features (possibly exceptions)
 
 >We're aware of the opportunity and also desire better error handling features in Swift, but they didn't make it in time for 1.0.
@@ -97,14 +84,6 @@ Source: https://devforums.apple.com/thread/228324?start=50&tstart=0
 >-- Joe Groff
 
 Source: https://devforums.apple.com/message/1002630#1002630
-
-### Character
-
->Note that Character is still evolving and will settle down by the final release of 1.0. One of the reasons that we use double quote syntax to initialize Characters is that they are expected to be able to hold full grapheme clusters, which are composed of multiple code points. This will roll out in a later beta.
->
->-- Chris Lattner
-
-Sources: https://devforums.apple.com/message/997759#997759 http://oleb.net/blog/2014/07/swift-strings/
 
 ### Enumerating enum types
 
@@ -260,14 +239,6 @@ Source: https://devforums.apple.com/message/1000950#1000950
 
 Source: https://devforums.apple.com/message/1007178#1007178
 
-### Usage of @-sign in front of keywords
-
->This is something we're continuing to evaluate, expect @ signs to change in subsequent betas.
->
->-- Chris Lattner
-
-Source: https://devforums.apple.com/thread/228324?start=25&tstart=0
-
 ### Unowned References [Breaking](http://openradar.appspot.com/radar?id=5300501415460864) in Beta 2 and 3
 
 > This should be fixed in Beta 3.
@@ -278,7 +249,50 @@ Still doesn't work in beta 3: see [#5](https://github.com/ksm/SwiftInFlux/pull/5
 
 Source: https://devforums.apple.com/message/997278#997278
 
+### Usage of @-sign in front of keywords
+
+Some of the @-attributes [were changed in Beta 4](#revised-declaration-modifiers) to declaration modifiers, shedding the @ prefix. However, more changes to these attributes will follow.
+
+> Future betas will include improvements to @class_protocol and adjust @prefix and other operator attributes.
+> 
+>-- Xcode beta 4 release notes
+>
+> This is something we're continuing to evaluate, expect @ signs to change in subsequent betas.
+>
+>-- Chris Lattner
+
+Source: https://devforums.apple.com/thread/228324?start=25&tstart=0,  http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_4_o2p8fz/xcode_6_beta_4_release_notes.pdf
+
+
 ___
+
+## Changed in Beta 4
+
+### Access control
+
+Beta 4 adds three levels of access control to user-defined entities: `public` (available anywhere), `internal` (available within the target where they're defined) and `private` (available only within the file where they're defined).
+
+> By default, most entities in a source file have internal access. This allows application developers to largely ignore access control while allowing framework developers full control over a framework's API.
+
+It's also possible to define attributes with public getters but private setters.
+
+Sources: https://devforums.apple.com/thread/228324?start=50&tstart=0 https://devforums.apple.com/message/996725#996725 https://devforums.apple.com/message/970220#970220 https://devforums.apple.com/message/1000948#1000948 http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_4_o2p8fz/xcode_6_beta_4_release_notes.pdf
+
+### Character
+
+Character was changed in Beta 4 to hold a full grapheme cluster instead of a single code point.
+
+> Certain accented characters (like é) can be represented either as a single code point or as a sequence of two or more code points (e + ́)
+
+Before Beta 4, é achieved using "e" and a combining mark would be treated as two Character instances. Now, every character is a single Character. The change helps avoid a class of bugs when dealing with complex Unicode strings.
+
+Sources: http://oleb.net/blog/2014/07/swift-strings/ https://devforums.apple.com/message/1007773#1007773
+
+## Revised declaration modifiers
+
+> The @final, @lazy, @optional, and @required attributes have been converted to declaration modifiers, specified without an @ sign.
+
+Source: http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_4_o2p8fz/xcode_6_beta_4_release_notes.pdf
 
 ## Changed in Beta 3
 
