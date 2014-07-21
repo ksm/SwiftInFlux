@@ -280,15 +280,13 @@ Sources: https://devforums.apple.com/thread/228324?start=50&tstart=0 https://dev
 
 ### Character
 
-> Note that Character is still evolving and will settle down by the final release of 1.0. One of the reasons that we use double quote syntax to initialize Characters is that they are expected to be able to hold full grapheme clusters, which are composed of multiple code points. This will roll out in a later beta.
->
->-- Chris Lattner
->
-> String and Character use (will use? I forget where that stands currently) grapheme clusters rather than code points, avoiding a class of bugs when dealing with complex unicode characters
->
->-- CFM
+Character was changed in Beta 4 to hold a full grapheme cluster instead of a single code point.
 
-Sources: https://devforums.apple.com/message/997759#997759 http://oleb.net/blog/2014/07/swift-strings/ https://devforums.apple.com/message/1007773#1007773
+> Certain accented characters (like é) can be represented either as a single code point or as a sequence of two or more code points (e + ́)
+
+Before Beta 4, é achieved using "e" and a combining mark would be treated as two Character instances. Now, every character is a single Character. The change helps avoid a class of bugs when dealing with complex Unicode strings.
+
+Sources: http://oleb.net/blog/2014/07/swift-strings/ https://devforums.apple.com/message/1007773#1007773
 
 ## Changed in Beta 3
 
