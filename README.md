@@ -11,11 +11,9 @@ To contribute: fork this project, add a section below (don't forget to update th
 
 * [Absence of math.h macros](#absence-of-mathh-macros)
 * [Abstract methods](#abstract-methods)
-* [Access control](#access-control)
 * [Better error handling](#better-error-handling-features-possibly-exceptions)
 * [C++ support](#c-support)
 * [C union support](#c-union-support)
-* [Character](#character)
 * [Enumerating enum types](#enumerating-enum-types)
 * [Enums nested in generic classes broken](#enums-nested-in-generic-classes-broken)
 * [Flow-sensitive optional unwrapping](#flow-sensitive-optional-unwrapping)
@@ -33,6 +31,10 @@ To contribute: fork this project, add a section below (don't forget to update th
 * [Unowned references breaking in Beta 2 and 3](#unowned-references-breaking-in-beta-2-and-3)
 
 ___
+
+* [Changed in Beta 4](#changed-in-beta-4)
+  * [Access control](#access-control)
+  * [Character](#character)
 
 * [Changed in Beta 3](#changed-in-beta-3)
   * [Array and Dictionary type declaration syntax](#array-and-dictionary-type-declaration-syntax)
@@ -58,22 +60,6 @@ Source: https://devforums.apple.com/message/989902#989902
 
 Source: https://devforums.apple.com/message/1006592#1006592
 
-### Access control
-
->We don't usually promise anything for the future, but in this case we are making an exception. Swift will have access control mechanisms.
->
->-- Greg Parker
-
->Access control (public/private/etc) is coming in a later beta, this is mentioned in the Xcode release notes.
->
->-- Chris Lattner
-
->The design is based around inline access-decorators (e.g. marking something public), not by adding headers back.  Please wait for it to come out in a later beta for details (yes, it is coming).
->
->-- Chris Lattner
-
-Sources: https://devforums.apple.com/thread/228324?start=50&tstart=0 https://devforums.apple.com/message/996725#996725 https://devforums.apple.com/message/970220#970220 https://devforums.apple.com/message/1000948#1000948
-
 ### Better error handling features (possibly exceptions)
 
 >We're aware of the opportunity and also desire better error handling features in Swift, but they didn't make it in time for 1.0.
@@ -97,18 +83,6 @@ Source: https://devforums.apple.com/thread/228324?start=50&tstart=0
 >-- Joe Groff
 
 Source: https://devforums.apple.com/message/1002630#1002630
-
-### Character
-
-> Note that Character is still evolving and will settle down by the final release of 1.0. One of the reasons that we use double quote syntax to initialize Characters is that they are expected to be able to hold full grapheme clusters, which are composed of multiple code points. This will roll out in a later beta.
->
->-- Chris Lattner
->
-> String and Character use (will use? I forget where that stands currently) grapheme clusters rather than code points, avoiding a class of bugs when dealing with complex unicode characters
->
->-- CFM
-
-Sources: https://devforums.apple.com/message/997759#997759 http://oleb.net/blog/2014/07/swift-strings/ https://devforums.apple.com/message/1007773#1007773
 
 ### Enumerating enum types
 
@@ -283,6 +257,38 @@ Still doesn't work in beta 3: see [#5](https://github.com/ksm/SwiftInFlux/pull/5
 Source: https://devforums.apple.com/message/997278#997278
 
 ___
+
+## Changed in Beta 4
+
+### Access control
+
+>We don't usually promise anything for the future, but in this case we are making an exception. Swift will have access control mechanisms.
+>
+>-- Greg Parker
+
+>Access control (public/private/etc) is coming in a later beta, this is mentioned in the Xcode release notes.
+>
+>-- Chris Lattner
+
+>The design is based around inline access-decorators (e.g. marking something public), not by adding headers back.  Please wait for it to come out in a later beta for details (yes, it is coming).
+>
+>-- Chris Lattner
+
+Sources: https://devforums.apple.com/thread/228324?start=50&tstart=0 https://devforums.apple.com/message/996725#996725 https://devforums.apple.com/message/970220#970220 https://devforums.apple.com/message/1000948#1000948
+
+
+
+### Character
+
+> Note that Character is still evolving and will settle down by the final release of 1.0. One of the reasons that we use double quote syntax to initialize Characters is that they are expected to be able to hold full grapheme clusters, which are composed of multiple code points. This will roll out in a later beta.
+>
+>-- Chris Lattner
+>
+> String and Character use (will use? I forget where that stands currently) grapheme clusters rather than code points, avoiding a class of bugs when dealing with complex unicode characters
+>
+>-- CFM
+
+Sources: https://devforums.apple.com/message/997759#997759 http://oleb.net/blog/2014/07/swift-strings/ https://devforums.apple.com/message/1007773#1007773
 
 ## Changed in Beta 3
 
