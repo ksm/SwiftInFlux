@@ -28,6 +28,7 @@ To contribute: fork this project, add a section below (don't forget to update th
 * [Structs with both @lazy and non-lazy properties crashes compiler](#structs-with-both-lazy-and-non-lazy-properties-crashes-compiler)
 * [Systems programming features](#systems-programming-features)
 * [Unowned references breaking in Beta 2 and 3](#unowned-references-breaking-in-beta-2-and-3)
+* [Usage of @-sign in front of keywords](#usage-of--sign-in-front-of-keywords)
 
 ___
 
@@ -247,6 +248,21 @@ Source: https://devforums.apple.com/message/1007178#1007178
 Still doesn't work in beta 3: see [#5](https://github.com/ksm/SwiftInFlux/pull/5)
 
 Source: https://devforums.apple.com/message/997278#997278
+
+### Usage of @-sign in front of keywords
+
+Some of the @-attributes [were changed in Beta 4](#revised-declaration-modifiers) to declaration modifiers, shedding the @ prefix. However, more changes to these attributes will follow.
+
+> Future betas will include improvements to @class_protocol and adjust @prefix and other operator attributes.
+> 
+>-- Xcode beta 4 release notes
+>
+> This is something we're continuing to evaluate, expect @ signs to change in subsequent betas.
+>
+>-- Chris Lattner
+
+Source: https://devforums.apple.com/thread/228324?start=25&tstart=0,  http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_4_o2p8fz/xcode_6_beta_4_release_notes.pdf
+
 
 ___
 
