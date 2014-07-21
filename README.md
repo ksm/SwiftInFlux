@@ -297,13 +297,13 @@ In addition to the above, Beta 4 removes `\x`, `\u` and `\U` escape sequences fo
 
 Sources: http://oleb.net/blog/2014/07/swift-strings/ https://devforums.apple.com/message/1007773#1007773
 
-## Revised declaration modifiers
+### Revised declaration modifiers
 
 > The @final, @lazy, @optional, and @required attributes have been converted to declaration modifiers, specified without an @ sign.
 
 Source: http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_4_o2p8fz/xcode_6_beta_4_release_notes.pdf
 
-## New stride() functions
+### New stride() functions
 
 > The .by() method for ranges has been replaced with general stride() functions. To
 adopt stride(), use stride(from: to: by:) for exclusive ranges and stride(from: through: by:) for inclusive ranges.
