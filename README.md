@@ -37,7 +37,8 @@ ___
   * [Revised declaration modifiers](#revised-declaration-modifiers)
   * [New stride() functions](#new-stride-functions)
   * [Set of legal operator characters](#set-of-legal-operator-characters)
-
+  * [Other changes to standard library](#other-changes-to-standard-library)
+  
 * [Changed in Beta 3](#changed-in-beta-3)
   * [Array and Dictionary type declaration syntax](#array-and-dictionary-type-declaration-syntax)
   * [Array value semantics](#array-value-semantics)
@@ -328,6 +329,19 @@ https://developer.apple.com/library/prerelease/mac/documentation/Swift/Conceptua
 >-- Joe Groff
 
 Sources: https://devforums.apple.com/thread/231723?tstart=450 https://devforums.apple.com/message/1000934#1000934
+
+### Other changes to standard library
+
+* `uppercaseString` and `lowercaseString` properties were removed from String
+* `insertionSort` and `quickSort` were removed
+* `CString` was removed. `const char *` values are now imported as `ConstUnsafePointer<Int8>`
+* `modulusWithOverflow` was replaced by `remainderWithOverflow`
+* `Float` and `Double` no longer conform to `RandomAccessIndex`, which means they can no longer be used to index a collection
+* `true` and `false` are now language literals. `Bool` conforms to a new `BooleanLiteralConvertible` protocol that allows user-defined types to support Boolean literals. 
+* `ArrayBuffer`, `ArrayBufferType`, `SliceBuffer` and `ContiguousArrayBuffer` were removed (the reason being, those structures were only an implementation detail of corresponding types)
+* `reverse` is no longer lazy and simply returns an Array. New `lazy` functions can be used to lazily reverse, filter and map collections through new `LazyForwardCollection`, `LazyRandomAccessCollection` and `LazySequence` structures
+
+Sources: http://airspeedvelocity.net/2014/07/21/changes-in-the-swift-standard-library-in-beta-4/ http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_4_o2p8fz/xcode_6_beta_4_release_notes.pdf
 
 ## Changed in Beta 3
 
