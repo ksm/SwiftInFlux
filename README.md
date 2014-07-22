@@ -24,7 +24,6 @@ To contribute: fork this project, add a section below (don't forget to update th
 * [Ranges](#ranges)
 * [Recursive nested functions](#recursive-nested-functions)
 * [Reflection](#reflection)
-* [Set of legal operator characters](#set-of-legal-operator-characters)
 * [Structs with both @lazy and non-lazy properties crashes compiler](#structs-with-both-lazy-and-non-lazy-properties-crashes-compiler)
 * [Systems programming features](#systems-programming-features)
 * [Unowned references breaking in Beta 2 and 3](#unowned-references-breaking-in-beta-2-and-3)
@@ -37,6 +36,7 @@ ___
   * [Unicode string improvements](#unicode-string-improvements)
   * [Revised declaration modifiers](#revised-declaration-modifiers)
   * [New stride() functions](#new-stride-functions)
+  * [Set of legal operator characters](#set-of-legal-operator-characters)
 
 * [Changed in Beta 3](#changed-in-beta-3)
   * [Array and Dictionary type declaration syntax](#array-and-dictionary-type-declaration-syntax)
@@ -215,18 +215,6 @@ No official word from anyone inside Apple as to whether it's gonna go public bef
 
 Sources: http://inessential.com/2014/07/13/swift_reflection https://gist.github.com/peebsjs/9288f79322ed3119ece4
 
-### Set of legal operator characters
-
-> The set of characters is in flux, but yes, most unicode symbol characters in the BMP that are classified as 'symbol' and 'math' are available as operator characters.
->
->-- Joe Groff
-
-> It's not documented yet, but the set of allowed operator characters includes 'math' and 'symbol' characters in the Unicode BMP, and operator characters can be augmented with combining characters. The full set of supported characters will be documented in one of the following seeds.
->
->-- Joe Groff
-
-Sources: https://devforums.apple.com/thread/231723?tstart=450 https://devforums.apple.com/message/1000934#1000934
-
 ### Structs with both @lazy and non-lazy properties crashes compiler
 
 structs with a @lazy property followed by a non-lazy property crashes
@@ -318,6 +306,22 @@ stride(from: x, through: y, by: z) // was: (x...y).by(z)
 > More improvements are due in forthcoming betas, addressing a variety of issues iterating over floating point ranges, constructing negative ranges, and several other known range-related problems.
 
 Source: http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_4_o2p8fz/xcode_6_beta_4_release_notes.pdf
+
+### Set of legal operator characters
+
+With release of Beta 4, the full grammar of operators was specified.
+
+https://developer.apple.com/library/prerelease/mac/documentation/Swift/Conceptual/Swift_Programming_Language/LexicalStructure.html#//apple_ref/doc/uid/TP40014097-CH30-XID_927
+
+> The set of characters is in flux, but yes, most unicode symbol characters in the BMP that are classified as 'symbol' and 'math' are available as operator characters.
+>
+>-- Joe Groff
+
+> It's not documented yet, but the set of allowed operator characters includes 'math' and 'symbol' characters in the Unicode BMP, and operator characters can be augmented with combining characters. The full set of supported characters will be documented in one of the following seeds.
+>
+>-- Joe Groff
+
+Sources: https://devforums.apple.com/thread/231723?tstart=450 https://devforums.apple.com/message/1000934#1000934
 
 ## Changed in Beta 3
 
