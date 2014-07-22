@@ -34,8 +34,9 @@ ___
 
 * [Changed in Beta 4](#changed-in-beta-4)
   * [Access control](#access-control)
-  * [Character](#character)
+  * [Unicode string improvements](#unicode-string-improvements)
   * [Revised declaration modifiers](#revised-declaration-modifiers)
+  * [New stride() functions](#new-stride-functions)
 
 * [Changed in Beta 3](#changed-in-beta-3)
   * [Array and Dictionary type declaration syntax](#array-and-dictionary-type-declaration-syntax)
@@ -177,6 +178,8 @@ Sources: https://devforums.apple.com/thread/234399?tstart=0
 
 ### Ranges
 
+Range operators were [changed in Beta 3](#range-operators), and Beta 4 brought new [`stride()` functions](#new-stride-functions) to replace `by()`. However, there are still many issues:
+
 > Ranges aren't in a good place in the current betas.  Among known bugs:
   - "5 ... 1" does the wrong thing.
   - "1.0 ... 2.1" produces an infinite range.
@@ -187,8 +190,12 @@ Sources: https://devforums.apple.com/thread/234399?tstart=0
 > We have a cohesive rework of this entire area coming in a later Beta.
 >
 >-- Chris Lattner
+>
+> More improvements are due in forthcoming betas, addressing a variety of issues iterating over floating point ranges, constructing negative ranges, and several other known range-related problems.
+>
+>-- Xcode beta 4 release notes
 
-Source: https://devforums.apple.com/message/1002719#1002719
+Source: https://devforums.apple.com/message/1002719#1002719, http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_4_o2p8fz/xcode_6_beta_4_release_notes.pdf
 
 ### Recursive nested functions
 
@@ -235,7 +242,7 @@ Source: https://devforums.apple.com/message/1000950#1000950
 
 > The focus of Swift 1.0 is definitely on improving general app development, but we do expect Swift to grow capabilities (e.g. perhaps even the ability to write inline assembly code) that allow it to fully span the gamut of programming: from writing the lowest level firmware up to the highest level application programming.  We prefer to do this carefully and deliberately over time, rather than attempting to solve all the world's problems at once.
 >
-> -Chris
+>-- Chris Lattner
 
 Source: https://devforums.apple.com/message/1007178#1007178
 
@@ -276,9 +283,9 @@ Beta 4 adds three levels of access control to user-defined entities: `public` (a
 
 It's also possible to define attributes with public getters but private setters.
 
-Sources: https://devforums.apple.com/thread/228324?start=50&tstart=0 https://devforums.apple.com/message/996725#996725 https://devforums.apple.com/message/970220#970220 https://devforums.apple.com/message/1000948#1000948 http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_4_o2p8fz/xcode_6_beta_4_release_notes.pdf
+Source: http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_4_o2p8fz/xcode_6_beta_4_release_notes.pdf
 
-### Character
+### Unicode string improvements
 
 Character was changed in Beta 4 to hold a full grapheme cluster instead of a single code point.
 
@@ -286,11 +293,29 @@ Character was changed in Beta 4 to hold a full grapheme cluster instead of a sin
 
 Before Beta 4, é achieved using "e" and a combining mark would be treated as two Character instances. Now, every character is a single Character. The change helps avoid a class of bugs when dealing with complex Unicode strings.
 
+In addition to the above, Beta 4 removes `\x`, `\u` and `\U` escape sequences for Unicode characters and replaces them with a single, less error-prone `\u{1234}` syntax
+
 Sources: http://oleb.net/blog/2014/07/swift-strings/ https://devforums.apple.com/message/1007773#1007773
 
-## Revised declaration modifiers
+### Revised declaration modifiers
 
 > The @final, @lazy, @optional, and @required attributes have been converted to declaration modifiers, specified without an @ sign.
+
+Source: http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_4_o2p8fz/xcode_6_beta_4_release_notes.pdf
+
+### New stride() functions
+
+> The .by() method for ranges has been replaced with general stride() functions. To
+adopt stride(), use stride(from: to: by:) for exclusive ranges and stride(from: through: by:) for inclusive ranges.
+
+For example, you can now do:
+
+```swift
+stride(from: x, to: y, by: z)      // was: (x..<y).by(z)
+stride(from: x, through: y, by: z) // was: (x...y).by(z)
+```
+
+> More improvements are due in forthcoming betas, addressing a variety of issues iterating over floating point ranges, constructing negative ranges, and several other known range-related problems.
 
 Source: http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_4_o2p8fz/xcode_6_beta_4_release_notes.pdf
 
