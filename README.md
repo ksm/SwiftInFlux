@@ -19,7 +19,6 @@ To contribute: fork this project, add a section below (don't forget to update th
 * [Flow-sensitive optional unwrapping](#flow-sensitive-optional-unwrapping)
 * [IBOutlet](#iboutlet)
 * [Mutable optional value types](#mutable-optional-value-types)
-* [Numerical data type conversion](#numerical-data-type-conversion-eg-cgfloat-and-swift-doubleswift-float)
 * [Optionals for values conforming to the LogicValue protocol](#optionals-for-values-conforming-to-the-logicvalue-protocol-eg-bool)
 * [Ranges](#ranges)
 * [Recursive nested functions](#recursive-nested-functions)
@@ -34,6 +33,7 @@ ___
 * [Changed in Beta 4](#changed-in-beta-4)
   * [Access control](#access-control)
   * [Unicode string improvements](#unicode-string-improvements)
+  * [Numerical data type conversion](#numerical-data-type-conversion-eg-cgfloat-and-swift-doubleswift-float)
   * [Revised declaration modifiers](#revised-declaration-modifiers)
   * [New stride() functions](#new-stride-functions)
   * [Set of legal operator characters](#set-of-legal-operator-characters)
@@ -147,16 +147,6 @@ var myArray: StringArray?
 >-- Chris Lattner
 
 Source: https://devforums.apple.com/message/998882#998882
-
-### Numerical data type conversion, e.g. CGFloat and Swift Double/Swift Float
-
->What is happening here is that CGFloat is a typealias for either Float or Double depending on whether you're building for 32 or 64-bits.  This is exactly how Objective-C works, but is problematic in Swift because Swift doesn't allow implicit conversions.
->
->We're aware of this problem and consider it to be serious: we are evaluating several different solutions right now and will roll one out in a later beta.  As you notice, you can cope with this today by casting to Double.  This is inelegant but effective :-)
->
->-- Chris Lattner
-
-Sources: https://devforums.apple.com/message/998222#998222
 
 ### Optionals for values conforming to the LogicValue protocol (e.g. Bool)
 
@@ -284,6 +274,22 @@ Before Beta 4, é achieved using "e" and a combining mark would be treated as tw
 In addition to the above, Beta 4 removes `\x`, `\u` and `\U` escape sequences for Unicode characters and replaces them with a single, less error-prone `\u{1234}` syntax
 
 Sources: http://oleb.net/blog/2014/07/swift-strings/ https://devforums.apple.com/message/1007773#1007773
+
+### Numerical data type conversion, e.g. CGFloat and Swift Double/Swift Float
+
+From Beta 4 Release Notes:
+>CGFloat is now a distinct floating-point type that wraps either a Float on 32-bit architectures or a Double on 64-bit architectures.
+
+Sources:
+http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_4_o2p8fz/xcode_6_beta_4_release_notes.pdf
+
+>What is happening here is that CGFloat is a typealias for either Float or Double depending on whether you're building for 32 or 64-bits.  This is exactly how Objective-C works, but is problematic in Swift because Swift doesn't allow implicit conversions.
+>
+>We're aware of this problem and consider it to be serious: we are evaluating several different solutions right now and will roll one out in a later beta.  As you notice, you can cope with this today by casting to Double.  This is inelegant but effective :-)
+>
+>-- Chris Lattner
+
+Sources: https://devforums.apple.com/message/998222#998222
 
 ### Revised declaration modifiers
 
