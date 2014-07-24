@@ -286,7 +286,9 @@ Beta 4 adds three levels of access control to user-defined entities: `public` (a
 
 > By default, most entities in a source file have internal access. This allows application developers to largely ignore access control while allowing framework developers full control over a framework's API.
 
-It's also possible to define attributes with public getters but private setters.
+It's also possible to define attributes with public getters but private setters using the `private(set)` syntax.
+
+It has been noted that the current access control design [makes unit testing a bit unwieldy](#limitations-of-current-access-control-design).
 
 Source: http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_4_o2p8fz/xcode_6_beta_4_release_notes.pdf
 
