@@ -11,7 +11,7 @@ To contribute: fork this project, add a section below (don't forget to update th
 
 * [Absence of math.h macros](#absence-of-mathh-macros)
 * [Abstract methods](#abstract-methods)
-* [Access control](#access-control)
+* [Access control](#limitations-of-current-access-control-design)
 * [Better error handling](#better-error-handling-features-possibly-exceptions)
 * [C++ support](#c-support)
 * [C union support](#c-union-support)
@@ -65,7 +65,7 @@ Source: https://devforums.apple.com/message/989902#989902
 
 Source: https://devforums.apple.com/message/1006592#1006592
 
-### Access control
+### Limitations of current access control design
 
 Swift [added access control](#access-control) in Beta 4, but there are limitations to its design. Entities marked as `internal` (which is the default) are not visible to other build targets, which means that unit tests (which traditionally live in a separate target) can't access them.
 
