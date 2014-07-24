@@ -14,6 +14,7 @@ To contribute: fork this project, add a section below (don't forget to update th
 * [Better error handling](#better-error-handling-features-possibly-exceptions)
 * [C++ support](#c-support)
 * [C union support](#c-union-support)
+* [Dynamic keyword](#dynamic-keyword)
 * [Enumerating enum types](#enumerating-enum-types)
 * [Enums nested in generic classes broken](#enums-nested-in-generic-classes-broken)
 * [Flow-sensitive optional unwrapping](#flow-sensitive-optional-unwrapping)
@@ -86,6 +87,12 @@ Source: https://devforums.apple.com/thread/228324?start=50&tstart=0
 >-- Joe Groff
 
 Source: https://devforums.apple.com/message/1002630#1002630
+
+### Dynamic keyword
+
+> 'dynamic' doesn't do anything in Beta 4, it will be wired up (and explained) in the next Beta.
+>
+>-Chris
 
 ### Enumerating enum types
 
