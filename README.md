@@ -94,6 +94,8 @@ Source: https://devforums.apple.com/message/1002630#1002630
 >
 >-Chris
 
+Source: https://devforums.apple.com/message/1010788#1010788
+
 ### Enumerating enum types
 
 > > Does anyone else think this would be fundamentally useful?  Or is their a good way of apporaoching this in Swift currently that I'm missing?
