@@ -11,6 +11,7 @@ To contribute: fork this project, add a section below (don't forget to update th
 
 * [Absence of math.h macros](#absence-of-mathh-macros)
 * [Abstract methods](#abstract-methods)
+* [Access control](#limitations-of-current-access-control-design)
 * [Better error handling](#better-error-handling-features-possibly-exceptions)
 * [C++ support](#c-support)
 * [C union support](#c-union-support)
@@ -63,6 +64,22 @@ Source: https://devforums.apple.com/message/989902#989902
 >-- Chris Lattner
 
 Source: https://devforums.apple.com/message/1006592#1006592
+
+### Limitations of current access control design
+
+Swift [added access control](#access-control) in Beta 4, but there are limitations to its design. Entities marked as `internal` (which is the default) are not visible to other build targets, which means that unit tests (which traditionally live in a separate target) can't access them.
+
+> We're aware that our access control design isn't great for unit testing (and this was in the release notes), we're evaluating the situation to see what we can do.
+>
+>-- Chris Lattner
+>
+> A limitation of the access control system is that unit tests cannot interact with the classes and methods in an application unless they are marked public. This is because the unit test target is not part of the application module.
+>
+>-- Xcode beta 4 release notes
+
+At the moment, one workaround is to mark all tested entities as public, another is to move tests to the same target as the application code. However, the former ruins the benefits of access control and the latter — of code modularization.
+
+Sources: https://devforums.apple.com/message/1010766#1010766 http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_4_o2p8fz/xcode_6_beta_4_release_notes.pdf
 
 ### Better error handling features (possibly exceptions)
 
@@ -269,7 +286,9 @@ Beta 4 adds three levels of access control to user-defined entities: `public` (a
 
 > By default, most entities in a source file have internal access. This allows application developers to largely ignore access control while allowing framework developers full control over a framework's API.
 
-It's also possible to define attributes with public getters but private setters.
+It's also possible to define attributes with public getters but private setters using the `private(set)` syntax.
+
+It has been noted that the current access control design [makes unit testing a bit unwieldy](#limitations-of-current-access-control-design).
 
 Source: http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_4_o2p8fz/xcode_6_beta_4_release_notes.pdf
 
