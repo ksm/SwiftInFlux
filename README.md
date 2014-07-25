@@ -24,7 +24,6 @@ To contribute: fork this project, add a section below (don't forget to update th
 * [Ranges](#ranges)
 * [Recursive nested functions](#recursive-nested-functions)
 * [Reflection](#reflection)
-* [Structs with both @lazy and non-lazy properties crashes compiler](#structs-with-both-lazy-and-non-lazy-properties-crashes-compiler)
 * [Systems programming features](#systems-programming-features)
 * [Unowned references breaking in Beta 2 and 3](#unowned-references-breaking-in-beta-2-and-3)
 * [Usage of @-sign in front of keywords](#usage-of--sign-in-front-of-keywords)
@@ -38,6 +37,7 @@ ___
   * [Revised declaration modifiers](#revised-declaration-modifiers)
   * [New stride() functions](#new-stride-functions)
   * [Set of legal operator characters](#set-of-legal-operator-characters)
+  * [Fixed: Structs with both @lazy and non-lazy properties crashes compiler](#fixed-structs-with-both-lazy-and-non-lazy-properties-crashes-compiler)
   * [Other changes to standard library](#other-changes-to-standard-library)
   
 * [Changed in Beta 3](#changed-in-beta-3)
@@ -215,17 +215,6 @@ No official word from anyone inside Apple as to whether it's gonna go public bef
 
 Sources: http://inessential.com/2014/07/13/swift_reflection https://gist.github.com/peebsjs/9288f79322ed3119ece4
 
-### Structs with both @lazy and non-lazy properties crashes compiler
-
-structs with a @lazy property followed by a non-lazy property crashes
-the compiler.
-
-> This is fixed, but didn't make it into Beta 3. Stay tuned for a later Beta,
->
->-- Chris Lattner
-
-Source: https://devforums.apple.com/message/1000950#1000950
-
 ### Systems Programming Features
 
 > The focus of Swift 1.0 is definitely on improving general app development, but we do expect Swift to grow capabilities (e.g. perhaps even the ability to write inline assembly code) that allow it to fully span the gamut of programming: from writing the lowest level firmware up to the highest level application programming.  We prefer to do this carefully and deliberately over time, rather than attempting to solve all the world's problems at once.
@@ -338,6 +327,19 @@ https://developer.apple.com/library/prerelease/mac/documentation/Swift/Conceptua
 >-- Joe Groff
 
 Sources: https://devforums.apple.com/thread/231723?tstart=450 https://devforums.apple.com/message/1000934#1000934
+
+### Fixed: Structs with both @lazy and non-lazy properties crashes compiler
+
+structs with a @lazy property followed by a non-lazy property crashes
+the compiler.
+
+> This is fixed, but didn't make it into Beta 3. Stay tuned for a later Beta,
+>
+>-- Chris Lattner
+
+[The code from the Developer Forums](https://devforums.apple.com/message/1000511#1000511) no longer causes a segmentation fault in the compiler in Beta 4.
+
+Source: https://devforums.apple.com/message/1000950#1000950
 
 ### Other changes to standard library
 
