@@ -20,6 +20,7 @@ To contribute: fork this project, add a section below (don't forget to update th
 * [Enums nested in generic classes broken](#enums-nested-in-generic-classes-broken)
 * [Flow-sensitive optional unwrapping](#flow-sensitive-optional-unwrapping)
 * [IBOutlet](#iboutlet)
+* [Implicit conversions](#implicit-conversions)
 * [Mutable optional value types](#mutable-optional-value-types)
 * [Optionals for values conforming to the LogicValue protocol](#optionals-for-values-conforming-to-the-logicvalue-protocol-eg-bool)
 * [Ranges](#ranges)
@@ -158,6 +159,31 @@ Source: https://devforums.apple.com/message/1005148#1005148
 >-- Chris Lattner
 
 Source: https://devforums.apple.com/message/1002722#1002722
+
+### Implicit conversions
+
+> > It turns out Swift actually does let you define implicit type conversions using `__conversion() -> T` methods, and you can put these in extensions, making the following possible:
+> > 
+> > ```swift
+extension Int {
+   func __conversion() -> CGFloat {
+        return CGFloat(self)
+   }
+}
+let x: CGFloat = 3.5
+let y: Int = 2
+let z = x * y // z is CGFloat and equals 7.0
+```
+> > 
+> > Use at your own risk.
+>
+> As you might guess from the name, __conversion is not intended to be a public feature.  It has never been documented, and we are planning to remove it for the final release.  Implicit conversions are a major source of exponential behavior (i.e., major slowdowns) in the type checker, and can lead to extremely surprising results with type inference.
+>  
+> We understand that implicit conversions are powerful and can be convenient in narrow situations, but don't get attached to it. :-)
+>
+>-- Chris Lattner
+
+Source: https://devforums.apple.com/message/1011396#1011396
 
 ### Mutable optional value types
 
