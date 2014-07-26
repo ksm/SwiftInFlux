@@ -19,6 +19,7 @@ To contribute: fork this project, add a section below (don't forget to update th
 * [Enumerating enum types](#enumerating-enum-types)
 * [Enums nested in generic classes broken](#enums-nested-in-generic-classes-broken)
 * [Flow-sensitive optional unwrapping](#flow-sensitive-optional-unwrapping)
+* [Framework/Swift bridging-type improvements](#frameworkswift-bridging-type-improvements)
 * [IBOutlet](#iboutlet)
 * [Implicit conversions](#implicit-conversions)
 * [Mutable optional value types](#mutable-optional-value-types)
@@ -41,7 +42,7 @@ ___
   * [Set of legal operator characters](#set-of-legal-operator-characters)
   * [Fixed: Structs with both @lazy and non-lazy properties crashes compiler](#fixed-structs-with-both-lazy-and-non-lazy-properties-crashes-compiler)
   * [Other changes to standard library](#other-changes-to-standard-library)
-  
+
 * [Changed in Beta 3](#changed-in-beta-3)
   * [Array and Dictionary type declaration syntax](#array-and-dictionary-type-declaration-syntax)
   * [Array value semantics](#array-value-semantics)
@@ -150,6 +151,18 @@ if exists x {
 
 Source: https://devforums.apple.com/message/1005148#1005148
 
+### Framework/Swift bridging-type improvements
+
+> > josephlord wrote:
+
+> > Is there any plan to audit the Frameworks and do anything to define return values and arguments as optional (?) when nils can happen and automatically unwrapped when nil will never be returned?
+
+> Yes.  Look for details in subsequent betas.
+>
+> -Chris
+
+Source: https://devforums.apple.com/message/1012357#1012357
+
 ### IBOutlet
 
 > In Beta 3 (and earlier) the @IBOutlet attribute implicitly makes the variable weak, and implicitly makes it an implicitly unwrapped optional (unless it's explicitly marked with ?).  We added the 'strong' modifier in Beta 3.
@@ -163,7 +176,7 @@ Source: https://devforums.apple.com/message/1002722#1002722
 ### Implicit conversions
 
 > > It turns out Swift actually does let you define implicit type conversions using `__conversion() -> T` methods, and you can put these in extensions, making the following possible:
-> > 
+> >
 > > ```swift
 extension Int {
    func __conversion() -> CGFloat {
@@ -174,11 +187,11 @@ let x: CGFloat = 3.5
 let y: Int = 2
 let z = x * y // z is CGFloat and equals 7.0
 ```
-> > 
+> >
 > > Use at your own risk.
 >
 > As you might guess from the name, __conversion is not intended to be a public feature.  It has never been documented, and we are planning to remove it for the final release.  Implicit conversions are a major source of exponential behavior (i.e., major slowdowns) in the type checker, and can lead to extremely surprising results with type inference.
->  
+>
 > We understand that implicit conversions are powerful and can be convenient in narrow situations, but don't get attached to it. :-)
 >
 >-- Chris Lattner
@@ -281,7 +294,7 @@ Source: https://devforums.apple.com/message/997278#997278
 Some of the @-attributes [were changed in Beta 4](#revised-declaration-modifiers) to declaration modifiers, shedding the @ prefix. However, more changes to these attributes will follow.
 
 > Future betas will include improvements to @class_protocol and adjust @prefix and other operator attributes.
-> 
+>
 >-- Xcode beta 4 release notes
 >
 > This is something we're continuing to evaluate, expect @ signs to change in subsequent betas.
@@ -393,7 +406,7 @@ Source: https://devforums.apple.com/message/1000950#1000950
 * `CString` was removed. `const char *` values are now imported as `ConstUnsafePointer<Int8>`
 * `modulusWithOverflow` was replaced by `remainderWithOverflow`
 * `Float` and `Double` no longer conform to `RandomAccessIndex`, which means they can no longer be used to index a collection
-* `true` and `false` are now language literals. `Bool` conforms to a new `BooleanLiteralConvertible` protocol that allows user-defined types to support Boolean literals. 
+* `true` and `false` are now language literals. `Bool` conforms to a new `BooleanLiteralConvertible` protocol that allows user-defined types to support Boolean literals.
 * `ArrayBuffer`, `ArrayBufferType`, `SliceBuffer` and `ContiguousArrayBuffer` were removed (the reason being, those structures were only an implementation detail of corresponding types)
 * `reverse` is no longer lazy and simply returns an Array. New `lazy` functions can be used to lazily reverse, filter and map collections through new `LazyForwardCollection`, `LazyRandomAccessCollection` and `LazySequence` structures
 
