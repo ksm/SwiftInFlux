@@ -19,6 +19,7 @@ To contribute: fork this project, add a section below (don't forget to update th
 * [Enumerating enum types](#enumerating-enum-types)
 * [Enums nested in generic classes broken](#enums-nested-in-generic-classes-broken)
 * [Flow-sensitive optional unwrapping](#flow-sensitive-optional-unwrapping)
+* [Framework/Swift bridging-type improvements](#frameworkswift-bridging-type-improvements)
 * [IBOutlet](#iboutlet)
 * [Implicit conversions](#implicit-conversions)
 * [Mutable optional value types](#mutable-optional-value-types)
@@ -149,6 +150,18 @@ if exists x {
 >-- Chris Lattner
 
 Source: https://devforums.apple.com/message/1005148#1005148
+
+### Framework/Swift bridging-type improvements
+
+> > josephlord wrote:
+ 
+> > Is there any plan to audit the Frameworks and do anything to define return values and arguments as optional (?) when nils can happen and automatically unwrapped when nil will never be returned?
+
+> Yes.  Look for details in subsequent betas.
+>
+> -Chris
+
+Source: https://devforums.apple.com/message/1012357#1012357
 
 ### IBOutlet
 
