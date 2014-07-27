@@ -23,7 +23,7 @@ To contribute: fork this project, add a section below (don't forget to update th
 * [IBOutlet](#iboutlet)
 * [Implicit conversions](#implicit-conversions)
 * [Mutable optional value types](#mutable-optional-value-types)
-* [Optionals for values conforming to the LogicValue protocol](#optionals-for-values-conforming-to-the-logicvalue-protocol-eg-bool)
+* [Optional Bool is confusing](#optional-bool-is-confusing)
 * [Ranges](#ranges)
 * [Recursive nested functions](#recursive-nested-functions)
 * [Reflection](#reflection)
@@ -214,9 +214,9 @@ var myArray: StringArray?
 
 Source: https://devforums.apple.com/message/998882#998882
 
-### Optionals for values conforming to the LogicValue protocol (e.g. Bool)
+### Optional Bool is confusing
 
-Optional Bools in a boolean context are confusing.
+Optionals for types conforming to the `LogicValue` protocol (primarily Bool) can have confusing semantics:
 
 ```swift
 var foo: Bool? = false
@@ -226,11 +226,15 @@ if foo {
 }
 ```
 
->This problem exists with any optional of something that conforms to the LogicValue protocol (e.g. nested optionals, optional of bool, etc).  We consider it serious issue that needs to be fixed for 1.0 and have some ideas, but haven't settled on a solution yet.
+> This problem exists with any optional of something that conforms to the LogicValue protocol (e.g. nested optionals, optional of bool, etc).  We consider it serious issue that needs to be fixed for 1.0 and have some ideas, but haven't settled on a solution yet.
+>
+>-- Chris Lattner
+>
+> FWIW, we have a fix for "optional bool confusion" that will be rolling out in the next beta (along with a few other improvements to optional semantics).  Stay tuned.
 >
 >-- Chris Lattner
 
-Sources: https://devforums.apple.com/thread/234399?tstart=0
+Sources: https://devforums.apple.com/thread/234399?tstart=0, https://devforums.apple.com/message/1012278#1012278
 
 ### Ranges
 
