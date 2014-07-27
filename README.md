@@ -19,11 +19,11 @@ To contribute: fork this project, add a section below (don't forget to update th
 * [Enumerating enum types](#enumerating-enum-types)
 * [Enums nested in generic classes broken](#enums-nested-in-generic-classes-broken)
 * [Flow-sensitive optional unwrapping](#flow-sensitive-optional-unwrapping)
-* [Framework/Swift bridging-type improvements](#frameworkswift-bridging-type-improvements)
 * [IBOutlet](#iboutlet)
 * [Implicit conversions](#implicit-conversions)
 * [Mutable optional value types](#mutable-optional-value-types)
-* [Optionals for values conforming to the LogicValue protocol](#optionals-for-values-conforming-to-the-logicvalue-protocol-eg-bool)
+* [Optional Bool is confusing](#optional-bool-is-confusing)
+* [Optionals in imported Objective-C frameworks](#optionals-in-imported-objective-c-frameworks)
 * [Ranges](#ranges)
 * [Recursive nested functions](#recursive-nested-functions)
 * [Reflection](#reflection)
@@ -151,18 +151,6 @@ if exists x {
 
 Source: https://devforums.apple.com/message/1005148#1005148
 
-### Framework/Swift bridging-type improvements
-
-> > josephlord wrote:
-
-> > Is there any plan to audit the Frameworks and do anything to define return values and arguments as optional (?) when nils can happen and automatically unwrapped when nil will never be returned?
-
-> Yes.  Look for details in subsequent betas.
->
-> -Chris
-
-Source: https://devforums.apple.com/message/1012357#1012357
-
 ### IBOutlet
 
 > In Beta 3 (and earlier) the @IBOutlet attribute implicitly makes the variable weak, and implicitly makes it an implicitly unwrapped optional (unless it's explicitly marked with ?).  We added the 'strong' modifier in Beta 3.
@@ -214,9 +202,9 @@ var myArray: StringArray?
 
 Source: https://devforums.apple.com/message/998882#998882
 
-### Optionals for values conforming to the LogicValue protocol (e.g. Bool)
+### Optional Bool is confusing
 
-Optional Bools in a boolean context are confusing.
+Optionals for types conforming to the `LogicValue` protocol (primarily Bool) can have confusing semantics:
 
 ```swift
 var foo: Bool? = false
@@ -226,11 +214,27 @@ if foo {
 }
 ```
 
->This problem exists with any optional of something that conforms to the LogicValue protocol (e.g. nested optionals, optional of bool, etc).  We consider it serious issue that needs to be fixed for 1.0 and have some ideas, but haven't settled on a solution yet.
+> This problem exists with any optional of something that conforms to the LogicValue protocol (e.g. nested optionals, optional of bool, etc).  We consider it serious issue that needs to be fixed for 1.0 and have some ideas, but haven't settled on a solution yet.
+>
+>-- Chris Lattner
+>
+> FWIW, we have a fix for "optional bool confusion" that will be rolling out in the next beta (along with a few other improvements to optional semantics).  Stay tuned.
 >
 >-- Chris Lattner
 
-Sources: https://devforums.apple.com/thread/234399?tstart=0
+Sources: https://devforums.apple.com/thread/234399?tstart=0, https://devforums.apple.com/message/1012278#1012278
+
+### Optionals in imported Objective-C frameworks
+
+At the moment, virtually all class types in Objective-C method definitions are imported to Swift as implicitly unwrapped optionals. For example, `- (NSString *)stringByAppendingString:(NSString *)aString` is translated to `func stringByAppendingString(_ aString: String!) -> String!`. That makes it harder to distinguish between types that can or can't be nil.
+
+> > Is there any plan to audit the Frameworks and do anything to define return values and arguments as optional (?) when nils can happen and automatically unwrapped when nil will never be returned?
+>
+> Yes.  Look for details in subsequent betas.
+>
+>-- Chris Lattner
+
+Source: https://devforums.apple.com/message/1012357#1012357
 
 ### Ranges
 
@@ -450,7 +454,7 @@ Source: https://devforums.apple.com/message/1003240#1003240
 
 ### Range operators
 
-The half-closed range operator was changed from `..` to `..<`.
+The half-open range operator was changed from `..` to `..<`.
 
 > We considered this carefully.  As you can see from this thread, small syntactic issues like this are polarizing, subject to personal preferences, and have no one right answer.  See also http://en.wikipedia.org/wiki/Bikeshed
 >
