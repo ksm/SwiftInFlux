@@ -454,7 +454,7 @@ Source: https://devforums.apple.com/message/1003240#1003240
 
 ### Range operators
 
-The half-closed range operator was changed from `..` to `..<`.
+The half-open range operator was changed from `..` to `..<`.
 
 > We considered this carefully.  As you can see from this thread, small syntactic issues like this are polarizing, subject to personal preferences, and have no one right answer.  See also http://en.wikipedia.org/wiki/Bikeshed
 >
