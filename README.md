@@ -238,7 +238,7 @@ Source: https://devforums.apple.com/message/1012357#1012357
 
 ### Ranges
 
-Range operators were [changed in Beta 3](#range-operators), and Beta 4 brought new [`stride()` functions](#new-stride-functions) to replace `by()`. However, there are still many issues:
+Range operators were [changed in Beta 3](#range-operators), and Beta 4 brought new [`stride()` functions](#new-stride-functions) to replace `by()`. However, there are still many issues that are expected to be fixed in Beta 5:
 
 > Ranges aren't in a good place in the current betas.  Among known bugs:
   - "5 ... 1" does the wrong thing.
@@ -254,8 +254,12 @@ Range operators were [changed in Beta 3](#range-operators), and Beta 4 brought n
 > More improvements are due in forthcoming betas, addressing a variety of issues iterating over floating point ranges, constructing negative ranges, and several other known range-related problems.
 >
 >-- Xcode beta 4 release notes
+>
+> Ranges are substantially revised in the next beta, including fixes for Character ranges.  Please stay tuned for it.
+>
+>-- Chris Lattner
 
-Source: https://devforums.apple.com/message/1002719#1002719, http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_4_o2p8fz/xcode_6_beta_4_release_notes.pdf
+Source: https://devforums.apple.com/message/1002719#1002719, http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_4_o2p8fz/xcode_6_beta_4_release_notes.pdf https://devforums.apple.com/message/1014241#1014241
 
 ### Recursive nested functions
 
