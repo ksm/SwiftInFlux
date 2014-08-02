@@ -27,6 +27,7 @@ To contribute: fork this project, add a section below (don't forget to update th
 * [Ranges](#ranges)
 * [Recursive nested functions](#recursive-nested-functions)
 * [Reflection](#reflection)
+* [Static libraries](#static-libraries)
 * [Systems programming features](#systems-programming-features)
 * [Unowned references breaking in Beta 2 and 3](#unowned-references-breaking-in-beta-2-and-3)
 * [Usage of @-sign in front of keywords](#usage-of--sign-in-front-of-keywords)
@@ -278,6 +279,14 @@ Sources: https://devforums.apple.com/message/997536#997536
 No official word from anyone inside Apple as to whether it's gonna go public before 1.0.
 
 Sources: http://inessential.com/2014/07/13/swift_reflection https://gist.github.com/peebsjs/9288f79322ed3119ece4
+
+### Static libraries
+
+> Xcode does not support building static libraries that include Swift code.
+> 
+>-- Xcode beta 4 release notes
+
+Source: http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_4_o2p8fz/xcode_6_beta_4_release_notes.pdf
 
 ### Systems Programming Features
 
