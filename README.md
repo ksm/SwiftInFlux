@@ -284,7 +284,7 @@ ___
 
 ### Usage of @-sign in front of keywords
 
-Most of the `@-attributes` has been done away with in Xcode Beta 5.
+Most of the `@-attributes` have been done away with in Xcode Beta 5.
 
 > The `@assignment` attribute has been removed from operator implementations. (16656024)
 >
