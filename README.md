@@ -226,7 +226,14 @@ Sources: https://devforums.apple.com/thread/234399?tstart=0, https://devforums.a
 
 ### Optionals in imported Objective-C frameworks
 
-At the moment, virtually all class types in Objective-C method definitions are imported to Swift as implicitly unwrapped optionals. For example, `- (NSString *)stringByAppendingString:(NSString *)aString` is translated to `func stringByAppendingString(_ aString: String!) -> String!`. That makes it harder to distinguish between types that can or can't be nil.
+As of Beta 5, few classes have been audited for optional conformance. More are
+expected to come in future betas.
+
+> The UIView, NSView, UIFont, and UIApplicationDelegate classes have been audited for optional conformance, removing most implicitly unwrapped optionals from their interfaces.
+> (...)
+> The changes in Beta 5 are simply the first step; more refinements to the SDK will come in future betas.
+>
+> -- Xcode 6 Beta 5 release notes
 
 > > Is there any plan to audit the Frameworks and do anything to define return values and arguments as optional (?) when nils can happen and automatically unwrapped when nil will never be returned?
 >
@@ -234,7 +241,7 @@ At the moment, virtually all class types in Objective-C method definitions are i
 >
 >-- Chris Lattner
 
-Source: https://devforums.apple.com/message/1012357#1012357
+Sources: https://devforums.apple.com/message/1012357#1012357 http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_5_za4gu6/xcode_6_beta_5_release_notes.pdf
 
 ### Ranges
 
