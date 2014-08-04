@@ -28,11 +28,11 @@ To contribute: fork this project, add a section below (don't forget to update th
 * [Reflection](#reflection)
 * [Systems programming features](#systems-programming-features)
 * [Unowned references breaking in Beta 2 and 3](#unowned-references-breaking-in-beta-2-and-3)
-* [Usage of @-sign in front of keywords](#usage-of--sign-in-front-of-keywords)
 
 ___
 
 * [Changed in Beta 5](#changed-in-beta-5)
+  * [Usage of @-sign in front of keywords](#usage-of--sign-in-front-of-keywords)
   * [Optional Bool is confusing](#optional-bool-is-confusing)
 
 * [Changed in Beta 4](#changed-in-beta-4)
@@ -277,7 +277,33 @@ Still doesn't work in beta 3: see [#5](https://github.com/ksm/SwiftInFlux/pull/5
 
 Source: https://devforums.apple.com/message/997278#997278
 
+
+___
+
+## Changed in Beta 5
+
 ### Usage of @-sign in front of keywords
+
+Most of the `@-attributes` has been done away with in Xcode Beta 5.
+
+> The `@assignment` attribute has been removed from operator implementations. (16656024)
+>
+> The `@prefix`, `@infix`, and `@postfix` attributes have been changed to declaration modifiers, 
+> so they are no longer spelled with an `@` sign (now, `prefix func (...)`). Operator declarations
+> have been rearranged from `operator prefix - {}` to `prefix operator - {}` for consistency. (17527000)
+>
+> The `@class_protocol` attribute has been removed; the new syntax for declaring that only protocol conformance is limited to classes is `'protocol P : class { ... }’`. (17510790)
+>
+> -- Xcode Beta 5 release notes
+
+There were also additional changes:
+
+> The @auto_closure attribute has been renamed to @autoclosure. (16859927)
+>
+> -- Xcode Beta 5 release notes
+
+Source: http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_5_za4gu6/xcode_6_beta_5_release_notes.pdf
+
 
 Some of the @-attributes [were changed in Beta 4](#revised-declaration-modifiers) to declaration modifiers, shedding the @ prefix. However, more changes to these attributes will follow.
 
@@ -291,10 +317,6 @@ Some of the @-attributes [were changed in Beta 4](#revised-declaration-modifiers
 
 Source: https://devforums.apple.com/thread/228324?start=25&tstart=0,  http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_4_o2p8fz/xcode_6_beta_4_release_notes.pdf
 
-
-___
-
-## Changed in Beta 5
 
 ### Optional Bool is confusing
 
