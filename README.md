@@ -284,9 +284,9 @@ Sources: http://inessential.com/2014/07/13/swift_reflection https://gist.github.
 
 > Xcode does not support building static libraries that include Swift code.
 > 
->-- Xcode beta 4 release notes
+>-- Xcode beta 5 release notes
 
-Source: http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_4_o2p8fz/xcode_6_beta_4_release_notes.pdf
+Source: http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_5_za4gu6/xcode_6_beta_5_release_notes.pdf
 
 ### Systems Programming Features
 
