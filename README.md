@@ -22,7 +22,6 @@ To contribute: fork this project, add a section below (don't forget to update th
 * [IBOutlet](#iboutlet)
 * [Implicit conversions](#implicit-conversions)
 * [Mutable optional value types](#mutable-optional-value-types)
-* [Optional Bool is confusing](#optional-bool-is-confusing)
 * [Optionals in imported Objective-C frameworks](#optionals-in-imported-objective-c-frameworks)
 * [Ranges](#ranges)
 * [Recursive nested functions](#recursive-nested-functions)
@@ -32,6 +31,9 @@ To contribute: fork this project, add a section below (don't forget to update th
 * [Usage of @-sign in front of keywords](#usage-of--sign-in-front-of-keywords)
 
 ___
+
+* [Changed in Beta 5](#changed-in-beta-5)
+  * [Optional Bool is confusing](#optional-bool-is-confusing)
 
 * [Changed in Beta 4](#changed-in-beta-4)
   * [Access control](#access-control)
@@ -202,28 +204,6 @@ var myArray: StringArray?
 
 Source: https://devforums.apple.com/message/998882#998882
 
-### Optional Bool is confusing
-
-Optionals for types conforming to the `LogicValue` protocol (primarily Bool) can have confusing semantics:
-
-```swift
-var foo: Bool? = false
-// This will print bar
-if foo {
-    println("bar")
-}
-```
-
-> This problem exists with any optional of something that conforms to the LogicValue protocol (e.g. nested optionals, optional of bool, etc).  We consider it serious issue that needs to be fixed for 1.0 and have some ideas, but haven't settled on a solution yet.
->
->-- Chris Lattner
->
-> FWIW, we have a fix for "optional bool confusion" that will be rolling out in the next beta (along with a few other improvements to optional semantics).  Stay tuned.
->
->-- Chris Lattner
-
-Sources: https://devforums.apple.com/thread/234399?tstart=0, https://devforums.apple.com/message/1012278#1012278
-
 ### Optionals in imported Objective-C frameworks
 
 At the moment, virtually all class types in Objective-C method definitions are imported to Swift as implicitly unwrapped optionals. For example, `- (NSString *)stringByAppendingString:(NSString *)aString` is translated to `func stringByAppendingString(_ aString: String!) -> String!`. That makes it harder to distinguish between types that can or can't be nil.
@@ -313,6 +293,40 @@ Source: https://devforums.apple.com/thread/228324?start=25&tstart=0,  http://adc
 
 
 ___
+
+## Changed in Beta 5
+
+### Optional Bool is confusing
+
+Since Beta 5, optional values no longer conform to BooleanType (formerly LogicValue) protocol, which means that:
+
+> (...) they may no longer be used in place of boolean expressions (they must be explicitly compared with v != nil).
+>
+> -- Xcode 6 Beta 5 release notes
+
+Sources: http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_5_za4gu6/xcode_6_beta_5_release_notes.pdf
+
+Optionals for types conforming to the `LogicValue` protocol (primarily Bool) can have confusing semantics:
+
+```swift
+var foo: Bool? = false
+// This will print bar
+if foo {
+    println("bar")
+}
+```
+
+> This problem exists with any optional of something that conforms to the LogicValue protocol (e.g. nested optionals, optional of bool, etc).  We consider it serious issue that needs to be fixed for 1.0 and have some ideas, but haven't settled on a solution yet.
+>
+>-- Chris Lattner
+>
+> FWIW, we have a fix for "optional bool confusion" that will be rolling out in the next beta (along with a few other improvements to optional semantics).  Stay tuned.
+>
+>-- Chris Lattner
+
+Sources: https://devforums.apple.com/thread/234399?tstart=0, https://devforums.apple.com/message/1012278#1012278
+
+
 
 ## Changed in Beta 4
 
