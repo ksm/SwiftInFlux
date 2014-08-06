@@ -391,27 +391,29 @@ Following minor changes to ranges [in Beta 3](#range-operators) and [Beta 4](#ne
 > It is considered an error to form a _Range_ whose `endIndex` is not reachable from its `startIndex` by incrementation, or an _Interval_ whose end is less than its start. In these cases, _Interval_ formation always traps and _Range_ formation traps when a violation is detectable, that is, when the indices are `Comparable`. 
 > 
 > ```
-    1> 1...0
-    fatal error: Can't form Range with end < start
+1> 1...0
+fatal error: Can't form Range with end < start
 > ```
 >
 > `Intervals` are represented by two generic types, `HalfOpenInterval<T>`, created by the `..<` operator, and `ClosedInterval<T>`, created by the `...` operator:
 > ```
-    1> 3.14..<12
-    $R0: HalfOpenInterval<Double> = {
-      _start = 3.1400000000000001
-      _end = 12
-    }
-    2> 22...99.1
-    $R1: ClosedInterval<Double> = {
-      _start = 22
-      _end = 99.099999999999994
-    }
+1> 3.14..<12
+$R0: HalfOpenInterval<Double> = {
+  _start = 3.1400000000000001
+  _end = 12
+}
+2> 22...99.1
+$R1: ClosedInterval<Double> = {
+  _start = 22
+  _end = 99.099999999999994
+}
 > ```
 > 
 > A _range_ `x..<y` always has `startIndex == x`. Therefore, `x` is the first valid subscript, and this applies even when the `Index` type is `Int`. In other words, the first valid subscript of `5..<10` is 5, not 0. To prevent surprise, it is a compilation error to subscript a range over an Integer type outside a generic context (for example, expressions like `(5..<10)[0]`).
 >
 > All _Ranges_ are represented by instances of a single generic type, `Range<T>`, whose representation is always half-open (and thus always print in the REPL and Playgrounds as a half-open range). Currently an inclusive range cannot include the last value in a sequence (for example, `4...Int.max` doesn’t work) unless the context requires an _Interval_ (like a case pattern matching specification).
+
+Source: http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_5_za4gu6/xcode_6_beta_5__release_notes.pdf
 
 ## Changed in Beta 4
 
