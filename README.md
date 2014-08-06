@@ -22,7 +22,6 @@ To contribute: fork this project, add a section below (don't forget to update th
 * [IBOutlet](#iboutlet)
 * [Implicit conversions](#implicit-conversions)
 * [Optionals in imported Objective-C frameworks](#optionals-in-imported-objective-c-frameworks)
-* [Ranges](#ranges)
 * [Recursive nested functions](#recursive-nested-functions)
 * [Reflection](#reflection)
 * [Static libraries](#static-libraries)
@@ -36,6 +35,7 @@ ___
   * [Nil coalescing operator](#nil-coalescing-operator)
   * [Usage of @-sign in front of keywords](#usage-of--sign-in-front-of-keywords)
   * [Optional Bool is confusing](#optional-bool-is-confusing)
+  * [Ranges](#ranges-intervals-striding)
 
 * [Changed in Beta 4](#changed-in-beta-4)
   * [Access control](#access-control)
@@ -209,31 +209,6 @@ expected to come in future betas.
 
 Sources: https://devforums.apple.com/message/1012357#1012357 http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_5_za4gu6/xcode_6_beta_5_release_notes.pdf
 
-### Ranges
-
-Range operators were [changed in Beta 3](#range-operators), and Beta 4 brought new [`stride()` functions](#new-stride-functions) to replace `by()`. However, there are still many issues that are expected to be fixed in Beta 5:
-
-> Ranges aren't in a good place in the current betas.  Among known bugs:
-  - "5 ... 1" does the wrong thing.
-  - "1.0 ... 2.1" produces an infinite range.
-  - The "by()" method on ranges is "unprincipled" and doesn't always work
-  - Subscripting a range produces the wrong results
-  - Inclusive ranges including the max values "0...UInt8.max" do the wrong thing
->
-> We have a cohesive rework of this entire area coming in a later Beta.
->
->-- Chris Lattner
->
-> More improvements are due in forthcoming betas, addressing a variety of issues iterating over floating point ranges, constructing negative ranges, and several other known range-related problems.
->
->-- Xcode beta 4 release notes
->
-> Ranges are substantially revised in the next beta, including fixes for Character ranges.  Please stay tuned for it.
->
->-- Chris Lattner
-
-Source: https://devforums.apple.com/message/1002719#1002719, http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_4_o2p8fz/xcode_6_beta_4_release_notes.pdf https://devforums.apple.com/message/1014241#1014241
-
 ### Recursive nested functions
 
 > This is due to a known bug with recursive nested functions.  You can fix this by pulling them out to the top level.
@@ -401,7 +376,42 @@ if foo {
 
 Sources: https://devforums.apple.com/thread/234399?tstart=0, https://devforums.apple.com/message/1012278#1012278
 
+### Ranges, Intervals, Striding
 
+Following minor changes to ranges [in Beta 3](#range-operators) and [Beta 4](#new-stride-functions), Beta 5 brings a major rework of the entire area:
+
+> The idea of a Range has been split into three separate concepts:
+>
+> * Ranges, which are Collections of consecutive discrete `ForwardIndexType` values. Ranges are used for slicing and iteration.
+> * Intervals over `Comparable` values, which can efficiently check for containment. Intervals are used for pattern matching in switch statements and by the `~=` operator.
+> * Striding over `Strideable` values, which are `Comparable` and can be advanced an arbitrary distance in O(1).
+> 
+> Some of the types most commonly used with the range operators `..<` and `...` – for example, `Int` — conform to both Comparable and ForwardIndexType. When used in a context that requires pattern matching (such as a switch case), the range operators create _Intervals_. Otherwise they create _Ranges_. Therefore, in a context without type constraint such as `let x = 3..<10`, the result is a _Range_.
+> 
+> It is considered an error to form a _Range_ whose `endIndex` is not reachable from its `startIndex` by incrementation, or an _Interval_ whose end is less than its start. In these cases, _Interval_ formation always traps and _Range_ formation traps when a violation is detectable, that is, when the indices are `Comparable`. 
+> 
+> ```swift
+    1> 1...0
+    fatal error: Can't form Range with end < start
+> ```
+>
+> `Intervals` are represented by two generic types, `HalfOpenInterval<T>`, created by the `..<` operator, and `ClosedInterval<T>`, created by the `...` operator:
+> ```swift
+    1> 3.14..<12
+    $R0: HalfOpenInterval<Double> = {
+      _start = 3.1400000000000001
+      _end = 12
+    }
+	
+    2> 22...99.1
+    $R1: ClosedInterval<Double> = {
+      _start = 22
+      _end = 99.099999999999994
+    }
+> ```
+> A _range_ `x..<y` always has `startIndex == x`. Therefore, `x` is the first valid subscript, and this applies even when the `Index` type is `Int`. In other words, the first valid subscript of `5..<10` is 5, not 0. To prevent surprise, it is a compilation error to subscript a range over an Integer type outside a generic context (for example, expressions like `(5..<10)[0]`).
+>
+> All _Ranges_ are represented by instances of a single generic type, `Range<T>`, whose representation is always half-open (and thus always print in the REPL and Playgrounds as a half-open range). Currently an inclusive range cannot include the last value in a sequence (for example, `4...Int.max` doesn’t work) unless the context requires an _Interval_ (like a case pattern matching specification).
 
 ## Changed in Beta 4
 
