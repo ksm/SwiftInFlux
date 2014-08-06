@@ -17,11 +17,10 @@ To contribute: fork this project, add a section below (don't forget to update th
 * [C union support](#c-union-support)
 * [Dynamic keyword](#dynamic-keyword)
 * [Enumerating enum types](#enumerating-enum-types)
-* [Enums nested in generic classes broken](#enums-nested-in-generic-classes-broken)
+* [Enums nested in generic classes broken](#enums-nested-in-generic-classes-broken) 
 * [Flow-sensitive optional unwrapping](#flow-sensitive-optional-unwrapping)
 * [IBOutlet](#iboutlet)
 * [Implicit conversions](#implicit-conversions)
-* [Mutable optional value types](#mutable-optional-value-types)
 * [Optionals in imported Objective-C frameworks](#optionals-in-imported-objective-c-frameworks)
 * [Ranges](#ranges)
 * [Recursive nested functions](#recursive-nested-functions)
@@ -33,6 +32,7 @@ To contribute: fork this project, add a section below (don't forget to update th
 ___
 
 * [Changed in Beta 5](#changed-in-beta-5)
+  * [Mutable optional value types](#mutable-optional-value-types)
   * [Usage of @-sign in front of keywords](#usage-of--sign-in-front-of-keywords)
   * [Optional Bool is confusing](#optional-bool-is-confusing)
 
@@ -189,22 +189,6 @@ let z = x * y // z is CGFloat and equals 7.0
 
 Source: https://devforums.apple.com/message/1011396#1011396
 
-### Mutable optional value types
-
-> The issue here is that optional forcing and binding operators (postfix ! and ?) return an immutable rvalue, even when the operand is a mutable lvalue.  This means that you cannot perform mutating operations on the result, which is why optional arrays, dictionaries and other value types are pretty useless right now.
-> Unfortunately there isn't a great solution or workaround right now: one approach is to wrap the value in a class and use the optional on the class wrapper:
-```
-class StringArray {
-    var elts : String[]
-}
-var myArray: StringArray?
-```
-> We consider this a significant problem and are investigating various solutions to incorporate in a later Beta.
->
->-- Chris Lattner
-
-Source: https://devforums.apple.com/message/998882#998882
-
 ### Optionals in imported Objective-C frameworks
 
 As of Beta 5, few classes have been audited for optional conformance. More are
@@ -297,6 +281,43 @@ Source: https://devforums.apple.com/message/997278#997278
 ___
 
 ## Changed in Beta 5
+
+### Mutable optional value types
+
+From Xcode6-Beta5 release notes:
+
+> The optional unwrapping operator x! can now be assigned through. Mutating methods and operators can be applied through it. (16922562)
+```swift
+var x: Int! = 0
+x! = 2
+x!++
+// Nested dictionaries can now be mutated directly:
+var sequences = ["fibonacci": [1, 1, 2, 3, 0]] 
+sequences["fibonacci"]![4] = 5 
+sequences["fibonacci"]!.append(8)
+```
+> The ? chaining operator can also be used to conditionally assign through an optional if it has a ! value:
+```swift
+sequences["fibonacci"]?.append(0)
+sequences["fibonacci"]?[6] = 13
+sequences["perfect"]?[0] = 6 // Does nothing because the sequence has no 'perfect' key
+```
+
+Previously:
+
+> The issue here is that optional forcing and binding operators (postfix ! and ?) return an immutable rvalue, even when the operand is a mutable lvalue.  This means that you cannot perform mutating operations on the result, which is why optional arrays, dictionaries and other value types are pretty useless right now.
+> Unfortunately there isn't a great solution or workaround right now: one approach is to wrap the value in a class and use the optional on the class wrapper:
+```
+class StringArray {
+    var elts : String[]
+}
+var myArray: StringArray?
+```
+> We consider this a significant problem and are investigating various solutions to incorporate in a later Beta.
+>
+>-- Chris Lattner
+
+Source: https://devforums.apple.com/message/998882#998882
 
 ### Usage of @-sign in front of keywords
 
