@@ -473,8 +473,6 @@ stride(from: x, to: y, by: z)      // was: (x..<y).by(z)
 stride(from: x, through: y, by: z) // was: (x...y).by(z)
 ```
 
-> More improvements are due in forthcoming betas, addressing a variety of issues iterating over floating point ranges, constructing negative ranges, and several other known range-related problems.
-
 Source: http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_4_o2p8fz/xcode_6_beta_4_release_notes.pdf
 
 ### Set of legal operator characters
