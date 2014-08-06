@@ -15,7 +15,6 @@ To contribute: fork this project, add a section below (don't forget to update th
 * [Better error handling](#better-error-handling-features-possibly-exceptions)
 * [C++ support](#c-support)
 * [C union support](#c-union-support)
-* [Dynamic keyword](#dynamic-keyword)
 * [Enumerating enum types](#enumerating-enum-types)
 * [Enums nested in generic classes broken](#enums-nested-in-generic-classes-broken) 
 * [Flow-sensitive optional unwrapping](#flow-sensitive-optional-unwrapping)
@@ -32,6 +31,7 @@ To contribute: fork this project, add a section below (don't forget to update th
 ___
 
 * [Changed in Beta 5](#changed-in-beta-5)
+  * [`dynamic` keyword](#dynamic-declaration-modifier)
   * [Mutable optional value types](#mutable-optional-value-types)
   * [Nil coalescing operator](#nil-coalescing-operator)
   * [Usage of @-sign in front of keywords](#usage-of--sign-in-front-of-keywords)
@@ -110,14 +110,6 @@ Source: https://devforums.apple.com/thread/228324?start=50&tstart=0
 >-- Joe Groff
 
 Source: https://devforums.apple.com/message/1002630#1002630
-
-### Dynamic keyword
-
-> 'dynamic' doesn't do anything in Beta 4, it will be wired up (and explained) in the next Beta.
->
->-Chris
-
-Source: https://devforums.apple.com/message/1010788#1010788
 
 ### Enumerating enum types
 
@@ -282,6 +274,19 @@ Source: https://devforums.apple.com/message/997278#997278
 ___
 
 ## Changed in Beta 5
+
+### `dynamic` declaration modifier
+
+`dynamic` is a new attribute that can be applied to properties, methods, subscripts and initializers to make all references to them dynamically dispatched (like message passing in Objective-C). This enables KVO, proxying, swizzling and other advanced Cocoa features to work with Swift.
+
+Before Beta 5, classes marked with `@objc` (or inheriting from `NSObject`) got the benefits of `dynamic` "for free", while non-`@objc` classes couldn't access dynamic dispatch at all. Now the two concepts are separate:
+
+> This change also clarifies the `@objc` attribute. Now it only makes a declaration visible to Objective-C (for examples, to `objc_msgSend`), instead of conflating exposure to the Objective-C runtime with guaranteed lack of devirtualization. This is a cleaner conceptual semantic model that enables performance improvements for a wide range of `NSObject` subclasses by allowing the compiler to use more efficient dispatch and access techniques for declarations marked `@objc` (which is usually implicit).
+>
+> Though the feature is independent of the `@objc` attribute, the implementation still currently relies on Objective-C runtime details, so dynamic currently can only be applied to declarations with `@objc`-compatible types.
+
+Source: http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_5_za4gu6/xcode_6_beta_5__release_notes.pdf
+
 
 ### Mutable optional value types
 
