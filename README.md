@@ -33,6 +33,7 @@ ___
 
 * [Changed in Beta 5](#changed-in-beta-5)
   * [Mutable optional value types](#mutable-optional-value-types)
+  * [Nil coalescing operator](#nil-coalescing-operator)
   * [Usage of @-sign in front of keywords](#usage-of--sign-in-front-of-keywords)
   * [Optional Bool is confusing](#optional-bool-is-confusing)
 
@@ -318,6 +319,21 @@ var myArray: StringArray?
 >-- Chris Lattner
 
 Source: https://devforums.apple.com/message/998882#998882
+
+### Nil coalescing operator
+
+A new operator, `??`, has been introduced to help working with optionals. `??` takes an optional as its left operand, and a non-optional value or expression on the right. If the optional has a value, the whole expression evaluates to the value of the optional (the expression on the right is not evaluated). If the optional is `nil`, the right hand side expression is evaluated and passed as the result. You can think of the nil coalescing operator like the short-circuiting `||` operator, but for optionals.
+
+For example:
+
+```swift
+var myArray: [Int] = []
+print(myArray.first ?? 0) // produces 0, because myArray.first is nil
+myArray.append(22)
+print(myArray.first ?? 0) // produces 22, the value of myArray.first
+```
+
+Sources: http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_5_za4gu6/xcode_6_beta_5__release_notes.pdf
 
 ### Usage of @-sign in front of keywords
 
