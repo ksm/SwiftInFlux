@@ -16,7 +16,7 @@ To contribute: fork this project, add a section below (don't forget to update th
 * [C++ support](#c-support)
 * [C union support](#c-union-support)
 * [Enumerating enum types](#enumerating-enum-types)
-* [Enums nested in generic classes broken](#enums-nested-in-generic-classes-broken) 
+* [Enums nested in generic classes broken](#enums-nested-in-generic-classes-broken)
 * [Flow-sensitive optional unwrapping](#flow-sensitive-optional-unwrapping)
 * [Implicit conversions](#implicit-conversions)
 * [Optionals in imported Objective-C frameworks](#optionals-in-imported-objective-c-frameworks)
@@ -212,7 +212,7 @@ Sources: http://inessential.com/2014/07/13/swift_reflection https://gist.github.
 ### Static libraries
 
 > Xcode does not support building static libraries that include Swift code.
-> 
+>
 >-- Xcode beta 5 release notes
 
 Source: http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_5_za4gu6/xcode_6_beta_5_release_notes.pdf
@@ -263,8 +263,8 @@ var x: Int! = 0
 x! = 2
 x!++
 // Nested dictionaries can now be mutated directly:
-var sequences = ["fibonacci": [1, 1, 2, 3, 0]] 
-sequences["fibonacci"]![4] = 5 
+var sequences = ["fibonacci": [1, 1, 2, 3, 0]]
+sequences["fibonacci"]![4] = 5
 sequences["fibonacci"]!.append(8)
 ```
 > The ? chaining operator can also be used to conditionally assign through an optional if it has a ! value:
@@ -311,7 +311,7 @@ Most of the `@-attributes` have been done away with in Xcode Beta 5.
 
 > The `@assignment` attribute has been removed from operator implementations. (16656024)
 >
-> The `@prefix`, `@infix`, and `@postfix` attributes have been changed to declaration modifiers, 
+> The `@prefix`, `@infix`, and `@postfix` attributes have been changed to declaration modifiers,
 > so they are no longer spelled with an `@` sign (now, `prefix func (...)`). Operator declarations
 > have been rearranged from `operator prefix - {}` to `prefix operator - {}` for consistency. (17527000)
 >
@@ -380,11 +380,11 @@ Following minor changes to ranges [in Beta 3](#range-operators) and [Beta 4](#ne
 > * Ranges, which are Collections of consecutive discrete `ForwardIndexType` values. Ranges are used for slicing and iteration.
 > * Intervals over `Comparable` values, which can efficiently check for containment. Intervals are used for pattern matching in switch statements and by the `~=` operator.
 > * Striding over `Strideable` values, which are `Comparable` and can be advanced an arbitrary distance in O(1).
-> 
+>
 > Some of the types most commonly used with the range operators `..<` and `...` – for example, `Int` — conform to both Comparable and ForwardIndexType. When used in a context that requires pattern matching (such as a switch case), the range operators create _Intervals_. Otherwise they create _Ranges_. Therefore, in a context without type constraint such as `let x = 3..<10`, the result is a _Range_.
-> 
-> It is considered an error to form a _Range_ whose `endIndex` is not reachable from its `startIndex` by incrementation, or an _Interval_ whose end is less than its start. In these cases, _Interval_ formation always traps and _Range_ formation traps when a violation is detectable, that is, when the indices are `Comparable`. 
-> 
+>
+> It is considered an error to form a _Range_ whose `endIndex` is not reachable from its `startIndex` by incrementation, or an _Interval_ whose end is less than its start. In these cases, _Interval_ formation always traps and _Range_ formation traps when a violation is detectable, that is, when the indices are `Comparable`.
+>
 > ```
 1> 1...0
 fatal error: Can't form Range with end < start
@@ -403,7 +403,7 @@ $R1: ClosedInterval<Double> = {
   _end = 99.099999999999994
 }
 > ```
-> 
+>
 > A _range_ `x..<y` always has `startIndex == x`. Therefore, `x` is the first valid subscript, and this applies even when the `Index` type is `Int`. In other words, the first valid subscript of `5..<10` is 5, not 0. To prevent surprise, it is a compilation error to subscript a range over an Integer type outside a generic context (for example, expressions like `(5..<10)[0]`).
 >
 > All _Ranges_ are represented by instances of a single generic type, `Range<T>`, whose representation is always half-open (and thus always print in the REPL and Playgrounds as a half-open range). Currently an inclusive range cannot include the last value in a sequence (for example, `4...Int.max` doesn’t work) unless the context requires an _Interval_ (like a case pattern matching specification).
