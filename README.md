@@ -59,7 +59,7 @@ ___
 
 >This is a known problem, it will be fixed in later betas.
 >
->-- Chris Lattner
+> — Chris Lattner
 
 Source: https://devforums.apple.com/message/989902#989902
 
@@ -67,7 +67,7 @@ Source: https://devforums.apple.com/message/989902#989902
 
 > FWIW, we already have many bugs tracking the idea of adding abstract methods to swift.  We'll consider it in future releases, we understand the value :-)
 >
->-- Chris Lattner
+> — Chris Lattner
 
 Source: https://devforums.apple.com/message/1006592#1006592
 
@@ -77,11 +77,11 @@ Swift [added access control](#access-control) in Beta 4, but there are limitatio
 
 > We're aware that our access control design isn't great for unit testing (and this was in the release notes), we're evaluating the situation to see what we can do.
 >
->-- Chris Lattner
+> — Chris Lattner
 >
 > A limitation of the access control system is that unit tests cannot interact with the classes and methods in an application unless they are marked public. This is because the unit test target is not part of the application module.
 >
->-- Xcode beta 4 release notes
+> — Xcode beta 4 release notes
 
 At the moment, one workaround is to mark all tested entities as public, another is to move tests to the same target as the application code. However, the former ruins the benefits of access control and the latter — of code modularization.
 
@@ -91,7 +91,7 @@ Sources: https://devforums.apple.com/message/1010766#1010766 http://adcdownload.
 
 >We're aware of the opportunity and also desire better error handling features in Swift, but they didn't make it in time for 1.0.
 >
->-- Chris Lattner
+> — Chris Lattner
 
 Source: https://devforums.apple.com/thread/228324?start=50&tstart=0
 
@@ -99,7 +99,7 @@ Source: https://devforums.apple.com/thread/228324?start=50&tstart=0
 
 >This is another obviously desirable feature, it is just a lot of work and didn't make it in 1.0 either.
 >
->-- Chris Lattner
+> — Chris Lattner
 
 Source: https://devforums.apple.com/thread/228324?start=50&tstart=0
 
@@ -107,7 +107,7 @@ Source: https://devforums.apple.com/thread/228324?start=50&tstart=0
 
 > We'll have at least partial support for importing unions in a future seed.
 >
->-- Joe Groff
+> — Joe Groff
 
 Source: https://devforums.apple.com/message/1002630#1002630
 
@@ -117,7 +117,7 @@ Source: https://devforums.apple.com/message/1002630#1002630
 >
 > Yes.  All of this would be super useful.  We have a large number of radars asking for similar functionality, thanks!
 >
->-- Chris Lattner
+> — Chris Lattner
 
 Source: https://devforums.apple.com/message/1003674#1003674
 
@@ -125,7 +125,7 @@ Source: https://devforums.apple.com/message/1003674#1003674
 
 > That's another frequently reported bug.  Unfortunately, we likely won't have time to make it work for the 1.0 release, but we intend to produce a decent compiler error message saying that it isn't supported (yet).  A workaround is to define the enums outside of generic classes.
 >
->-- Chris Lattner
+> — Chris Lattner
 
 Source: https://devforums.apple.com/thread/236195?start=25&tstart=0
 
@@ -143,7 +143,7 @@ if exists x {
 
 > We're definitely aware of the advantages of control-flow sensitive type refinement for optionals (and also for other subtype relationships).  This would be particularly handy in ternary operators, but isn't something on the books for 1.0.  We have several radars requesting that and tracking it for consideration in a future release.
 >
->-- Chris Lattner
+> — Chris Lattner
 
 Source: https://devforums.apple.com/message/1005148#1005148
 
@@ -168,7 +168,7 @@ let z = x * y // z is CGFloat and equals 7.0
 >
 > We understand that implicit conversions are powerful and can be convenient in narrow situations, but don't get attached to it. :-)
 >
->-- Chris Lattner
+> — Chris Lattner
 
 Source: https://devforums.apple.com/message/1011396#1011396
 
@@ -181,13 +181,13 @@ expected to come in future betas.
 > (...)
 > The changes in Beta 5 are simply the first step; more refinements to the SDK will come in future betas.
 >
-> -- Xcode 6 Beta 5 release notes
+> — Xcode 6 Beta 5 release notes
 
 > > Is there any plan to audit the Frameworks and do anything to define return values and arguments as optional (?) when nils can happen and automatically unwrapped when nil will never be returned?
 >
 > Yes.  Look for details in subsequent betas.
 >
->-- Chris Lattner
+> — Chris Lattner
 
 Sources: https://devforums.apple.com/message/1012357#1012357 http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_5_za4gu6/xcode_6_beta_5_release_notes.pdf
 
@@ -195,7 +195,7 @@ Sources: https://devforums.apple.com/message/1012357#1012357 http://adcdownload.
 
 > This is due to a known bug with recursive nested functions.  You can fix this by pulling them out to the top level.
 >
->-- Chris Lattner
+> — Chris Lattner
 
 Sources: https://devforums.apple.com/message/997536#997536
 
@@ -203,7 +203,7 @@ Sources: https://devforums.apple.com/message/997536#997536
 
 > Though it’s not documented in the Swift Standard Library Reference — and is subject to change, and could disappear entirely — Swift has a reflection API.
 >
->-- Brent Simmons
+> — Brent Simmons
 
 No official word from anyone inside Apple as to whether it's gonna go public before 1.0.
 
@@ -213,7 +213,7 @@ Sources: http://inessential.com/2014/07/13/swift_reflection https://gist.github.
 
 > Xcode does not support building static libraries that include Swift code.
 >
->-- Xcode beta 5 release notes
+> — Xcode beta 5 release notes
 
 Source: http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_5_za4gu6/xcode_6_beta_5_release_notes.pdf
 
@@ -221,7 +221,7 @@ Source: http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_5_za4gu6/xcod
 
 > The focus of Swift 1.0 is definitely on improving general app development, but we do expect Swift to grow capabilities (e.g. perhaps even the ability to write inline assembly code) that allow it to fully span the gamut of programming: from writing the lowest level firmware up to the highest level application programming.  We prefer to do this carefully and deliberately over time, rather than attempting to solve all the world's problems at once.
 >
->-- Chris Lattner
+> — Chris Lattner
 
 Source: https://devforums.apple.com/message/1007178#1007178
 
@@ -229,7 +229,7 @@ Source: https://devforums.apple.com/message/1007178#1007178
 
 > This should be fixed in Beta 3.
 >
->-- Chris Lattner
+> — Chris Lattner
 
 Still doesn't work in beta 3: see [#5](https://github.com/ksm/SwiftInFlux/pull/5)
 
@@ -286,7 +286,7 @@ var myArray: StringArray?
 ```
 > We consider this a significant problem and are investigating various solutions to incorporate in a later Beta.
 >
->-- Chris Lattner
+> — Chris Lattner
 
 Source: https://devforums.apple.com/message/998882#998882
 
@@ -317,13 +317,13 @@ Most of the `@-attributes` have been done away with in Xcode Beta 5.
 >
 > The `@class_protocol` attribute has been removed; the new syntax for declaring that only protocol conformance is limited to classes is `'protocol P : class { ... }’`. (17510790)
 >
-> -- Xcode Beta 5 release notes
+> — Xcode Beta 5 release notes
 
 There were also additional changes:
 
 > The @auto_closure attribute has been renamed to @autoclosure. (16859927)
 >
-> -- Xcode Beta 5 release notes
+> — Xcode Beta 5 release notes
 
 Source: http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_5_za4gu6/xcode_6_beta_5_release_notes.pdf
 
@@ -332,11 +332,11 @@ Some of the @-attributes [were changed in Beta 4](#revised-declaration-modifiers
 
 > Future betas will include improvements to @class_protocol and adjust @prefix and other operator attributes.
 >
->-- Xcode beta 4 release notes
+> — Xcode beta 4 release notes
 >
 > This is something we're continuing to evaluate, expect @ signs to change in subsequent betas.
 >
->-- Chris Lattner
+> — Chris Lattner
 
 Source: https://devforums.apple.com/thread/228324?start=25&tstart=0,  http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_4_o2p8fz/xcode_6_beta_4_release_notes.pdf
 
@@ -347,7 +347,7 @@ Since Beta 5, optional values no longer conform to BooleanType (formerly LogicVa
 
 > (...) they may no longer be used in place of boolean expressions (they must be explicitly compared with v != nil).
 >
-> -- Xcode 6 Beta 5 release notes
+> — Xcode 6 Beta 5 release notes
 
 Sources: http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_5_za4gu6/xcode_6_beta_5_release_notes.pdf
 
@@ -363,11 +363,11 @@ if foo {
 
 > This problem exists with any optional of something that conforms to the LogicValue protocol (e.g. nested optionals, optional of bool, etc).  We consider it serious issue that needs to be fixed for 1.0 and have some ideas, but haven't settled on a solution yet.
 >
->-- Chris Lattner
+> — Chris Lattner
 >
 > FWIW, we have a fix for "optional bool confusion" that will be rolling out in the next beta (along with a few other improvements to optional semantics).  Stay tuned.
 >
->-- Chris Lattner
+> — Chris Lattner
 
 Sources: https://devforums.apple.com/thread/234399?tstart=0, https://devforums.apple.com/message/1012278#1012278
 
@@ -448,7 +448,7 @@ http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_4_o2p8fz/xcode_6_beta
 >
 >We're aware of this problem and consider it to be serious: we are evaluating several different solutions right now and will roll one out in a later beta.  As you notice, you can cope with this today by casting to Double.  This is inelegant but effective :-)
 >
->-- Chris Lattner
+> — Chris Lattner
 
 Sources: https://devforums.apple.com/message/998222#998222
 
@@ -480,11 +480,11 @@ https://developer.apple.com/library/prerelease/mac/documentation/Swift/Conceptua
 
 > The set of characters is in flux, but yes, most unicode symbol characters in the BMP that are classified as 'symbol' and 'math' are available as operator characters.
 >
->-- Joe Groff
+> — Joe Groff
 
 > It's not documented yet, but the set of allowed operator characters includes 'math' and 'symbol' characters in the Unicode BMP, and operator characters can be augmented with combining characters. The full set of supported characters will be documented in one of the following seeds.
 >
->-- Joe Groff
+> — Joe Groff
 
 Sources: https://devforums.apple.com/thread/231723?tstart=450 https://devforums.apple.com/message/1000934#1000934
 
@@ -498,7 +498,7 @@ Previously:
 >
 > This is super confusing, too magic, leads to problems (like this) where "retains" are lost for types like arrays because the only reference is weak, and isn't even best practice on iOS where most outlets should be strong.  For all of these reasons, in a future Beta, @IBOutlet will become "just" an annotation for IB, without any implicit behavior.
 >
->-- Chris Lattner
+> — Chris Lattner
 
 Source: https://devforums.apple.com/message/1002722#1002722
 
@@ -509,7 +509,7 @@ the compiler.
 
 > This is fixed, but didn't make it into Beta 3. Stay tuned for a later Beta,
 >
->-- Chris Lattner
+> — Chris Lattner
 
 [The code from the Developer Forums](https://devforums.apple.com/message/1000511#1000511) no longer causes a segmentation fault in the compiler in Beta 4.
 
@@ -538,7 +538,7 @@ Since Beta 3, Array has full value semantics to match Dictionary, String and oth
 
 >Array semantics were in flux at the time of Beta 1, and have been revised to provide full value semantics like Dictionary and String.  This will be available in later betas.
 >
->-- Chris Lattner
+> — Chris Lattner
 
 Sources: https://devforums.apple.com/thread/228695?start=75&tstart=
 
@@ -560,7 +560,7 @@ class C {
 >
 > Long story short, this is a feature, not a bug :-)
 >
->-- Chris Lattner
+> — Chris Lattner
 
 Source: https://devforums.apple.com/message/1003240#1003240
 
@@ -572,13 +572,13 @@ The half-open range operator was changed from `..` to `..<`.
 >
 > For what it's worth, this approach is precendented in the groovy language.  It optimizes for readability and clarity: you're unlikely to mistake one operator for the other when skimming code, and new people coming to Swift are unlikely to assume that ..< is an inclusive range operator (like most assumed when they saw "0..5")
 >
->-- Chris Lattner
+> — Chris Lattner
 >
 > I'd really like it if there was only a single range operator, but that isn't possible (AFAIK):
 >
 > - You need to have a half-open range operator to be able to represent an empty range.
 > - You need an inclusive range operator to represent finite enumerated sequences when you want to include the last element (e.g. enums, but also integers that you want to include the largest integer value in)..
 >
->-- Chris Lattner
+> — Chris Lattner
 
 Sources: https://devforums.apple.com/message/1000100#1000100 https://devforums.apple.com/message/999669#999669
