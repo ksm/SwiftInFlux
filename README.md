@@ -35,6 +35,7 @@ ___
   * [Usage of @-sign in front of keywords](#usage-of--sign-in-front-of-keywords)
   * [Optional Bool is confusing](#optional-bool-is-confusing)
   * [Ranges](#ranges-intervals-striding)
+  * [Initializers](#required-and-designated-initializers-in-subclasses)
 
 * [Changed in Beta 4](#changed-in-beta-4)
   * [Access control](#access-control)
@@ -409,6 +410,20 @@ $R1: ClosedInterval<Double> = {
 > All _Ranges_ are represented by instances of a single generic type, `Range<T>`, whose representation is always half-open (and thus always print in the REPL and Playgrounds as a half-open range). Currently an inclusive range cannot include the last value in a sequence (for example, `4...Int.max` doesn’t work) unless the context requires an _Interval_ (like a case pattern matching specification).
 
 Source: http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_5_za4gu6/xcode_6_beta_5__release_notes.pdf
+
+### Required and designated initializers in subclasses
+
+Swift compiler now strictly enforces the presence of required initializers in subclasses. If an ancestor of a class conforms to a protocol requiring a specific initializer and the class doesn't inherit that initializer automatically, it must define it by itself.
+
+What it means, most commonly, is that if you subclass a Cocoa class that conforms to `NSCoding` (e.g. `UIView`) and add your own designated initializer, you must also define `init(coder:)`. If you don't want to actually implement it, you can simply make it fail at runtime, like so:
+
+```swift
+required init(coder: NSCoder) {
+    fatalError("Does not implement coding")
+}
+```
+
+Also, the compiler now requires overrides of designated initializers to be explicitly marked with `override` and implementations of required initializers — with `required`.
 
 ## Changed in Beta 4
 
