@@ -425,6 +425,8 @@ required init(coder: NSCoder) {
 
 Also, the compiler now requires overrides of designated initializers to be explicitly marked with `override` and implementations of required initializers — with `required`.
 
+Source: [Xcode 6 beta 5 release notes](http://radex.io/xcode6-release-notes/beta5.pdf)
+
 ## Changed in Beta 4
 
 ### Access control
