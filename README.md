@@ -240,6 +240,8 @@ ___
 
 ## Changed in Beta 5
 
+Also see the [official Xcode release notes for Beta 5](http://radex.io/xcode6-release-notes/beta5.pdf).
+
 ### `dynamic` declaration modifier
 
 `dynamic` is a new attribute that can be applied to properties, methods, subscripts and initializers to make all references to them dynamically dispatched (like message passing in Objective-C). This enables KVO, proxying, swizzling and other advanced Cocoa features to work with Swift.
@@ -412,6 +414,8 @@ Source: [Xcode 6 beta 5 release notes](http://radex.io/xcode6-release-notes/beta
 
 ## Changed in Beta 4
 
+Also see the [official Xcode release notes for Beta 4](http://radex.io/xcode6-release-notes/beta4.pdf).
+
 ### Access control
 
 Beta 4 adds three levels of access control to user-defined entities: `public` (available anywhere), `internal` (available within the target where they're defined) and `private` (available only within the file where they're defined).
@@ -529,6 +533,8 @@ Source: https://devforums.apple.com/message/1000950#1000950
 Sources: http://airspeedvelocity.net/2014/07/21/changes-in-the-swift-standard-library-in-beta-4/ [Xcode 6 beta 4 release notes](http://radex.io/xcode6-release-notes/beta4.pdf)
 
 ## Changed in Beta 3
+
+Also see the [official Xcode release notes for Beta 3](http://radex.io/xcode6-release-notes/beta3.pdf).
 
 ### Array and Dictionary type declaration syntax
 Before Beta 3, the shorthand for an Array type was `Type[]`, and Dictionary types were written `Dictionary<KeyType, ValueType>`. Array type shorthand was changed to `[Type]` and Dictionaries types now have a shorthand syntax `[KeyType: ValueType]` (e.g. `[String: Bool]`)
