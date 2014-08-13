@@ -86,7 +86,7 @@ Swift [added access control](#access-control) in Beta 4, but there are limitatio
 
 At the moment, one workaround is to mark all tested entities as public, another is to move tests to the same target as the application code. However, the former ruins the benefits of access control and the latter — of code modularization.
 
-Sources: https://devforums.apple.com/message/1010766#1010766 http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_4_o2p8fz/xcode_6_beta_4_release_notes.pdf
+Sources: https://devforums.apple.com/message/1010766#1010766 [Xcode 6 beta 4 release notes](http://radex.io/xcode6-release-notes/beta4.pdf)
 
 ### Better error handling features (possibly exceptions)
 
@@ -190,7 +190,7 @@ expected to come in future betas.
 >
 > — Chris Lattner
 
-Sources: https://devforums.apple.com/message/1012357#1012357 http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_5_za4gu6/xcode_6_beta_5_release_notes.pdf
+Sources: https://devforums.apple.com/message/1012357#1012357 [Xcode 6 beta 5 release notes](http://radex.io/xcode6-release-notes/beta5.pdf)
 
 ### Recursive nested functions
 
@@ -216,7 +216,7 @@ Sources: http://inessential.com/2014/07/13/swift_reflection https://gist.github.
 >
 > — Xcode beta 5 release notes
 
-Source: http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_5_za4gu6/xcode_6_beta_5_release_notes.pdf
+Source: [Xcode 6 beta 5 release notes](http://radex.io/xcode6-release-notes/beta5.pdf)
 
 ### Systems Programming Features
 
@@ -241,6 +241,8 @@ ___
 
 ## Changed in Beta 5
 
+Also see the [official Xcode release notes for Beta 5](http://radex.io/xcode6-release-notes/beta5.pdf).
+
 ### `dynamic` declaration modifier
 
 `dynamic` is a new attribute that can be applied to properties, methods, subscripts and initializers to make all references to them dynamically dispatched (like message passing in Objective-C). This enables KVO, proxying, swizzling and other advanced Cocoa features to work with Swift.
@@ -251,7 +253,7 @@ Before Beta 5, classes marked with `@objc` (or inheriting from `NSObject`) got t
 >
 > Though the feature is independent of the `@objc` attribute, the implementation still currently relies on Objective-C runtime details, so dynamic currently can only be applied to declarations with `@objc`-compatible types.
 
-Source: http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_5_za4gu6/xcode_6_beta_5__release_notes.pdf
+Source: [Xcode 6 beta 5 release notes](http://radex.io/xcode6-release-notes/beta5.pdf)
 
 
 ### Mutable optional value types
@@ -304,7 +306,7 @@ myArray.append(22)
 print(myArray.first ?? 0) // produces 22, the value of myArray.first
 ```
 
-Sources: http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_5_za4gu6/xcode_6_beta_5__release_notes.pdf
+Sources: [Xcode 6 beta 5 release notes](http://radex.io/xcode6-release-notes/beta5.pdf)
 
 ### Usage of @-sign in front of keywords
 
@@ -326,7 +328,7 @@ There were also additional changes:
 >
 > — Xcode Beta 5 release notes
 
-Source: http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_5_za4gu6/xcode_6_beta_5_release_notes.pdf
+Source: [Xcode 6 beta 5 release notes](http://radex.io/xcode6-release-notes/beta5.pdf)
 
 
 Some of the @-attributes [were changed in Beta 4](#revised-declaration-modifiers) to declaration modifiers, shedding the @ prefix. However, more changes to these attributes will follow.
@@ -339,7 +341,7 @@ Some of the @-attributes [were changed in Beta 4](#revised-declaration-modifiers
 >
 > — Chris Lattner
 
-Source: https://devforums.apple.com/thread/228324?start=25&tstart=0,  http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_4_o2p8fz/xcode_6_beta_4_release_notes.pdf
+Source: https://devforums.apple.com/thread/228324?start=25&tstart=0,  [Xcode 6 beta 4 release notes](http://radex.io/xcode6-release-notes/beta4.pdf)
 
 
 ### Optional Bool is confusing
@@ -350,7 +352,7 @@ Since Beta 5, optional values no longer conform to BooleanType (formerly LogicVa
 >
 > — Xcode 6 Beta 5 release notes
 
-Sources: http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_5_za4gu6/xcode_6_beta_5_release_notes.pdf
+Sources: [Xcode 6 beta 5 release notes](http://radex.io/xcode6-release-notes/beta5.pdf)
 
 Optionals for types conforming to the `LogicValue` protocol (primarily Bool) can have confusing semantics:
 
@@ -409,7 +411,7 @@ $R1: ClosedInterval<Double> = {
 >
 > All _Ranges_ are represented by instances of a single generic type, `Range<T>`, whose representation is always half-open (and thus always print in the REPL and Playgrounds as a half-open range). Currently an inclusive range cannot include the last value in a sequence (for example, `4...Int.max` doesn’t work) unless the context requires an _Interval_ (like a case pattern matching specification).
 
-Source: http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_5_za4gu6/xcode_6_beta_5__release_notes.pdf
+Source: [Xcode 6 beta 5 release notes](http://radex.io/xcode6-release-notes/beta5.pdf)
 
 ### Required and designated initializers in subclasses
 
@@ -429,6 +431,8 @@ Source: [Xcode 6 beta 5 release notes](http://radex.io/xcode6-release-notes/beta
 
 ## Changed in Beta 4
 
+Also see the [official Xcode release notes for Beta 4](http://radex.io/xcode6-release-notes/beta4.pdf).
+
 ### Access control
 
 Beta 4 adds three levels of access control to user-defined entities: `public` (available anywhere), `internal` (available within the target where they're defined) and `private` (available only within the file where they're defined).
@@ -439,7 +443,7 @@ It's also possible to define attributes with public getters but private setters 
 
 It has been noted that the current access control design [makes unit testing a bit unwieldy](#limitations-of-current-access-control-design).
 
-Source: http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_4_o2p8fz/xcode_6_beta_4_release_notes.pdf
+Source: [Xcode 6 beta 4 release notes](http://radex.io/xcode6-release-notes/beta4.pdf)
 
 ### Unicode string improvements
 
@@ -459,7 +463,7 @@ From Beta 4 Release Notes:
 >CGFloat is now a distinct floating-point type that wraps either a Float on 32-bit architectures or a Double on 64-bit architectures.
 
 Sources:
-http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_4_o2p8fz/xcode_6_beta_4_release_notes.pdf
+[Xcode 6 beta 4 release notes](http://radex.io/xcode6-release-notes/beta4.pdf)
 
 >What is happening here is that CGFloat is a typealias for either Float or Double depending on whether you're building for 32 or 64-bits.  This is exactly how Objective-C works, but is problematic in Swift because Swift doesn't allow implicit conversions.
 >
@@ -473,7 +477,7 @@ Sources: https://devforums.apple.com/message/998222#998222
 
 > The @final, @lazy, @optional, and @required attributes have been converted to declaration modifiers, specified without an @ sign.
 
-Source: http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_4_o2p8fz/xcode_6_beta_4_release_notes.pdf
+Source: [Xcode 6 beta 4 release notes](http://radex.io/xcode6-release-notes/beta4.pdf)
 
 ### New stride() functions
 
@@ -487,7 +491,7 @@ stride(from: x, to: y, by: z)      // was: (x..<y).by(z)
 stride(from: x, through: y, by: z) // was: (x...y).by(z)
 ```
 
-Source: http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_4_o2p8fz/xcode_6_beta_4_release_notes.pdf
+Source: [Xcode 6 beta 4 release notes](http://radex.io/xcode6-release-notes/beta4.pdf)
 
 ### Set of legal operator characters
 
@@ -543,9 +547,11 @@ Source: https://devforums.apple.com/message/1000950#1000950
 * `ArrayBuffer`, `ArrayBufferType`, `SliceBuffer` and `ContiguousArrayBuffer` were removed (the reason being, those structures were only an implementation detail of corresponding types)
 * `reverse` is no longer lazy and simply returns an Array. New `lazy` functions can be used to lazily reverse, filter and map collections through new `LazyForwardCollection`, `LazyRandomAccessCollection` and `LazySequence` structures
 
-Sources: http://airspeedvelocity.net/2014/07/21/changes-in-the-swift-standard-library-in-beta-4/ http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_4_o2p8fz/xcode_6_beta_4_release_notes.pdf
+Sources: http://airspeedvelocity.net/2014/07/21/changes-in-the-swift-standard-library-in-beta-4/ [Xcode 6 beta 4 release notes](http://radex.io/xcode6-release-notes/beta4.pdf)
 
 ## Changed in Beta 3
+
+Also see the [official Xcode release notes for Beta 3](http://radex.io/xcode6-release-notes/beta3.pdf).
 
 ### Array and Dictionary type declaration syntax
 Before Beta 3, the shorthand for an Array type was `Type[]`, and Dictionary types were written `Dictionary<KeyType, ValueType>`. Array type shorthand was changed to `[Type]` and Dictionaries types now have a shorthand syntax `[KeyType: ValueType]` (e.g. `[String: Bool]`)
