@@ -32,7 +32,7 @@ ___
   * [`dynamic` keyword](#dynamic-declaration-modifier)
   * [Mutable optional value types](#mutable-optional-value-types)
   * [Nil coalescing operator](#nil-coalescing-operator)
-  * [Usage of @-sign in front of keywords](#usage-of--sign-in-front-of-keywords)
+  * [Attributes](#revised-attributes)
   * [Optional Bool is confusing](#optional-bool-is-confusing)
   * [Ranges](#ranges-intervals-striding)
   * [Initializers](#required-and-designated-initializers-in-subclasses)
@@ -306,41 +306,23 @@ print(myArray.first ?? 0) // produces 22, the value of myArray.first
 
 Sources: http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_5_za4gu6/xcode_6_beta_5__release_notes.pdf
 
-### Usage of @-sign in front of keywords
+### Revised attributes
 
-Most of the `@-attributes` have been done away with in Xcode Beta 5.
+Following the [changes in Beta 4](#revised-declaration-modifiers), most of the @-attributes have been changed to declaration modifiers (shedding the `@` prefix) in Beta 5.
 
-> The `@assignment` attribute has been removed from operator implementations. (16656024)
+> The `@assignment` attribute has been removed from operator implementations.
 >
 > The `@prefix`, `@infix`, and `@postfix` attributes have been changed to declaration modifiers,
 > so they are no longer spelled with an `@` sign (now, `prefix func (...)`). Operator declarations
-> have been rearranged from `operator prefix - {}` to `prefix operator - {}` for consistency. (17527000)
+> have been rearranged from `operator prefix - {}` to `prefix operator - {}` for consistency.
 >
-> The `@class_protocol` attribute has been removed; the new syntax for declaring that only protocol conformance is limited to classes is `'protocol P : class { ... }’`. (17510790)
->
-> — Xcode Beta 5 release notes
-
-There were also additional changes:
-
-> The @auto_closure attribute has been renamed to @autoclosure. (16859927)
+> The `@class_protocol` attribute has been removed; the new syntax for declaring that only protocol conformance is limited to classes is `'protocol P : class { ... }’`.
+> 
+> The @auto_closure attribute has been renamed to @autoclosure.
 >
 > — Xcode Beta 5 release notes
 
 Source: http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_5_za4gu6/xcode_6_beta_5_release_notes.pdf
-
-
-Some of the @-attributes [were changed in Beta 4](#revised-declaration-modifiers) to declaration modifiers, shedding the @ prefix. However, more changes to these attributes will follow.
-
-> Future betas will include improvements to @class_protocol and adjust @prefix and other operator attributes.
->
-> — Xcode beta 4 release notes
->
-> This is something we're continuing to evaluate, expect @ signs to change in subsequent betas.
->
-> — Chris Lattner
-
-Source: https://devforums.apple.com/thread/228324?start=25&tstart=0,  http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_4_o2p8fz/xcode_6_beta_4_release_notes.pdf
-
 
 ### Optional Bool is confusing
 
