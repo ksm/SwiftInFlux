@@ -33,7 +33,7 @@ ___
   * [Mutable optional value types](#mutable-optional-value-types)
   * [Nil coalescing operator](#nil-coalescing-operator)
   * [Attributes](#revised-attributes)
-  * [Optional Bool is confusing](#optional-bool-is-confusing)
+  * [Boolean semantics of optionals](#boolean-semantics-of-optionals)
   * [Ranges](#ranges-intervals-striding)
   * [Initializers](#required-and-designated-initializers-in-subclasses)
 
@@ -324,35 +324,25 @@ Following the [changes in Beta 4](#revised-declaration-modifiers), most of the @
 
 Source: http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_5_za4gu6/xcode_6_beta_5_release_notes.pdf
 
-### Optional Bool is confusing
+### Boolean semantics of optionals
 
-Since Beta 5, optional values no longer conform to BooleanType (formerly LogicValue) protocol, which means that:
+Optional values no longer conform to `BooleanType` (formerly `LogicValue`) protocol, which means that:
 
 > (...) they may no longer be used in place of boolean expressions (they must be explicitly compared with v != nil).
 >
 > — Xcode 6 Beta 5 release notes
 
-Sources: http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_5_za4gu6/xcode_6_beta_5_release_notes.pdf
-
-Optionals for types conforming to the `LogicValue` protocol (primarily Bool) can have confusing semantics:
+Before this change, the boolean semantics of optionals were confusing when the optional wrapped a value that was a `BooleanType` itself:
 
 ```swift
 var foo: Bool? = false
-// This will print bar
+// This would print bar
 if foo {
     println("bar")
 }
 ```
 
-> This problem exists with any optional of something that conforms to the LogicValue protocol (e.g. nested optionals, optional of bool, etc).  We consider it serious issue that needs to be fixed for 1.0 and have some ideas, but haven't settled on a solution yet.
->
-> — Chris Lattner
->
-> FWIW, we have a fix for "optional bool confusion" that will be rolling out in the next beta (along with a few other improvements to optional semantics).  Stay tuned.
->
-> — Chris Lattner
-
-Sources: https://devforums.apple.com/thread/234399?tstart=0, https://devforums.apple.com/message/1012278#1012278
+Source: http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_5_za4gu6/xcode_6_beta_5_release_notes.pdf
 
 ### Ranges, Intervals, Striding
 
