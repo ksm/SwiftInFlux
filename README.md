@@ -256,9 +256,9 @@ Source: http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_5_za4gu6/xcod
 
 ### Mutable optional value types
 
-From Xcode6-Beta5 release notes:
+From [Beta 5 release notes](http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_5_za4gu6/xcode_6_beta_5__release_notes.pdf):
 
-> The optional unwrapping operator x! can now be assigned through. Mutating methods and operators can be applied through it. (16922562)
+> The optional unwrapping operator x! can now be assigned through. Mutating methods and operators can be applied through it.
 ```swift
 var x: Int! = 0
 x! = 2
@@ -289,7 +289,7 @@ var myArray: StringArray?
 >
 > — Chris Lattner
 
-Source: https://devforums.apple.com/message/998882#998882
+Sources: https://devforums.apple.com/message/998882#998882 http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_5_za4gu6/xcode_6_beta_5__release_notes.pdf
 
 ### Nil coalescing operator
 
