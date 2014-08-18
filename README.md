@@ -16,15 +16,12 @@ To contribute: fork this project, add a section below (don't forget to update th
 * [C++ support](#c-support)
 * [C union support](#c-union-support)
 * [Enumerating enum types](#enumerating-enum-types)
-* [Enums nested in generic classes broken](#enums-nested-in-generic-classes-broken)
 * [Flow-sensitive optional unwrapping](#flow-sensitive-optional-unwrapping)
 * [Implicit conversions](#implicit-conversions)
 * [Optionals in imported Objective-C frameworks](#optionals-in-imported-objective-c-frameworks)
-* [Recursive nested functions](#recursive-nested-functions)
 * [Reflection](#reflection)
 * [Static libraries](#static-libraries)
 * [Systems programming features](#systems-programming-features)
-* [Unowned references breaking in Beta 2 and 3](#unowned-references-breaking-in-beta-2-and-3)
 
 ___
 
@@ -123,14 +120,6 @@ Source: https://devforums.apple.com/message/1002630#1002630
 
 Source: https://devforums.apple.com/message/1003674#1003674
 
-### Enums nested in generic classes broken
-
-> That's another frequently reported bug.  Unfortunately, we likely won't have time to make it work for the 1.0 release, but we intend to produce a decent compiler error message saying that it isn't supported (yet).  A workaround is to define the enums outside of generic classes.
->
-> — Chris Lattner
-
-Source: https://devforums.apple.com/thread/236195?start=25&tstart=0
-
 ### Flow-sensitive optional unwrapping
 
 With this feature, optional types would be implicitly unwrapped in the context of a block checking if an optional has a value, like so:
@@ -193,14 +182,6 @@ expected to come in future betas.
 
 Sources: https://devforums.apple.com/message/1012357#1012357 http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_5_za4gu6/xcode_6_beta_5_release_notes.pdf
 
-### Recursive nested functions
-
-> This is due to a known bug with recursive nested functions.  You can fix this by pulling them out to the top level.
->
-> — Chris Lattner
-
-Sources: https://devforums.apple.com/message/997536#997536
-
 ### Reflection
 
 > Though it’s not documented in the Swift Standard Library Reference — and is subject to change, and could disappear entirely — Swift has a reflection API.
@@ -226,17 +207,6 @@ Source: http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_5_za4gu6/xcod
 > — Chris Lattner
 
 Source: https://devforums.apple.com/message/1007178#1007178
-
-### Unowned References [Breaking](http://openradar.appspot.com/radar?id=5300501415460864) in Beta 2 and 3
-
-> This should be fixed in Beta 3.
->
-> — Chris Lattner
-
-Still doesn't work in beta 3: see [#5](https://github.com/ksm/SwiftInFlux/pull/5)
-
-Source: https://devforums.apple.com/message/997278#997278
-
 
 ___
 
