@@ -36,6 +36,7 @@ ___
   * [Boolean semantics of optionals](#boolean-semantics-of-optionals)
   * [Ranges](#ranges-intervals-striding)
   * [Initializers](#required-and-designated-initializers-in-subclasses)
+  * [Other](#other-changes)
 
 * [Changed in Beta 4](#changed-in-beta-4)
   * [Access control](#access-control)
@@ -398,6 +399,36 @@ required init(coder: NSCoder) {
 Also, the compiler now requires overrides of designated initializers to be explicitly marked with `override` and implementations of required initializers — with `required`.
 
 Source: [Xcode 6 beta 5 release notes](http://radex.io/xcode6-release-notes/beta5.pdf)
+
+### Other changes
+
+Beta 5 has seen a lot of symbols being renamed:
+
+* Protocols were renamed so that they all end with `able`, `ible` or `Type`. For example, `Integer` protocol was renamed to `IntegerType`
+* `LogicValue` was renamed to `BooleanType`
+* `getLogicValue()` became a `boolValue` property and `Optional<T>` additionally has a `hasValue` property
+* `UnsafeArray` and `UnsafeMutableArray` were renamed to `UnsafeBufferPointer` and `UnsafeMutableBufferPointer`
+* `UnsafeConstPointer` and `UnsafePointer` were renamed to `UnsafePointer` and `UnsafeMutablePointer` for consistency and to encourage immutability
+* `reinterpretCast()` was renamed to `unsafeBitCast()`
+
+Other changes in the standard library:
+
+* `+=` operator on arrays can no longer append a single item to the array (you have to wrap it into an array)
+* `String` now has a constructor that takes an integer (you can even supply a radix)
+* New `first`, `last` and `isEmpty` functions
+
+Finally:
+
+* Together with improvements in earlier betas, the Swift compiler can now produce far faster, better optimized code (on some benchmarks, Swift went from being two orders of magnitude slower than Objective-C to being an order of magnitude _faster_ than Objective-C)
+* Meanwhile, Xcode can now recompile a single changed file instead of recompiling the whole project.  
+* You can now import frameworks in Playgrounds
+* `println()` in Playgrounds now prints next to the line where it's defined (not just printed in the console output)
+
+Further reading:
+* [Airspeed Velocity](http://airspeedvelocity.net/2014/08/04/changes-in-the-swift-standard-library-in-beta-5/)
+* [Russ Bishop](http://www.russbishop.net/swift-beta-5)
+* [Xcode release notes](http://radex.io/xcode6-release-notes/beta5.pdf)
+* [Apples to apples, Part II](http://www.jessesquires.com/apples-to-apples-part-two/)
 
 ## Changed in Beta 4
 
