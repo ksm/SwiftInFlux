@@ -31,6 +31,7 @@ ___
 * [Changed in Beta 6](#changed-in-beta-6)
  * [Refinements to nil coalescing operator](#refinements-to-nil-coalescing-operator)
  * [Optionals in Foundation](#optionals-in-foundation)
+ * [Boolean semantics of types](#boolean-semantics-of-types)
 
 * [Changed in Beta 5](#changed-in-beta-5)
   * [`dynamic` keyword](#dynamic-declaration-modifier)
@@ -274,6 +275,12 @@ Sources: [Xcode 6 beta 6 release notes](http://adcdownload.apple.com//Developer_
 > These changes replace T! with either T? or T depending on whether the value can be null (or not) respectively.
 
 Source: [Xcode release notes](http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_6_o48bpy/xcode_6_beta_6_release_notes.pdf)
+
+### Boolean semantics of types
+
+Implicitly unwrapped optionals no longer conform to `BooleanType`, which means that they now have to be explicitly compared to `nil` in if statements. (This follows an equivalent change to `Optional` [last beta](#boolean-semantics-of-optionals))
+
+Meanwhile, it is now an error to compare a non-optional type with `nil`.
 
 ## Changed in Beta 5
 
