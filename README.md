@@ -280,7 +280,9 @@ Source: [Xcode release notes](http://adcdownload.apple.com//Developer_Tools/xcod
 
 Implicitly unwrapped optionals no longer conform to `BooleanType`, which means that they now have to be explicitly compared to `nil` in if statements. (This follows an equivalent change to `Optional` [last beta](#boolean-semantics-of-optionals))
 
-Meanwhile, it is now an error to compare a non-optional type with `nil`.
+Meanwhile, non-optional types may no longer be compared to `nil`.
+
+Source: [Xcode release notes](http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_6_o48bpy/xcode_6_beta_6_release_notes.pdf)
 
 ## Changed in Beta 5
 
