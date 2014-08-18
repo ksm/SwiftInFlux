@@ -28,6 +28,9 @@ To contribute: fork this project, add a section below (don't forget to update th
 
 ___
 
+* [Changed in Beta 6](#changed-in-beta-6)
+ * [Refinements to nil coalescing operator](#refinements-to-nil-coalescing-operator)
+
 * [Changed in Beta 5](#changed-in-beta-5)
   * [`dynamic` keyword](#dynamic-declaration-modifier)
   * [Mutable optional value types](#mutable-optional-value-types)
@@ -239,6 +242,25 @@ Source: https://devforums.apple.com/message/997278#997278
 
 
 ___
+
+## Changed in Beta 6
+
+### Refinements to nil coalescing operator
+
+Beta 6 improves on the [nil coalescing operator](#nil-coalescing-operator) introduced last Beta. It's now possible to pass an optional as the righthand side operand — if both sides evaluate to nil, the whole expression evaluates to nil. This makes it possible to chain expressions using nil coalescing, like so:
+
+```swift
+let a: Int? = nil
+let b: Int? = nil
+
+a ?? b ?? 0
+```
+
+In the example above, the first chained expression that doesn't evaluate to `nil` will be used as the value of the entire operation.
+
+Previously, passing a non-optional value as the second operand to `??` was technically valid, but its semantics were [very confusing](http://airspeedvelocity.net/2014/08/12/yo-dawg/)
+
+Sources: [Xcode 6 beta 6 release notes](http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_6_o48bpy/xcode_6_beta_6_release_notes.pdf), [Airspeed Velocity](http://airspeedvelocity.net/2014/08/12/yo-dawg/)
 
 ## Changed in Beta 5
 
