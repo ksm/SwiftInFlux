@@ -32,6 +32,7 @@ ___
  * [Refinements to nil coalescing operator](#refinements-to-nil-coalescing-operator)
  * [Optionals in Foundation](#optionals-in-foundation)
  * [Boolean semantics of types](#boolean-semantics-of-types)
+ * [Other](#other-changes-in-beta-6)
 
 * [Changed in Beta 5](#changed-in-beta-5)
   * [`dynamic` keyword](#dynamic-declaration-modifier)
@@ -283,6 +284,20 @@ Implicitly unwrapped optionals no longer conform to `BooleanType`, which means t
 Meanwhile, non-optional types may no longer be compared to `nil`.
 
 Source: [Xcode release notes](http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_6_o48bpy/xcode_6_beta_6_release_notes.pdf)
+
+### Other changes in Beta 6
+
+* The `+` operator can no longer append a `Character` to `String`, clarifying that `+` is only for concatenation. (This is analogous to appending an element to an array which was [removed in Beta 5](#other-changes))
+* `Optional.hasValue` was removed
+* `RawOptionSetType` (used by imported `NS_OPTIONS`) now supports bitwise assignment operators
+* One-element tuples can no longer have a label (in practice, that means that an enum case that stores one value cannot have a label)
+* Messages in `assert` calls can now use string interpolation
+* New `precondition()` function. It works similarly to `assert()` (takes a condition and stops the program if it's `false`), however unlike `assert`s, `precondition`s aren't disabled in Release mode builds. (They will be stripped, however, if the application is compiled with `-Ounchecked` setting)
+
+Further reading:
+
+* [Beta 6 release notes](http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_6_o48bpy/xcode_6_beta_6_release_notes.pdf)
+* [Airspeed velocity](http://airspeedvelocity.net)
 
 ## Changed in Beta 5
 
