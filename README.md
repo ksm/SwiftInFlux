@@ -30,6 +30,7 @@ ___
 
 * [Changed in Beta 6](#changed-in-beta-6)
  * [Refinements to nil coalescing operator](#refinements-to-nil-coalescing-operator)
+ * [Optionals in Foundation](#optionals-in-foundation)
 
 * [Changed in Beta 5](#changed-in-beta-5)
   * [`dynamic` keyword](#dynamic-declaration-modifier)
@@ -179,9 +180,13 @@ Source: https://devforums.apple.com/message/1011396#1011396
 
 ### Optionals in imported Objective-C frameworks
 
-As of Beta 5, few classes have been audited for optional conformance. More are
+As of Beta 6, few classes have been audited for optional conformance. More are
 expected to come in future betas.
 
+> A large number of Foundation APIs have been audited for optional conformance, removing a significant number of implicitly unwrapped optionals from their interfaces. This clarifies the nullability of their properties and arguments / return values of their methods. This is an ongoing effort since beta 5.
+>
+> — Xcode 6 beta 6 release notes
+>
 > The UIView, NSView, UIFont, and UIApplicationDelegate classes have been audited for optional conformance, removing most implicitly unwrapped optionals from their interfaces.
 > (...)
 > The changes in Beta 5 are simply the first step; more refinements to the SDK will come in future betas.
@@ -261,6 +266,14 @@ In the example above, the first chained expression that doesn't evaluate to `nil
 Previously, passing a non-optional value as the second operand to `??` was technically valid, but its semantics were [very confusing](http://airspeedvelocity.net/2014/08/12/yo-dawg/)
 
 Sources: [Xcode 6 beta 6 release notes](http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_6_o48bpy/xcode_6_beta_6_release_notes.pdf), [Airspeed Velocity](http://airspeedvelocity.net/2014/08/12/yo-dawg/)
+
+### Optionals in Foundation
+
+> A large number of Foundation APIs have been audited for optional conformance, removing a significant number of implicitly unwrapped optionals from their interfaces. This clarifies the nullability of their properties and arguments / return values of their methods. This is an ongoing effort since beta 5.
+>
+> These changes replace T! with either T? or T depending on whether the value can be null (or not) respectively.
+
+Source: [Xcode release notes](http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_6_o48bpy/xcode_6_beta_6_release_notes.pdf)
 
 ## Changed in Beta 5
 
