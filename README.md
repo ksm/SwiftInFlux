@@ -32,8 +32,8 @@ ___
   * [`dynamic` keyword](#dynamic-declaration-modifier)
   * [Mutable optional value types](#mutable-optional-value-types)
   * [Nil coalescing operator](#nil-coalescing-operator)
-  * [Usage of @-sign in front of keywords](#usage-of--sign-in-front-of-keywords)
-  * [Optional Bool is confusing](#optional-bool-is-confusing)
+  * [Attributes](#revised-attributes)
+  * [Boolean semantics of optionals](#boolean-semantics-of-optionals)
   * [Ranges](#ranges-intervals-striding)
   * [Initializers](#required-and-designated-initializers-in-subclasses)
 
@@ -256,9 +256,9 @@ Source: http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_5_za4gu6/xcod
 
 ### Mutable optional value types
 
-From Xcode6-Beta5 release notes:
+From [Beta 5 release notes](http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_5_za4gu6/xcode_6_beta_5__release_notes.pdf):
 
-> The optional unwrapping operator x! can now be assigned through. Mutating methods and operators can be applied through it. (16922562)
+> The optional unwrapping operator x! can now be assigned through. Mutating methods and operators can be applied through it.
 ```swift
 var x: Int! = 0
 x! = 2
@@ -289,7 +289,7 @@ var myArray: StringArray?
 >
 > — Chris Lattner
 
-Source: https://devforums.apple.com/message/998882#998882
+Sources: https://devforums.apple.com/message/998882#998882 http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_5_za4gu6/xcode_6_beta_5__release_notes.pdf
 
 ### Nil coalescing operator
 
@@ -306,71 +306,43 @@ print(myArray.first ?? 0) // produces 22, the value of myArray.first
 
 Sources: http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_5_za4gu6/xcode_6_beta_5__release_notes.pdf
 
-### Usage of @-sign in front of keywords
+### Revised attributes
 
-Most of the `@-attributes` have been done away with in Xcode Beta 5.
+Following the [changes in Beta 4](#revised-declaration-modifiers), most of the @-attributes have been changed to declaration modifiers (shedding the `@` prefix) in Beta 5.
 
-> The `@assignment` attribute has been removed from operator implementations. (16656024)
+> The `@assignment` attribute has been removed from operator implementations.
 >
 > The `@prefix`, `@infix`, and `@postfix` attributes have been changed to declaration modifiers,
 > so they are no longer spelled with an `@` sign (now, `prefix func (...)`). Operator declarations
-> have been rearranged from `operator prefix - {}` to `prefix operator - {}` for consistency. (17527000)
+> have been rearranged from `operator prefix - {}` to `prefix operator - {}` for consistency.
 >
-> The `@class_protocol` attribute has been removed; the new syntax for declaring that only protocol conformance is limited to classes is `'protocol P : class { ... }’`. (17510790)
->
-> — Xcode Beta 5 release notes
-
-There were also additional changes:
-
-> The @auto_closure attribute has been renamed to @autoclosure. (16859927)
+> The `@class_protocol` attribute has been removed; the new syntax for declaring that only protocol conformance is limited to classes is `'protocol P : class { ... }’`.
+> 
+> The @auto_closure attribute has been renamed to @autoclosure.
 >
 > — Xcode Beta 5 release notes
 
 Source: http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_5_za4gu6/xcode_6_beta_5_release_notes.pdf
 
+### Boolean semantics of optionals
 
-Some of the @-attributes [were changed in Beta 4](#revised-declaration-modifiers) to declaration modifiers, shedding the @ prefix. However, more changes to these attributes will follow.
-
-> Future betas will include improvements to @class_protocol and adjust @prefix and other operator attributes.
->
-> — Xcode beta 4 release notes
->
-> This is something we're continuing to evaluate, expect @ signs to change in subsequent betas.
->
-> — Chris Lattner
-
-Source: https://devforums.apple.com/thread/228324?start=25&tstart=0,  http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_4_o2p8fz/xcode_6_beta_4_release_notes.pdf
-
-
-### Optional Bool is confusing
-
-Since Beta 5, optional values no longer conform to BooleanType (formerly LogicValue) protocol, which means that:
+Optional values no longer conform to `BooleanType` (formerly `LogicValue`) protocol, which means that:
 
 > (...) they may no longer be used in place of boolean expressions (they must be explicitly compared with v != nil).
 >
 > — Xcode 6 Beta 5 release notes
 
-Sources: http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_5_za4gu6/xcode_6_beta_5_release_notes.pdf
-
-Optionals for types conforming to the `LogicValue` protocol (primarily Bool) can have confusing semantics:
+Before this change, the boolean semantics of optionals were confusing when the optional wrapped a value that was a `BooleanType` itself:
 
 ```swift
 var foo: Bool? = false
-// This will print bar
+// This would print bar
 if foo {
     println("bar")
 }
 ```
 
-> This problem exists with any optional of something that conforms to the LogicValue protocol (e.g. nested optionals, optional of bool, etc).  We consider it serious issue that needs to be fixed for 1.0 and have some ideas, but haven't settled on a solution yet.
->
-> — Chris Lattner
->
-> FWIW, we have a fix for "optional bool confusion" that will be rolling out in the next beta (along with a few other improvements to optional semantics).  Stay tuned.
->
-> — Chris Lattner
-
-Sources: https://devforums.apple.com/thread/234399?tstart=0, https://devforums.apple.com/message/1012278#1012278
+Source: http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_5_za4gu6/xcode_6_beta_5_release_notes.pdf
 
 ### Ranges, Intervals, Striding
 
