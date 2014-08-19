@@ -21,6 +21,7 @@ To contribute: fork this project, add a section below (don't forget to update th
 * [Reflection](#reflection)
 * [Static libraries](#static-libraries)
 * [Systems programming features](#systems-programming-features)
+* [Date of the next release](#date-of-the-next-release)
 
 ___
 
@@ -191,6 +192,16 @@ Source: http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_5_za4gu6/xcod
 > — Chris Lattner
 
 Source: https://devforums.apple.com/message/1007178#1007178
+
+### Date of the next release
+
+It's unclear when the next version of Swift after 1.0 will be released, but it has been hinted that it might occur sooner than a year from now:
+
+> When there is more to say about the compiler release plan, we'll say it.  However, I'll point out that we have historically updated Clang more than once a year.
+>
+> — Chris Lattner
+
+Source: https://devforums.apple.com/message/1025424#1025424
 
 ___
 
