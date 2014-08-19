@@ -28,6 +28,12 @@ To contribute: fork this project, add a section below (don't forget to update th
 
 ___
 
+* [Changed in Beta 6](#changed-in-beta-6)
+ * [Refinements to nil coalescing operator](#refinements-to-nil-coalescing-operator)
+ * [Optionals in Foundation](#optionals-in-foundation)
+ * [Boolean semantics of types](#boolean-semantics-of-types)
+ * [Other](#other-changes-in-beta-6)
+
 * [Changed in Beta 5](#changed-in-beta-5)
   * [`dynamic` keyword](#dynamic-declaration-modifier)
   * [Mutable optional value types](#mutable-optional-value-types)
@@ -176,9 +182,13 @@ Source: https://devforums.apple.com/message/1011396#1011396
 
 ### Optionals in imported Objective-C frameworks
 
-As of Beta 5, few classes have been audited for optional conformance. More are
+As of Beta 6, few classes have been audited for optional conformance. More are
 expected to come in future betas.
 
+> A large number of Foundation APIs have been audited for optional conformance, removing a significant number of implicitly unwrapped optionals from their interfaces. This clarifies the nullability of their properties and arguments / return values of their methods. This is an ongoing effort since beta 5.
+>
+> — Xcode 6 beta 6 release notes
+>
 > The UIView, NSView, UIFont, and UIApplicationDelegate classes have been audited for optional conformance, removing most implicitly unwrapped optionals from their interfaces.
 > (...)
 > The changes in Beta 5 are simply the first step; more refinements to the SDK will come in future betas.
@@ -239,6 +249,55 @@ Source: https://devforums.apple.com/message/997278#997278
 
 
 ___
+
+## Changed in Beta 6
+
+### Refinements to nil coalescing operator
+
+Beta 6 improves on the [nil coalescing operator](#nil-coalescing-operator) introduced last Beta. It's now possible to pass an optional as the righthand side operand — if both sides evaluate to nil, the whole expression evaluates to nil. This makes it possible to chain expressions using nil coalescing, like so:
+
+```swift
+let a: Int? = nil
+let b: Int? = nil
+
+a ?? b ?? 0
+```
+
+In the example above, the first chained expression that doesn't evaluate to `nil` will be used as the value of the entire operation.
+
+Previously, passing a non-optional value as the second operand to `??` was technically valid, but its semantics were [very confusing](http://airspeedvelocity.net/2014/08/12/yo-dawg/)
+
+Sources: [Xcode 6 beta 6 release notes](http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_6_o48bpy/xcode_6_beta_6_release_notes.pdf), [Airspeed Velocity](http://airspeedvelocity.net/2014/08/12/yo-dawg/)
+
+### Optionals in Foundation
+
+> A large number of Foundation APIs have been audited for optional conformance, removing a significant number of implicitly unwrapped optionals from their interfaces. This clarifies the nullability of their properties and arguments / return values of their methods. This is an ongoing effort since beta 5.
+>
+> These changes replace T! with either T? or T depending on whether the value can be null (or not) respectively.
+
+Source: [Xcode release notes](http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_6_o48bpy/xcode_6_beta_6_release_notes.pdf)
+
+### Boolean semantics of types
+
+Implicitly unwrapped optionals no longer conform to `BooleanType`, which means that they now have to be explicitly compared to `nil` in if statements. (This follows an equivalent change to `Optional` [last beta](#boolean-semantics-of-optionals))
+
+Meanwhile, non-optional types may no longer be compared to `nil`.
+
+Source: [Xcode release notes](http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_6_o48bpy/xcode_6_beta_6_release_notes.pdf)
+
+### Other changes in Beta 6
+
+* The `+` operator can no longer append a `Character` to `String`, clarifying that `+` is only for concatenation. (This is analogous to appending an element to an array which was [removed in Beta 5](#other-changes))
+* `Optional.hasValue` was removed
+* `RawOptionSetType` (used by imported `NS_OPTIONS`) now supports bitwise assignment operators
+* One-element tuples can no longer have a label (in practice, that means that an enum case that stores one value cannot have a label)
+* Messages in `assert` calls can now use string interpolation
+* New `precondition()` function. It works similarly to `assert()` (takes a condition and stops the program if it's `false`), however unlike `assert`s, `precondition`s aren't disabled in Release mode builds. (They will be stripped, however, if the application is compiled with `-Ounchecked` setting)
+
+Further reading:
+
+* [Beta 6 release notes](http://adcdownload.apple.com//Developer_Tools/xcode_6_beta_6_o48bpy/xcode_6_beta_6_release_notes.pdf)
+* [Airspeed velocity](http://airspeedvelocity.net)
 
 ## Changed in Beta 5
 
