@@ -17,7 +17,6 @@ To contribute: fork this project, add a section below (don't forget to update th
 * [C union support](#c-union-support)
 * [Enumerating enum types](#enumerating-enum-types)
 * [Flow-sensitive optional unwrapping](#flow-sensitive-optional-unwrapping)
-* [Implicit conversions](#implicit-conversions)
 * [Optionals in imported Objective-C frameworks](#optionals-in-imported-objective-c-frameworks)
 * [Reflection](#reflection)
 * [Static libraries](#static-libraries)
@@ -144,31 +143,6 @@ if exists x {
 
 Source: https://devforums.apple.com/message/1005148#1005148
 
-### Implicit conversions
-
-> > It turns out Swift actually does let you define implicit type conversions using `__conversion() -> T` methods, and you can put these in extensions, making the following possible:
-> >
-> > ```swift
-extension Int {
-   func __conversion() -> CGFloat {
-        return CGFloat(self)
-   }
-}
-let x: CGFloat = 3.5
-let y: Int = 2
-let z = x * y // z is CGFloat and equals 7.0
-```
-> >
-> > Use at your own risk.
->
-> As you might guess from the name, __conversion is not intended to be a public feature.  It has never been documented, and we are planning to remove it for the final release.  Implicit conversions are a major source of exponential behavior (i.e., major slowdowns) in the type checker, and can lead to extremely surprising results with type inference.
->
-> We understand that implicit conversions are powerful and can be convenient in narrow situations, but don't get attached to it. :-)
->
-> — Chris Lattner
-
-Source: https://devforums.apple.com/message/1011396#1011396
-
 ### Optionals in imported Objective-C frameworks
 
 As of Beta 6, few classes have been audited for optional conformance. More are
@@ -263,6 +237,7 @@ Source: [Xcode release notes](http://adcdownload.apple.com//Developer_Tools/xcod
 * One-element tuples can no longer have a label (in practice, that means that an enum case that stores one value cannot have a label)
 * Messages in `assert` calls can now use string interpolation
 * New `precondition()` function. It works similarly to `assert()` (takes a condition and stops the program if it's `false`), however unlike `assert`s, `precondition`s aren't disabled in Release mode builds. (They will be stripped, however, if the application is compiled with `-Ounchecked` setting)
+* Arbitrary implicit conversions between types using `__conversion() -> T` was removed. It's now only possible to add implicit conversions from value literals [using language-defined protocols](http://nshipster.com/swift-literal-convertible/).
 
 Further reading:
 
