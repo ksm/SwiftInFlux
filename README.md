@@ -222,7 +222,15 @@ Confusingly, it's valid to label the associated values if there's more than one.
 >
 > — Doug Gregor
 
-Source: https://devforums.apple.com/message/1027499#1027499
+Also, the ability to specify default values to enum cases might be added:
+
+> > And what about default parameter values for those enums?
+>
+> That would be a reasonable extension that follows from considering enum cases to be function-like.
+>
+> — Doug Gregor
+
+Source: https://devforums.apple.com/message/1027499#1027499, https://devforums.apple.com/message/1029151#1029151
 
 ___
 
