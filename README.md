@@ -17,6 +17,7 @@ To contribute: fork this project, add a section below (don't forget to update th
 * [C union support](#c-union-support)
 * [Enumerating enum types](#enumerating-enum-types)
 * [Flow-sensitive optional unwrapping](#flow-sensitive-optional-unwrapping)
+* [Initializers that return nil](#initializers-that-return-nil)
 * [Optionals in imported Objective-C frameworks](#optionals-in-imported-objective-c-frameworks)
 * [Reflection](#reflection)
 * [Static libraries](#static-libraries)
@@ -144,6 +145,16 @@ if exists x {
 > — Chris Lattner
 
 Source: https://devforums.apple.com/message/1005148#1005148
+
+### Initializers that return nil
+
+Cocoa initializers do not return optionals, but they may return nil. If an initializer returns nil into a non-optional variable or constant you will crash when trying to access it.
+
+> Yep, this is a known problem and mentioned in the Xcode release notes.  You can expect progress here in a subsequent beta.
+>
+> — Chris Lattner
+
+Source: https://devforums.apple.com/message/1028107#1028107
 
 ### Optionals in imported Objective-C frameworks
 
