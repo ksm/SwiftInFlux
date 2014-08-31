@@ -7,6 +7,10 @@ This document is an attempt to gather the Swift features that are still in flux 
 ### Contributing
 To contribute: fork this project, add a section below (don't forget to update the Table of Contents!), and create a pull request.
 
+### Credits
+
+Swift InFlux was created by [Karol S. Mazur](https://github.com/ksm) during [SwiftCrunch](http://swiftcrunch.com). It is maintained by the creator, and two great contributors: [Radek Pietruszewski](https://twitter.com/radexp) and [Jan Klausa](https://github.com/jklausa).
+
 ### Table of Contents
 
 * [Absence of math.h macros](#absence-of-mathh-macros)
