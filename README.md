@@ -148,7 +148,9 @@ Source: https://devforums.apple.com/message/1005148#1005148
 
 ### Initializers that return nil
 
-Cocoa initializers do not return optionals, but they may return nil. If an initializer returns nil into a non-optional variable or constant you will crash when trying to access it.
+Swift initializers cannot return an optional type, but imported initializers from Objective-C classes might return nil. If an imported initializer returns nil into a non-optional variable or constant you will crash when trying to access it.
+
+The workaround is to assign the returned variable to an optional variable.
 
 > Yep, this is a known problem and mentioned in the Xcode release notes.  You can expect progress here in a subsequent beta.
 >
