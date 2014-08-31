@@ -13,6 +13,7 @@ To contribute: fork this project, add a section below (don't forget to update th
 * [Abstract methods](#abstract-methods)
 * [Access control](#limitations-of-current-access-control-design)
 * [Better error handling](#better-error-handling-features-possibly-exceptions)
+* [Class variables](#class-variables)
 * [C++ support](#c-support)
 * [C union support](#c-union-support)
 * [Enumerating enum types](#enumerating-enum-types)
@@ -101,6 +102,24 @@ Sources: https://devforums.apple.com/message/1010766#1010766 [Beta 4 release not
 > — Chris Lattner
 
 Source: https://devforums.apple.com/thread/228324?start=50&tstart=0
+
+### Class variables
+
+At the moment, stored class properties are not supported in Swift. They will come in a later release, but not in 1.0. Possibly, the main reason for this is that Swift largely depends on Objective-C runtime and implementation details, which don't support class variables.
+
+> Class variables not yet supported.
+>
+> — Swift compiler error
+>
+> The feature set for 1.0 is nearly final.  'yet' should not be taken to mean Swift 1.0.
+>
+> — Chris Lattner
+>
+> Swift in Xcode 6 will not support class variables.
+>
+> — Greg Parker
+
+Sources: https://devforums.apple.com/message/1022374#1022374 https://devforums.apple.com/message/1030167#1030167
 
 ### C++ support
 
