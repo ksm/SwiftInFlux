@@ -20,6 +20,7 @@ To contribute: fork this project, add a section below (don't forget to update th
 * [Flow-sensitive optional unwrapping](#flow-sensitive-optional-unwrapping)
 * [Initializers that return nil](#initializers-that-return-nil)
 * [Optionals in imported Objective-C frameworks](#optionals-in-imported-objective-c-frameworks)
+* [Overriding declarations from extensions](#overriding-declarations-from-extensions)
 * [Reflection](#reflection)
 * [Static libraries](#static-libraries)
 * [Systems programming features](#systems-programming-features)
@@ -199,6 +200,32 @@ expected to come in future betas.
 > — Chris Lattner
 
 Sources: https://devforums.apple.com/message/1012357#1012357 [Beta 5 release notes](http://ksm.github.io/SwiftInFlux/docs/beta5.pdf)
+
+### Overriding declarations from extensions
+
+At the moment, it's not possible to override entities declared in extension by subclassing, like so:
+
+```swift
+class Base { }
+
+extension Base {
+    var foo: String { return "foo" }
+}
+
+class Sub: Base {
+    override var foo: String { return "FOO" } // This is an error
+}
+```
+
+> Declarations from extensions cannot be overriden yet.
+>
+> — Swift compiler error
+>
+> The feature set for 1.0 is nearly final.  'yet' should not be taken to mean Swift 1.0.
+>
+> — Chris Lattner
+
+Source: https://devforums.apple.com/message/1022374#1022374
 
 ### Reflection
 
