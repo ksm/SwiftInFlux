@@ -22,6 +22,7 @@ To contribute: fork this project, add a section below (don't forget to update th
 * [Optionals in imported Objective-C frameworks](#optionals-in-imported-objective-c-frameworks)
 * [Overriding declarations from extensions](#overriding-declarations-from-extensions)
 * [Reflection](#reflection)
+* [Redefinition of private entities](#redefinition-of-private-entities)
 * [Static libraries](#static-libraries)
 * [Systems programming features](#systems-programming-features)
 * [Date of the next release](#date-of-the-next-release)
@@ -236,6 +237,16 @@ Source: https://devforums.apple.com/message/1022374#1022374
 No official word from anyone inside Apple as to whether it's gonna go public before 1.0.
 
 Sources: http://inessential.com/2014/07/13/swift_reflection https://gist.github.com/peebsjs/9288f79322ed3119ece4
+
+### Redefinition of private entities
+
+It's not yet possible to define two entities (functions, classes, global variables…) with the same name, even if they're private and defined in separate files. The compilation will fail as the linker can't tell them apart.
+
+> Yup. "private" currently only guards access, but doesn't handle redefinition. This is a known issue.
+> 
+> — SevenTenEleven
+
+Source: https://devforums.apple.com/message/1031354#1031354
 
 ### Static libraries
 
