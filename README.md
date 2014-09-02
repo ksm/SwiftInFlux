@@ -191,12 +191,12 @@ Source: https://devforums.apple.com/message/1028107#1028107
 
 ### Optionals in imported Objective-C frameworks
 
-As of Beta 6, few classes have been audited for optional conformance. More are
-expected to come in future betas.
+As of Beta 7, relatively few APIs have been audited for optional conformance. More are
+expected to come in the future.
 
-> A large number of Foundation APIs have been audited for optional conformance, removing a significant number of implicitly unwrapped optionals from their interfaces. This clarifies the nullability of their properties and arguments / return values of their methods. This is an ongoing effort since beta 5.
+> A large number of Foundation, UIKit, CoreData, SceneKit, SpriteKit, Metal APIs have been audited for optional conformance, removing a significant number of implicitly unwrapped optionals from their interfaces. This clarifies the nullability of their properties, arguments and return values of their methods. This is an ongoing effort that started shipping in beta 5.
 >
-> — Xcode 6 beta 6 release notes
+> — Xcode 6 Beta 7 release notes
 >
 > The UIView, NSView, UIFont, and UIApplicationDelegate classes have been audited for optional conformance, removing most implicitly unwrapped optionals from their interfaces.
 > (...)
@@ -210,7 +210,7 @@ expected to come in future betas.
 >
 > — Chris Lattner
 
-Sources: https://devforums.apple.com/message/1012357#1012357 [Beta 5 release notes](http://ksm.github.io/SwiftInFlux/docs/beta5.pdf)
+Sources: [Beta 7 release notes](http://ksm.github.io/SwiftInFlux/docs/beta7.pdf) [Beta 5 release notes](http://ksm.github.io/SwiftInFlux/docs/beta5.pdf) https://devforums.apple.com/message/1012357#1012357
 
 ### Overriding declarations from extensions
 
