@@ -34,13 +34,14 @@ Swift InFlux was created by [Karol S. Mazur](https://github.com/ksm) during [Swi
 
 ___
 
-* [Changed in Beta 6](#changed-in-beta-6)
+
+* [Changed in Xcode 6.0 Beta 6](#changed-in-xcode-60-beta-6)
  * [Refinements to nil coalescing operator](#refinements-to-nil-coalescing-operator)
  * [Optionals in Foundation](#optionals-in-foundation)
  * [Boolean semantics of types](#boolean-semantics-of-types)
- * [Other](#other-changes-in-beta-6)
+ * [Other](#other-changes-in-xcode-60-beta-6)
 
-* [Changed in Beta 5](#changed-in-beta-5)
+* [Changed in Xcode 6.0 Beta 5](#changed-in-xcode-60-beta-5)
   * [`dynamic` keyword](#dynamic-declaration-modifier)
   * [Mutable optional value types](#mutable-optional-value-types)
   * [Nil coalescing operator](#nil-coalescing-operator)
@@ -50,7 +51,7 @@ ___
   * [Initializers](#required-and-designated-initializers-in-subclasses)
   * [Other](#other-changes)
 
-* [Changed in Beta 4](#changed-in-beta-4)
+* [Changed in Xcode 6.0 Beta 4](#changed-in-xcode-60-beta-4)
   * [Access control](#access-control)
   * [Unicode string improvements](#unicode-string-improvements)
   * [Numerical data type conversion](#numerical-data-type-conversion-eg-cgfloat-and-swift-doubleswift-float)
@@ -61,7 +62,7 @@ ___
   * [Fixed: Structs with both @lazy and non-lazy properties crashes compiler](#fixed-structs-with-both-lazy-and-non-lazy-properties-crashes-compiler)
   * [Other changes to standard library](#other-changes-to-standard-library)
 
-* [Changed in Beta 3](#changed-in-beta-3)
+* [Changed in Xcode 6.0 Beta 3](#changed-in-xcode-60-beta-3)
   * [Array and Dictionary type declaration syntax](#array-and-dictionary-type-declaration-syntax)
   * [Array value semantics](#array-value-semantics)
   * [Modifying constant properties in designated vs. convenience initializers](#modifying-constant-properties-in-designated-vs-convenience-initializers)
@@ -76,7 +77,7 @@ ___
 > — Chris Lattner
 >
 > FWIW, we consider it to be a bug that M_PI (and a variety of other imported constants) get an arbitrary fixed type assigned to them.  This affects integer constants just as much as floating point ones.
-> 
+>
 > In principle, there could be a way to provide "typeless named literals" in the language, and constants imported from C macros could be imported like that.  I don't know if that's the approach we'll take, but it is one of several different options we'll evaluate down the road to improve this situation.
 >
 > — Chris Lattner
@@ -93,7 +94,7 @@ Source: https://devforums.apple.com/message/1006592#1006592
 
 ### Limitations of current access control design
 
-Swift [added access control](#access-control) in Beta 4, but there are limitations to its design. Entities marked as `internal` (which is the default) are not visible to other build targets, which means that unit tests (which traditionally live in a separate target) can't access them.
+Swift [added access control](#access-control) in Xcode 6.0 Beta 4, but there are limitations to its design. Entities marked as `internal` (which is the default) are not visible to other build targets, which means that unit tests (which traditionally live in a separate target) can't access them.
 
 > We're aware that our access control design isn't great for unit testing (and this was in the release notes), we're evaluating the situation to see what we can do.
 >
@@ -101,11 +102,11 @@ Swift [added access control](#access-control) in Beta 4, but there are limitatio
 >
 > A limitation of the access control system is that unit tests cannot interact with the classes and methods in an application unless they are marked public. This is because the unit test target is not part of the application module.
 >
-> — Xcode beta 4 release notes
+> — Xcode 6.0 beta 4 release notes
 
 At the moment, one workaround is to mark all tested entities as public, another is to move tests to the same target as the application code. However, the former ruins the benefits of access control and the latter — of code modularization.
 
-Sources: https://devforums.apple.com/message/1010766#1010766 [Beta 4 release notes](http://ksm.github.io/SwiftInFlux/docs/beta4.pdf)
+Sources: https://devforums.apple.com/message/1010766#1010766 [Xcode 6.0 Beta 4 release notes](http://ksm.github.io/SwiftInFlux/docs/beta4.pdf)
 
 ### Better error handling features (possibly exceptions)
 
@@ -191,17 +192,17 @@ Source: https://devforums.apple.com/message/1028107#1028107
 
 ### Optionals in imported Objective-C frameworks
 
-As of Beta 7, relatively few APIs have been audited for optional conformance. More improvements are expected to come in the future.
+As of Xcode 6.0 Beta 7, relatively few APIs have been audited for optional conformance. More improvements are expected to come in the future.
 
 > A large number of Foundation, UIKit, CoreData, SceneKit, SpriteKit, Metal APIs have been audited for optional conformance, removing a significant number of implicitly unwrapped optionals from their interfaces. This clarifies the nullability of their properties, arguments and return values of their methods. This is an ongoing effort that started shipping in beta 5.
 >
-> — Xcode 6 Beta 7 release notes
+> — Xcode 6.0 Beta 7 release notes
 >
 > The UIView, NSView, UIFont, and UIApplicationDelegate classes have been audited for optional conformance, removing most implicitly unwrapped optionals from their interfaces.
 > (...)
 > The changes in Beta 5 are simply the first step; more refinements to the SDK will come in future betas.
 >
-> — Xcode 6 Beta 5 release notes
+> — Xcode 6.0 Beta 5 release notes
 
 > > Is there any plan to audit the Frameworks and do anything to define return values and arguments as optional (?) when nils can happen and automatically unwrapped when nil will never be returned?
 >
@@ -209,7 +210,7 @@ As of Beta 7, relatively few APIs have been audited for optional conformance. Mo
 >
 > — Chris Lattner
 
-Sources: [Beta 7 release notes](http://ksm.github.io/SwiftInFlux/docs/beta7.pdf), [Beta 5 release notes](http://ksm.github.io/SwiftInFlux/docs/beta5.pdf), https://devforums.apple.com/message/1012357#1012357
+Sources: [Xcode 6.0 Beta 7 release notes](http://ksm.github.io/SwiftInFlux/docs/beta7.pdf), [Xcode 6.0 Beta 5 release notes](http://ksm.github.io/SwiftInFlux/docs/beta5.pdf), https://devforums.apple.com/message/1012357#1012357
 
 ### Overriding declarations from extensions
 
@@ -252,7 +253,7 @@ Sources: http://inessential.com/2014/07/13/swift_reflection https://gist.github.
 It's not yet possible to define two entities (functions, classes, global variables…) with the same name, even if they're private and defined in separate files. The compilation will fail as the linker can't tell them apart.
 
 > Yup. "private" currently only guards access, but doesn't handle redefinition. This is a known issue.
-> 
+>
 > — SevenTenEleven
 
 Source: https://devforums.apple.com/message/1031354#1031354
@@ -261,9 +262,9 @@ Source: https://devforums.apple.com/message/1031354#1031354
 
 > Xcode does not support building static libraries that include Swift code.
 >
-> — Xcode beta 5 release notes
+> — Xcode 6.0 beta 5 release notes
 
-Source: [Beta 5 release notes](http://ksm.github.io/SwiftInFlux/docs/beta5.pdf)
+Source: [Xcode 6.0 Beta 5 release notes](http://ksm.github.io/SwiftInFlux/docs/beta5.pdf)
 
 ### Systems Programming Features
 
@@ -285,7 +286,7 @@ Source: https://devforums.apple.com/message/1025424#1025424
 
 ### Enumeration case value labels
 
-Beta 6 [removed the ability](#other-changes-in-beta-6) to label the value of a 1-tuple. Because the associated values of enumeration cases act like a tuple, the following code is now illegal:
+Xcode 6.0 Beta 6 [removed the ability](#other-changes-in-xcode-60-beta-6) to label the value of a 1-tuple. Because the associated values of enumeration cases act like a tuple, the following code is now illegal:
 
 ```swift
 enum SomeEnum {
@@ -295,9 +296,9 @@ enum SomeEnum {
 
 Confusingly, it's valid to label the associated values if there's more than one. This will be fixed:
 
-> We've found that single-element labeled tuples caused more confusion than they provided benefits, because one sometimes expects that they be equivalent to (or convertible to) the value of their single element type, and other times is surprised by the inter-convertibility between the single element type and a single-element labeled tuple. 
-> 
-> As for the enumeration case that started this thread, we're going to bring back support for the label in the single-element case. The user view of the enumeration case is generally function-like, because one calls them like functions, which favors the use of labels. 
+> We've found that single-element labeled tuples caused more confusion than they provided benefits, because one sometimes expects that they be equivalent to (or convertible to) the value of their single element type, and other times is surprised by the inter-convertibility between the single element type and a single-element labeled tuple.
+>
+> As for the enumeration case that started this thread, we're going to bring back support for the label in the single-element case. The user view of the enumeration case is generally function-like, because one calls them like functions, which favors the use of labels.
 >
 > — Doug Gregor
 
@@ -313,11 +314,11 @@ Source: https://devforums.apple.com/message/1027499#1027499, https://devforums.a
 
 ___
 
-## Changed in Beta 6
+## Changed in Xcode 6.0 Beta 6
 
 ### Refinements to nil coalescing operator
 
-Beta 6 improves on the [nil coalescing operator](#nil-coalescing-operator) introduced last Beta. It's now possible to pass an optional as the righthand side operand — if both sides evaluate to nil, the whole expression evaluates to nil. This makes it possible to chain expressions using nil coalescing, like so:
+Xcode 6.0 Beta 6 improves on the [nil coalescing operator](#nil-coalescing-operator) introduced last Beta. It's now possible to pass an optional as the righthand side operand — if both sides evaluate to nil, the whole expression evaluates to nil. This makes it possible to chain expressions using nil coalescing, like so:
 
 ```swift
 let a: Int? = nil
@@ -330,7 +331,7 @@ In the example above, the first chained expression that doesn't evaluate to `nil
 
 Previously, passing a non-optional value as the second operand to `??` was technically valid, but its semantics were [very confusing](http://airspeedvelocity.net/2014/08/12/yo-dawg/)
 
-Sources: [Beta 6 release notes](http://ksm.github.io/SwiftInFlux/docs/beta6.pdf), [Airspeed Velocity](http://airspeedvelocity.net/2014/08/12/yo-dawg/)
+Sources: [Xcode 6.0 Beta 6 release notes](http://ksm.github.io/SwiftInFlux/docs/beta6.pdf), [Airspeed Velocity](http://airspeedvelocity.net/2014/08/12/yo-dawg/)
 
 ### Optionals in Foundation
 
@@ -338,7 +339,7 @@ Sources: [Beta 6 release notes](http://ksm.github.io/SwiftInFlux/docs/beta6.pdf)
 >
 > These changes replace T! with either T? or T depending on whether the value can be null (or not) respectively.
 
-Source: [Beta 6 release notes](http://ksm.github.io/SwiftInFlux/docs/beta6.pdf)
+Source: [Xcode 6.0 Beta 6 release notes](http://ksm.github.io/SwiftInFlux/docs/beta6.pdf)
 
 ### Boolean semantics of types
 
@@ -346,11 +347,11 @@ Implicitly unwrapped optionals no longer conform to `BooleanType`, which means t
 
 Meanwhile, non-optional types may no longer be compared to `nil`.
 
-Source: [Beta 6 release notes](http://ksm.github.io/SwiftInFlux/docs/beta6.pdf)
+Source: [Xcode 6.0 Beta 6 release notes](http://ksm.github.io/SwiftInFlux/docs/beta6.pdf)
 
-### Other changes in Beta 6
+### Other changes in Xcode 6.0 Beta 6
 
-* The `+` operator can no longer append a `Character` to `String`, clarifying that `+` is only for concatenation. (This is analogous to appending an element to an array which was [removed in Beta 5](#other-changes))
+* The `+` operator can no longer append a `Character` to `String`, clarifying that `+` is only for concatenation. (This is analogous to appending an element to an array which was [removed in Xcode 6.0 Beta 5](#other-changes))
 * `Optional.hasValue` was removed
 * `RawOptionSetType` (used by imported `NS_OPTIONS`) now supports bitwise assignment operators
 * One-element tuples can no longer have a label. In practice, that means that an enum case that stores one value cannot have a label ([this will be fixed](#enumeration-case-value-labels)).
@@ -360,27 +361,27 @@ Source: [Beta 6 release notes](http://ksm.github.io/SwiftInFlux/docs/beta6.pdf)
 
 Further reading:
 
-* [Beta 6 release notes](http://ksm.github.io/SwiftInFlux/docs/beta6.pdf)
+* [Xcode 6.0 Beta 6 release notes](http://ksm.github.io/SwiftInFlux/docs/beta6.pdf)
 * [Airspeed velocity](http://airspeedvelocity.net)
 
-## Changed in Beta 5
+## Changed in Xcode 6.0 Beta 5
 
 ### `dynamic` declaration modifier
 
 `dynamic` is a new attribute that can be applied to properties, methods, subscripts and initializers to make all references to them dynamically dispatched (like message passing in Objective-C). This enables KVO, proxying, swizzling and other advanced Cocoa features to work with Swift.
 
-Before Beta 5, classes marked with `@objc` (or inheriting from `NSObject`) got the benefits of `dynamic` "for free", while non-`@objc` classes couldn't access dynamic dispatch at all. Now the two concepts are separate:
+Before Xcode 6.0 Beta 5, classes marked with `@objc` (or inheriting from `NSObject`) got the benefits of `dynamic` "for free", while non-`@objc` classes couldn't access dynamic dispatch at all. Now the two concepts are separate:
 
 > This change also clarifies the `@objc` attribute. Now it only makes a declaration visible to Objective-C (for examples, to `objc_msgSend`), instead of conflating exposure to the Objective-C runtime with guaranteed lack of devirtualization. This is a cleaner conceptual semantic model that enables performance improvements for a wide range of `NSObject` subclasses by allowing the compiler to use more efficient dispatch and access techniques for declarations marked `@objc` (which is usually implicit).
 >
 > Though the feature is independent of the `@objc` attribute, the implementation still currently relies on Objective-C runtime details, so dynamic currently can only be applied to declarations with `@objc`-compatible types.
 
-Source: [Beta 5 release notes](http://ksm.github.io/SwiftInFlux/docs/beta5.pdf)
+Source: [Xcode 6.0 Beta 5 release notes](http://ksm.github.io/SwiftInFlux/docs/beta5.pdf)
 
 
 ### Mutable optional value types
 
-From [Beta 5 release notes](http://ksm.github.io/SwiftInFlux/docs/beta5.pdf):
+From [Xcode 6.0 Beta 5 release notes](http://ksm.github.io/SwiftInFlux/docs/beta5.pdf):
 
 > The optional unwrapping operator x! can now be assigned through. Mutating methods and operators can be applied through it.
 ```swift
@@ -413,7 +414,7 @@ var myArray: StringArray?
 >
 > — Chris Lattner
 
-Sources: https://devforums.apple.com/message/998882#998882 [Beta 5 release notes](http://ksm.github.io/SwiftInFlux/docs/beta5.pdf)
+Sources: https://devforums.apple.com/message/998882#998882 [Xcode 6.0 Beta 5 release notes](http://ksm.github.io/SwiftInFlux/docs/beta5.pdf)
 
 ### Nil coalescing operator
 
@@ -428,11 +429,11 @@ myArray.append(22)
 print(myArray.first ?? 0) // produces 22, the value of myArray.first
 ```
 
-Sources: [Beta 5 release notes](http://ksm.github.io/SwiftInFlux/docs/beta5.pdf)
+Sources: [Xcode 6.0 Beta 5 release notes](http://ksm.github.io/SwiftInFlux/docs/beta5.pdf)
 
 ### Revised attributes
 
-Following the [changes in Beta 4](#revised-declaration-modifiers), most of the @-attributes have been changed to declaration modifiers (shedding the `@` prefix) in Beta 5.
+Following the [changes in Xcode 6.0 Beta 4](#revised-declaration-modifiers), most of the @-attributes have been changed to declaration modifiers (shedding the `@` prefix) in Xcode 6.0 Beta 5.
 
 > The `@assignment` attribute has been removed from operator implementations.
 >
@@ -441,12 +442,12 @@ Following the [changes in Beta 4](#revised-declaration-modifiers), most of the @
 > have been rearranged from `operator prefix - {}` to `prefix operator - {}` for consistency.
 >
 > The `@class_protocol` attribute has been removed; the new syntax for declaring that only protocol conformance is limited to classes is `'protocol P : class { ... }’`.
-> 
+>
 > The @auto_closure attribute has been renamed to @autoclosure.
 >
-> — Xcode Beta 5 release notes
+> — Xcode 6.0 Beta 5 release notes
 
-Source: [Beta 5 release notes](http://ksm.github.io/SwiftInFlux/docs/beta5.pdf)
+Source: [Xcode 6.0 Beta 5 release notes](http://ksm.github.io/SwiftInFlux/docs/beta5.pdf)
 
 ### Boolean semantics of optionals
 
@@ -454,7 +455,7 @@ Optional values no longer conform to `BooleanType` (formerly `LogicValue`) proto
 
 > (...) they may no longer be used in place of boolean expressions (they must be explicitly compared with v != nil).
 >
-> — Xcode 6 Beta 5 release notes
+> — Xcode 6.0 Beta 5 release notes
 
 Before this change, the boolean semantics of optionals were confusing when the optional wrapped a value that was a `BooleanType` itself:
 
@@ -466,11 +467,11 @@ if foo {
 }
 ```
 
-Source: [Beta 5 release notes](http://ksm.github.io/SwiftInFlux/docs/beta5.pdf)
+Source: [Xcode 6.0 Beta 5 release notes](http://ksm.github.io/SwiftInFlux/docs/beta5.pdf)
 
 ### Ranges, Intervals, Striding
 
-Following minor changes to ranges [in Beta 3](#range-operators) and [Beta 4](#new-stride-functions), Beta 5 brings a major rework of the entire area:
+Following minor changes to ranges [in Xcode 6.0 Beta 3](#range-operators) and [Xcode 6.0 Beta 4](#new-stride-functions), Xcode 6.0 Beta 5 brings a major rework of the entire area:
 
 > The idea of a Range has been split into three separate concepts:
 >
@@ -505,7 +506,7 @@ $R1: ClosedInterval<Double> = {
 >
 > All _Ranges_ are represented by instances of a single generic type, `Range<T>`, whose representation is always half-open (and thus always print in the REPL and Playgrounds as a half-open range). Currently an inclusive range cannot include the last value in a sequence (for example, `4...Int.max` doesn’t work) unless the context requires an _Interval_ (like a case pattern matching specification).
 
-Source: [Beta 5 release notes](http://ksm.github.io/SwiftInFlux/docs/beta5.pdf)
+Source: [Xcode 6.0 Beta 5 release notes](http://ksm.github.io/SwiftInFlux/docs/beta5.pdf)
 
 ### Required and designated initializers in subclasses
 
@@ -521,11 +522,11 @@ required init(coder: NSCoder) {
 
 Also, the compiler now requires overrides of designated initializers to be explicitly marked with `override` and implementations of required initializers — with `required`.
 
-Source: [Beta 5 release notes](http://ksm.github.io/SwiftInFlux/docs/beta5.pdf)
+Source: [Xcode 6.0 Beta 5 release notes](http://ksm.github.io/SwiftInFlux/docs/beta5.pdf)
 
 ### Other changes
 
-Beta 5 has seen a lot of symbols being renamed:
+Xcode 6.0 Beta 5 has seen a lot of symbols being renamed:
 
 * Protocols were renamed so that they all end with `able`, `ible` or `Type`. For example, `Integer` protocol was renamed to `IntegerType`
 * `LogicValue` was renamed to `BooleanType`
@@ -543,21 +544,21 @@ Other changes in the standard library:
 Finally:
 
 * Together with improvements in earlier betas, the Swift compiler can now produce far faster, better optimized code (on some benchmarks, Swift went from being two orders of magnitude slower than Objective-C to being an order of magnitude _faster_ than Objective-C)
-* Meanwhile, Xcode can now recompile a single changed file instead of recompiling the whole project.  
+* Meanwhile, Xcode can now recompile a single changed file instead of recompiling the whole project.
 * You can now import frameworks in Playgrounds
 * `println()` in Playgrounds now prints next to the line where it's defined (not just printed in the console output)
 
 Further reading:
 * [Airspeed Velocity](http://airspeedvelocity.net/2014/08/04/changes-in-the-swift-standard-library-in-beta-5/)
 * [Russ Bishop](http://www.russbishop.net/swift-beta-5)
-* [Beta 5 release notes](http://ksm.github.io/SwiftInFlux/docs/beta5.pdf)
+* [Xcode 6.0 Beta 5 release notes](http://ksm.github.io/SwiftInFlux/docs/beta5.pdf)
 * [Apples to apples, Part II](http://www.jessesquires.com/apples-to-apples-part-two/)
 
-## Changed in Beta 4
+## Changed in Xcode 6.0 Beta 4
 
 ### Access control
 
-Beta 4 adds three levels of access control to user-defined entities: `public` (available anywhere), `internal` (available within the target where they're defined) and `private` (available only within the file where they're defined).
+Xcode 6.0 Beta 4 adds three levels of access control to user-defined entities: `public` (available anywhere), `internal` (available within the target where they're defined) and `private` (available only within the file where they're defined).
 
 > By default, most entities in a source file have internal access. This allows application developers to largely ignore access control while allowing framework developers full control over a framework's API.
 
@@ -565,27 +566,27 @@ It's also possible to define attributes with public getters but private setters 
 
 It has been noted that the current access control design [makes unit testing a bit unwieldy](#limitations-of-current-access-control-design).
 
-Source: [Beta 4 release notes](http://ksm.github.io/SwiftInFlux/docs/beta4.pdf)
+Source: [Xcode 6.0 Beta 4 release notes](http://ksm.github.io/SwiftInFlux/docs/beta4.pdf)
 
 ### Unicode string improvements
 
-Character was changed in Beta 4 to hold a full grapheme cluster instead of a single code point.
+Character was changed in Xcode 6.0 Beta 4 to hold a full grapheme cluster instead of a single code point.
 
 > Certain accented characters (like é) can be represented either as a single code point or as a sequence of two or more code points (e + ́)
 
-Before Beta 4, é achieved using "e" and a combining mark would be treated as two Character instances. Now, every character is a single Character. The change helps avoid a class of bugs when dealing with complex Unicode strings.
+Before Xcode 6.0 Beta 4, é achieved using "e" and a combining mark would be treated as two Character instances. Now, every character is a single Character. The change helps avoid a class of bugs when dealing with complex Unicode strings.
 
-In addition to the above, Beta 4 removes `\x`, `\u` and `\U` escape sequences for Unicode characters and replaces them with a single, less error-prone `\u{1234}` syntax
+In addition to the above, Xcode 6.0 Beta 4 removes `\x`, `\u` and `\U` escape sequences for Unicode characters and replaces them with a single, less error-prone `\u{1234}` syntax
 
 Sources: http://oleb.net/blog/2014/07/swift-strings/ https://devforums.apple.com/message/1007773#1007773
 
 ### Numerical data type conversion, e.g. CGFloat and Swift Double/Swift Float
 
-From Beta 4 Release Notes:
+From Xcode 6.0 Beta 4 Release Notes:
 >CGFloat is now a distinct floating-point type that wraps either a Float on 32-bit architectures or a Double on 64-bit architectures.
 
 Sources:
-[Beta 4 release notes](http://ksm.github.io/SwiftInFlux/docs/beta4.pdf)
+[Xcode 6.0 Beta 4 release notes](http://ksm.github.io/SwiftInFlux/docs/beta4.pdf)
 
 >What is happening here is that CGFloat is a typealias for either Float or Double depending on whether you're building for 32 or 64-bits.  This is exactly how Objective-C works, but is problematic in Swift because Swift doesn't allow implicit conversions.
 >
@@ -599,7 +600,7 @@ Sources: https://devforums.apple.com/message/998222#998222
 
 > The @final, @lazy, @optional, and @required attributes have been converted to declaration modifiers, specified without an @ sign.
 
-Source: [Beta 4 release notes](http://ksm.github.io/SwiftInFlux/docs/beta4.pdf)
+Source: [Xcode 6.0 Beta 4 release notes](http://ksm.github.io/SwiftInFlux/docs/beta4.pdf)
 
 ### New stride() functions
 
@@ -613,11 +614,11 @@ stride(from: x, to: y, by: z)      // was: (x..<y).by(z)
 stride(from: x, through: y, by: z) // was: (x...y).by(z)
 ```
 
-Source: [Beta 4 release notes](http://ksm.github.io/SwiftInFlux/docs/beta4.pdf)
+Source: [Xcode 6.0 Beta 4 release notes](http://ksm.github.io/SwiftInFlux/docs/beta4.pdf)
 
 ### Set of legal operator characters
 
-With release of Beta 4, the full grammar of operators was specified.
+With release of Xcode 6.0 Beta 4, the full grammar of operators was specified.
 
 https://developer.apple.com/library/prerelease/mac/documentation/Swift/Conceptual/Swift_Programming_Language/LexicalStructure.html#//apple_ref/doc/uid/TP40014097-CH30-XID_927
 
@@ -633,7 +634,7 @@ Sources: https://devforums.apple.com/thread/231723?tstart=450 https://devforums.
 
 ### `@IBOutlet`
 
-Before Beta 4, marking a property with `@IBOutlet` implicitly made it a weak variable and an implicitly unwrapped optional. Now, the attribute merely makes a property visible to Interface Builder.
+Before Xcode 6.0 Beta 4, marking a property with `@IBOutlet` implicitly made it a weak variable and an implicitly unwrapped optional. Now, the attribute merely makes a property visible to Interface Builder.
 
 Previously:
 
@@ -654,7 +655,7 @@ the compiler.
 >
 > — Chris Lattner
 
-[The code from the Developer Forums](https://devforums.apple.com/message/1000511#1000511) no longer causes a segmentation fault in the compiler in Beta 4.
+[The code from the Developer Forums](https://devforums.apple.com/message/1000511#1000511) no longer causes a segmentation fault in the compiler in Xcode 6.0 Beta 4.
 
 Source: https://devforums.apple.com/message/1000950#1000950
 
@@ -669,15 +670,15 @@ Source: https://devforums.apple.com/message/1000950#1000950
 * `ArrayBuffer`, `ArrayBufferType`, `SliceBuffer` and `ContiguousArrayBuffer` were removed (the reason being, those structures were only an implementation detail of corresponding types)
 * `reverse` is no longer lazy and simply returns an Array. New `lazy` functions can be used to lazily reverse, filter and map collections through new `LazyForwardCollection`, `LazyRandomAccessCollection` and `LazySequence` structures
 
-Sources: http://airspeedvelocity.net/2014/07/21/changes-in-the-swift-standard-library-in-beta-4/ [Beta 4 release notes](http://ksm.github.io/SwiftInFlux/docs/beta4.pdf)
+Sources: http://airspeedvelocity.net/2014/07/21/changes-in-the-swift-standard-library-in-beta-4/ [Xcode 6.0 Beta 4 release notes](http://ksm.github.io/SwiftInFlux/docs/beta4.pdf)
 
-## Changed in Beta 3
+## Changed in Xcode 6.0 Beta 3
 
 ### Array and Dictionary type declaration syntax
-Before Beta 3, the shorthand for an Array type was `Type[]`, and Dictionary types were written `Dictionary<KeyType, ValueType>`. Array type shorthand was changed to `[Type]` and Dictionaries types now have a shorthand syntax `[KeyType: ValueType]` (e.g. `[String: Bool]`)
+Before Xcode 6.0 Beta 3, the shorthand for an Array type was `Type[]`, and Dictionary types were written `Dictionary<KeyType, ValueType>`. Array type shorthand was changed to `[Type]` and Dictionaries types now have a shorthand syntax `[KeyType: ValueType]` (e.g. `[String: Bool]`)
 
 ### Array value semantics
-Since Beta 3, Array has full value semantics to match Dictionary, String and other value types.
+Since Xcode 6.0 Beta 3, Array has full value semantics to match Dictionary, String and other value types.
 
 >Array semantics were in flux at the time of Beta 1, and have been revised to provide full value semantics like Dictionary and String.  This will be available in later betas.
 >
