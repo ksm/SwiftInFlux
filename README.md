@@ -28,6 +28,7 @@ Swift InFlux was created by [Karol S. Mazur](https://github.com/ksm) during [Swi
 * [Redefinition of private entities](#redefinition-of-private-entities)
 * [Static libraries](#static-libraries)
 * [Swift 1.1 Scope](#swift-11-scope)
+* [`switch` and `if` as Expressions](#switch-and-if-as-expressions)
 * [Systems programming features](#systems-programming-features)
 * [Enumeration case value labels](#enumeration-case-value-labels)
 
@@ -264,6 +265,14 @@ Source: [Xcode 6.0 Beta 5 release notes](http://ksm.github.io/SwiftInFlux/docs/b
 > -Chris
 
 Source: https://devforums.apple.com/message/1040097#1040097
+
+### `switch` and `if` as Expressions
+
+> We're aware that 'switch' and 'if' are commonly expressions in functional languages, and that this brings a lot of convenience.  We'll consider expanding this in future releases, but it isn't a short term priority for Swift 1.1.
+> 
+> -Chris
+
+Source: https://devforums.apple.com/message/1040049#1040049
 
 ### Systems Programming Features
 
