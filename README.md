@@ -22,7 +22,6 @@ Swift InFlux was created by [Karol S. Mazur](https://github.com/ksm) during [Swi
 * [C union support](#c-union-support)
 * [Enumerating enum types](#enumerating-enum-types)
 * [Flow-sensitive optional unwrapping](#flow-sensitive-optional-unwrapping)
-* [Initializers that return nil](#initializers-that-return-nil)
 * [Optionals in imported Objective-C frameworks](#optionals-in-imported-objective-c-frameworks)
 * [Overriding declarations from extensions](#overriding-declarations-from-extensions)
 * [Reflection](#reflection)
@@ -35,6 +34,8 @@ Swift InFlux was created by [Karol S. Mazur](https://github.com/ksm) during [Swi
 
 ___
 
+* [Changed in Xcode 6.1 Beta 1](#changed-in-xcode-61-beta-1)
+ * [Initializers that return nil](#initializers-that-return-nil)
 
 * [Changed in Xcode 6.0 Beta 6](#changed-in-xcode-60-beta-6)
  * [Refinements to nil coalescing operator](#refinements-to-nil-coalescing-operator)
@@ -179,18 +180,6 @@ if exists x {
 
 Source: https://devforums.apple.com/message/1005148#1005148
 
-### Initializers that return nil
-
-Swift initializers cannot return an optional type, but imported initializers from Objective-C classes might return nil. If an imported initializer returns nil into a non-optional variable or constant you will crash when trying to access it.
-
-The workaround is to assign the returned variable to an optional variable.
-
-> Yep, this is a known problem and mentioned in the Xcode release notes.  You can expect progress here in a subsequent beta.
->
-> — Chris Lattner
-
-Source: https://devforums.apple.com/message/1028107#1028107
-
 ### Optionals in imported Objective-C frameworks
 
 As of Xcode 6.0 Beta 7, relatively few APIs have been audited for optional conformance. More improvements are expected to come in the future.
@@ -324,6 +313,46 @@ Also, the ability to specify default values to enum cases might be added:
 Source: https://devforums.apple.com/message/1027499#1027499, https://devforums.apple.com/message/1029151#1029151
 
 ___
+
+## Changed in Xcode 6.1 Beta 1
+
+### Initializers that return nil
+
+Initializers can now fail by returning `nil`. A failable initializer is declared with `init?` to return an 
+explicit optional or `init!` to return an implicitly unwrapped optional. For example, you could 
+implement `String.toInt` as a failable initializer of `Int` like this:
+
+```swift
+extension Int {
+  init?(fromString: String) {
+    if let i = fromString.toInt() {
+      // Initialize 
+      self = i 
+    } else { 
+      // Discard self and return 'nil'. 
+      return nil 
+    } 
+  }
+}
+```
+
+The result of constructing a value using a failable initializer then becomes optional:
+
+```swift
+if let twentytwo = Int(fromString: "22") {
+  println("the number is \(twentytwo)”)
+} else {
+  println("not a number”)
+}
+```
+
+In the current implementation, `struct` and `enum` initializers can return `nil` at any point inside 
+the initializer, but class initializers can only return `nil` after all of the stored properties of the 
+object have been initialized and `self.init` or `super.init` has been called. If `self.init` or 
+`super.init` is used to delegate to a failable initializer, then the `nil` return is implicitly 
+propagated through the current initializer if the called initializer fails.
+
+Source: Xcode 6.1 Beta 1 release notes
 
 ## Changed in Xcode 6.0 Beta 6
 
