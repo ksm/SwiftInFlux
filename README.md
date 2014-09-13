@@ -13,6 +13,7 @@ Swift InFlux was created by [Karol S. Mazur](https://github.com/ksm) during [Swi
 
 ### Table of Contents
 
+* [2D Array Performance Issues](#2d-array-performance-issues)
 * [Absence of math.h macros](#absence-of-mathh-macros)
 * [Abstract methods](#abstract-methods)
 * [Access control](#limitations-of-current-access-control-design)
@@ -71,6 +72,16 @@ ___
   * [Range operators](#range-operators)
 
 ---
+
+### 2D Array Performance Issues
+
+As of Xcode 6.1 Beta 1, 2D arrays (e.g., `[[Int]]`) are approximately 1000 times slower than 1D arrays (e.g., `[Int]`).
+
+> 2D arrays hit a specific known representational problem that we're tracking.  We consider it a serious performance problem, and we're investigating a fix for the 6.1 betas.
+> 
+> -Chris
+
+Sources: https://devforums.apple.com/message/1039447#1039447, https://devforums.apple.com/message/1040092#1040092
 
 ### Absence of math.h macros
 
