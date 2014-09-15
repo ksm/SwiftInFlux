@@ -318,7 +318,7 @@ ___
 
 ### Failable initializers in Objective-C frameworks
 
-Objective-C `init` and factory methods are now imported as [failable initializers](#failable-initializers) to explicitly signal that they might return `nil`. Most initializers are automatically imported as `init!` (subject to [auditing for optional conformance](#optionals-in-imported-objective-c-frameworks) in later releases), however methods that take an `NSError**` parameter are always imported as `init?`.
+Objective-C `init` and factory methods are now imported as [failable initializers](#failable-initializers) to explicitly signal that they might return `nil`. Most initializers are automatically imported as `init!` (subject to [auditing for optional conformance](#optionals-in-imported-objective-c-frameworks) in later releases), however methods that take a `NSError**` parameter are always imported as `init?`.
 
 For example:
 
