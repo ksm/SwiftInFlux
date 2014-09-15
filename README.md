@@ -21,7 +21,8 @@ Swift InFlux was created by [Karol S. Mazur](https://github.com/ksm) during [Swi
 * [C++ support](#c-support)
 * [C union support](#c-union-support)
 * [Enumerating enum types](#enumerating-enum-types)
-* [Flow-sensitive optional unwrapping](#flow-sensitive-optional-unwrapping)
+* [Improvements to optional unwrapping](#improvements-to-optional-unwrapping)
+ * [Flow-sensitive optional unwrapping](#flow-sensitive-optional-unwrapping)
 * [Optionals in imported Objective-C frameworks](#optionals-in-imported-objective-c-frameworks)
 * [Overriding declarations from extensions](#overriding-declarations-from-extensions)
 * [Reflection](#reflection)
@@ -162,9 +163,17 @@ Source: https://devforums.apple.com/message/1002630#1002630
 
 Source: https://devforums.apple.com/message/1003674#1003674
 
-### Flow-sensitive optional unwrapping
+### Improvements to optional unwrapping
 
-With this feature, optional types would be implicitly unwrapped in the context of a block checking if an optional has a value, like so:
+> There are a variety of improvements to optional unwrapping that we're tracking for consideration in future releases, including allowing "&&" with "if let", allowing something like "if not let" as you describe, and many others.  I expect the situation to improve when time permits.
+>
+> — Chris Lattner
+
+Source: https://devforums.apple.com/message/1042776#1042776
+
+#### Flow-sensitive optional unwrapping
+
+It has been suggested that optional types could be implicitly unwrapped in the context of an if-statement checking if an optional has a value, for example:
 
 ```swift
 let x: Type?
