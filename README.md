@@ -35,6 +35,10 @@ Swift InFlux was created by [Karol S. Mazur](https://github.com/ksm) during [Swi
 
 ___
 
+
+* [Changed in Xcode 6.1 Beta 2](#changed-in-xcode-61-beta-2)
+ * [Failable initializers in Objective-C frameworks](#failable-initializers-in-objective-c-frameworks)
+
 * [Changed in Xcode 6.1 Beta 1](#changed-in-xcode-61-beta-1)
  * [Failable initializers](#failable-initializers)
 
@@ -320,6 +324,21 @@ Also, the ability to specify default values to enum cases might be added:
 Source: https://devforums.apple.com/message/1027499#1027499, https://devforums.apple.com/message/1029151#1029151
 
 ___
+
+
+## Changed in Xcode 6.1 Beta 2
+
+### Failable initializers in Objective-C frameworks
+
+Objective-C `init` and factory methods are now imported as [failable initializers][#failable-initializers] to explicitly signal that they might return `nil`. Most initializers are automatically imported as `init!` (subject to [auditing for optional conformance](#optionals-in-imported-objective-c-frameworks) in later releases), however methods that take an `NSError**` parameter are always imported as `init?`.
+
+For example:
+
+```swift
+init?(contentsOfFile path: String, encoding: NSStringEncoding, error: NSErrorPointer)
+```
+
+Source: Xcode 6.1 Beta 2 release notes
 
 ## Changed in Xcode 6.1 Beta 1
 
