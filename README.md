@@ -201,7 +201,7 @@ As of Xcode 6 GM and 6.1 Beta 2, relatively few APIs have been audited for optio
 >
 > — Xcode 6.1 Beta 2 release notes
 
-Sources: Xcode 6.1 Beta 2 release notes
+Sources: [Xcode 6.1 Beta 2 release notes](http://ksm.github.io/SwiftInFlux/docs/6.1-beta2.pdf)
 
 ### Overriding declarations from extensions
 
@@ -326,7 +326,7 @@ For example:
 init?(contentsOfFile path: String, encoding: NSStringEncoding, error: NSErrorPointer)
 ```
 
-Source: Xcode 6.1 Beta 2 release notes
+Source: [Xcode 6.1 Beta 2 release notes](http://ksm.github.io/SwiftInFlux/docs/6.1-beta2.pdf)
 
 ## Changed in Xcode 6.1 Beta 1
 
@@ -366,7 +366,7 @@ object have been initialized and `self.init` or `super.init` has been called. If
 `super.init` is used to delegate to a failable initializer, then the `nil` return is implicitly 
 propagated through the current initializer if the called initializer fails.
 
-Source: Xcode 6.1 Beta 1 release notes
+Source: [Xcode 6.1 Beta 1 release notes](http://ksm.github.io/SwiftInFlux/docs/6.1-beta1.pdf)
 
 ## Changed in Xcode 6.0 Beta 6
 
