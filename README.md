@@ -336,6 +336,7 @@ Source: [Xcode 6.1 Beta 2 release notes](http://ksm.github.io/SwiftInFlux/docs/6
     let foo = Foo(rawValue: 2)! // formerly 'Foo.fromRaw(2)!'
     println(foo.rawValue) // formerly 'foo.toRaw()'
     ```
+* Nested functions that recursively reference themselves or other functions inside the same outer function will no longer crash the compiler.
 
 Source: [Xcode 6.1 Beta 2 release notes](http://ksm.github.io/SwiftInFlux/docs/6.1-beta2.pdf)
 
