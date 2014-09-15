@@ -35,7 +35,7 @@ Swift InFlux was created by [Karol S. Mazur](https://github.com/ksm) during [Swi
 ___
 
 * [Changed in Xcode 6.1 Beta 1](#changed-in-xcode-61-beta-1)
- * [Initializers that return nil](#initializers-that-return-nil)
+ * [Failable initializers](#failable-initializers)
 
 * [Changed in Xcode 6.0 Beta 6](#changed-in-xcode-60-beta-6)
  * [Refinements to nil coalescing operator](#refinements-to-nil-coalescing-operator)
@@ -314,7 +314,7 @@ ___
 
 ## Changed in Xcode 6.1 Beta 1
 
-### Initializers that return nil
+### Failable initializers
 
 Initializers can now fail by returning `nil`. A failable initializer is declared with `init?` to return an 
 explicit optional or `init!` to return an implicitly unwrapped optional. For example, you could 
