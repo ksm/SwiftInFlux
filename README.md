@@ -38,6 +38,7 @@ ___
 * [Changed in Xcode 6.1 Beta 2](#changed-in-xcode-61-beta-2)
  * [Failable initializers in Objective-C frameworks](#failable-initializers-in-objective-c-frameworks)
  * [Redefinition of private entities](#redefinition-of-private-entities)
+ * [Other](#other-changes-in-xcode-61-beta-2)
 
 * [Changed in Xcode 6.1 Beta 1](#changed-in-xcode-61-beta-1)
  * [Failable initializers](#failable-initializers)
@@ -323,6 +324,21 @@ Source: [Xcode 6.1 Beta 2 release notes](http://ksm.github.io/SwiftInFlux/docs/6
 It's now possible to redefine private entities (functions, classes, global variables…) with the same name and type in different files. Previously, the compilation would fail because the linker couldn't tell them apart.
 
 Source: [Xcode 6.1 Beta 2 release notes](http://ksm.github.io/SwiftInFlux/docs/6.1-beta2.pdf)
+
+### Other changes in Xcode 6.1 Beta 2
+
+* Mac apps can now apply `@NSApplicationMain` attribute to their app delegate class to generate an implicit `main` function for the app. (This works like `@UIApplicationMain` on iOS)
+* The `fromRaw()` static method in enums that have raw values has been replaced with a failble `init?(rawValue:)` initializer. Also, `toRaw()` method has been replaced with `rawValue` property.
+    Example:
+    
+    ```swift
+    enum Foo: Int { case A = 0, B = 1, C = 2 }
+    let foo = Foo(rawValue: 2)! // formerly 'Foo.fromRaw(2)!'
+    println(foo.rawValue) // formerly 'foo.toRaw()'
+    ```
+
+Source: [Xcode 6.1 Beta 2 release notes](http://ksm.github.io/SwiftInFlux/docs/6.1-beta2.pdf)
+
 
 ## Changed in Xcode 6.1 Beta 1
 
