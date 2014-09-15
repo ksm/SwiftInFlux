@@ -379,7 +379,11 @@ object have been initialized and `self.init` or `super.init` has been called. If
 `super.init` is used to delegate to a failable initializer, then the `nil` return is implicitly 
 propagated through the current initializer if the called initializer fails.
 
-Source: [Xcode 6.1 Beta 1 release notes](http://ksm.github.io/SwiftInFlux/docs/6.1-beta1.pdf)
+> FWIW, the most common use-case for failable initializers will be with imported Cocoa APIs (e.g. loading a UIImage that can fail).  Beta 1 doesn't import Cocoa APIs to use failable initializers, but that will be addressed "soon" in the next 6.1 beta.
+>
+> — Chris Lattner
+
+Source: [Xcode 6.1 Beta 1 release notes](http://ksm.github.io/SwiftInFlux/docs/6.1-beta1.pdf), https://devforums.apple.com/message/1042776#1042776
 
 ## Changed in Xcode 6.0 Beta 6
 
