@@ -195,25 +195,13 @@ Source: https://devforums.apple.com/message/1005148#1005148
 
 ### Optionals in imported Objective-C frameworks
 
-As of Xcode 6.0 Beta 7, relatively few APIs have been audited for optional conformance. More improvements are expected to come in the future.
+As of Xcode 6 GM and 6.1 Beta 2, relatively few APIs have been audited for optional conformance. More improvements are expected to come in the future.
 
 > A large number of Foundation, UIKit, CoreData, SceneKit, SpriteKit, Metal APIs have been audited for optional conformance, removing a significant number of implicitly unwrapped optionals from their interfaces. This clarifies the nullability of their properties, arguments and return values of their methods. This is an ongoing effort that started shipping in beta 5.
 >
-> — Xcode 6.0 Beta 7 release notes
->
-> The UIView, NSView, UIFont, and UIApplicationDelegate classes have been audited for optional conformance, removing most implicitly unwrapped optionals from their interfaces.
-> (...)
-> The changes in Beta 5 are simply the first step; more refinements to the SDK will come in future betas.
->
-> — Xcode 6.0 Beta 5 release notes
+> — Xcode 6.1 Beta 2 release notes
 
-> > Is there any plan to audit the Frameworks and do anything to define return values and arguments as optional (?) when nils can happen and automatically unwrapped when nil will never be returned?
->
-> Yes.  Look for details in subsequent betas.
->
-> — Chris Lattner
-
-Sources: [Xcode 6.0 Beta 7 release notes](http://ksm.github.io/SwiftInFlux/docs/beta7.pdf), [Xcode 6.0 Beta 5 release notes](http://ksm.github.io/SwiftInFlux/docs/beta5.pdf), https://devforums.apple.com/message/1012357#1012357
+Sources: Xcode 6.1 Beta 2 release notes
 
 ### Overriding declarations from extensions
 
