@@ -27,8 +27,8 @@ Swift InFlux was created by [Karol S. Mazur](https://github.com/ksm) during [Swi
 * [Reflection](#reflection)
 * [Redefinition of private entities](#redefinition-of-private-entities)
 * [Static libraries](#static-libraries)
-* [Swift 1.1 Scope](#swift-11-scope)
-* [`switch` and `if` as Expressions](#switch-and-if-as-expressions)
+* [Swift 1.1 scope](#swift-11-scope)
+* [`switch` and `if` as expressions](#switch-and-if-as-expressions)
 * [Systems programming features](#systems-programming-features)
 * [Enumeration case value labels](#enumeration-case-value-labels)
 
@@ -256,7 +256,7 @@ Source: https://devforums.apple.com/message/1031354#1031354
 
 Source: [Xcode 6.0 Beta 5 release notes](http://ksm.github.io/SwiftInFlux/docs/beta5.pdf)
 
-### Swift 1.1 Scope
+### Swift 1.1 scope
 
 > Swift 1.1 is a small scope release primarily aimed to improve quality, fix bugs, and address a couple of outstanding performance issues.  There are some small "features", and they will roll out in the Xcode release notes.  The first one is support for failable initializers as mentioned in the beta 1 release notes.
 > 
@@ -266,7 +266,7 @@ Source: [Xcode 6.0 Beta 5 release notes](http://ksm.github.io/SwiftInFlux/docs/b
 
 Source: https://devforums.apple.com/message/1040097#1040097
 
-### `switch` and `if` as Expressions
+### `switch` and `if` as expressions
 
 > We're aware that 'switch' and 'if' are commonly expressions in functional languages, and that this brings a lot of convenience.  We'll consider expanding this in future releases, but it isn't a short term priority for Swift 1.1.
 > 
