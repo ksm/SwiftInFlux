@@ -43,6 +43,8 @@ ___
 * [Changed in Xcode 6.1 Beta 1](#changed-in-xcode-61-beta-1)
  * [Failable initializers](#failable-initializers)
 
+___
+
 * [Changed in Xcode 6.0 Beta 6](#changed-in-xcode-60-beta-6)
  * [Refinements to nil coalescing operator](#refinements-to-nil-coalescing-operator)
  * [Optionals in Foundation](#optionals-in-foundation)
@@ -384,6 +386,8 @@ propagated through the current initializer if the called initializer fails.
 > — Chris Lattner
 
 Source: [Xcode 6.1 Beta 1 release notes](http://ksm.github.io/SwiftInFlux/docs/6.1-beta1.pdf), https://devforums.apple.com/message/1042776#1042776
+
+___
 
 ## Changed in Xcode 6.0 Beta 6
 
