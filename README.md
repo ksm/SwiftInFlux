@@ -26,7 +26,6 @@ Swift InFlux was created by [Karol S. Mazur](https://github.com/ksm) during [Swi
 * [Optionals in imported Objective-C frameworks](#optionals-in-imported-objective-c-frameworks)
 * [Overriding declarations from extensions](#overriding-declarations-from-extensions)
 * [Reflection](#reflection)
-* [Redefinition of private entities](#redefinition-of-private-entities)
 * [Static libraries](#static-libraries)
 * [Swift 1.1 scope](#swift-11-scope)
 * [`switch` and `if` as expressions](#switch-and-if-as-expressions)
@@ -38,6 +37,7 @@ ___
 
 * [Changed in Xcode 6.1 Beta 2](#changed-in-xcode-61-beta-2)
  * [Failable initializers in Objective-C frameworks](#failable-initializers-in-objective-c-frameworks)
+ * [Redefinition of private entities](#redefinition-of-private-entities)
 
 * [Changed in Xcode 6.1 Beta 1](#changed-in-xcode-61-beta-1)
  * [Failable initializers](#failable-initializers)
@@ -239,16 +239,6 @@ No official word from anyone inside Apple as to whether it's gonna go public bef
 
 Sources: http://inessential.com/2014/07/13/swift_reflection https://gist.github.com/peebsjs/9288f79322ed3119ece4
 
-### Redefinition of private entities
-
-It's not yet possible to define two entities (functions, classes, global variables…) with the same name, even if they're private and defined in separate files. The compilation will fail as the linker can't tell them apart.
-
-> Yup. "private" currently only guards access, but doesn't handle redefinition. This is a known issue.
->
-> — SevenTenEleven
-
-Source: https://devforums.apple.com/message/1031354#1031354
-
 ### Static libraries
 
 > Xcode does not support building static libraries that include Swift code.
@@ -325,6 +315,12 @@ For example:
 ```swift
 init?(contentsOfFile path: String, encoding: NSStringEncoding, error: NSErrorPointer)
 ```
+
+Source: [Xcode 6.1 Beta 2 release notes](http://ksm.github.io/SwiftInFlux/docs/6.1-beta2.pdf)
+
+### Redefinition of private entities
+
+It's now possible to redefine private entities (functions, classes, global variables…) with the same name and type in different files. Previously, the compilation would fail because the linker couldn't tell them apart.
 
 Source: [Xcode 6.1 Beta 2 release notes](http://ksm.github.io/SwiftInFlux/docs/6.1-beta2.pdf)
 
