@@ -46,6 +46,10 @@ ___
 
 ___
 
+* [Changed in Xcode 6.0 GM / 6.0.1](#changed-in-xcode60-gm-601)
+
+* [Changed in Xcode 6.0 Beta 7](#changed-in-xcode-60-beta-7)
+
 * [Changed in Xcode 6.0 Beta 6](#changed-in-xcode-60-beta-6)
  * [Refinements to nil coalescing operator](#refinements-to-nil-coalescing-operator)
  * [Optionals in Foundation](#optionals-in-foundation)
@@ -405,6 +409,14 @@ Beta 1 has very few developer-facing changes in the standard library:
 * [Xcode release notes](http://ksm.github.io/SwiftInFlux/docs/6.1-beta1.pdf)
 
 ___
+
+## Changed in Xcode 6.0 GM / 6.0.1
+
+Xcode 6 GM had no developer-facing Swift changes compared to Beta 7. The golden master was then officially released as 6.0.1 (not 6.0) with no changes to the Swift compiler
+
+## Changed in Xcode 6.0 Beta 7
+
+_This section needs expanding. [Please contribute.](#contribute)_
 
 ## Changed in Xcode 6.0 Beta 6
 
