@@ -42,6 +42,7 @@ ___
 
 * [Changed in Xcode 6.1 Beta 1](#changed-in-xcode-61-beta-1)
  * [Failable initializers](#failable-initializers)
+ * [Other](#other-changes-in-xcode-61-beta-1)
 
 ___
 
@@ -386,6 +387,22 @@ propagated through the current initializer if the called initializer fails.
 > — Chris Lattner
 
 Source: [Xcode 6.1 Beta 1 release notes](http://ksm.github.io/SwiftInFlux/docs/6.1-beta1.pdf), https://devforums.apple.com/message/1042776#1042776
+
+
+### Other changes in Xcode 6.1 Beta 1
+
+Beta 1 has very few developer-facing changes in the standard library:
+
+* `compare` method on `String` is removed
+* `StaticString`'s `start` was renamed to `utf8String`, there's also a new `withUTF8Buffer` method and `unicodeScalar` property
+* `StrideTo` and `StrideThrough` are now `Reflectable`
+* `AssertString` and `StaticString` are now `Printable` and `DebugPrintable`
+* New `unsafeAddressOf` function that can be used to identify objects
+
+**Further reading**:
+
+* [Airspeed Velocity](http://airspeedvelocity.net/2014/09/10/changes-to-the-swift-standard-library-in-xcode-6-1/)
+* [Xcode release notes](http://ksm.github.io/SwiftInFlux/docs/6.1-beta1.pdf)
 
 ___
 
