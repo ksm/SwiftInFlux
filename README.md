@@ -46,7 +46,7 @@ ___
 
 ___
 
-* [Changed in Xcode 6.0 GM / 6.0.1](#changed-in-xcode60-gm-601)
+* [Changed in Xcode 6.0 GM / 6.0.1](#changed-in-xcode-60-gm--601)
 
 * [Changed in Xcode 6.0 Beta 7](#changed-in-xcode-60-beta-7)
 
