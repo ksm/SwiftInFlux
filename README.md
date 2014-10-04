@@ -34,9 +34,9 @@ Swift InFlux was created by [Karol S. Mazur](https://github.com/ksm) during [Swi
 
 ___
 
-* [Changed in Xcode 6.1 GM](#changed-in-xcode-61-gm)
+* [Changed in Xcode 6.1 Beta 3 / Yosemite GM seed](#changed-in-xcode-61-beta-3--yosemite-gm-seed)
  * [`LiteralConvertible` protocols use constructor](#literalconvertible-protocols-use-constructor)
- * [Other](#other-changes-in-xcode-61-gm)
+ * [Other](#other-changes-in-xcode-61-beta--yosemite-gm-seed)
 
 * [Changed in Xcode 6.1 Beta 2](#changed-in-xcode-61-beta-2)
  * [Failable initializers in Objective-C frameworks](#failable-initializers-in-objective-c-frameworks)
