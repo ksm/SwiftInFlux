@@ -34,6 +34,8 @@ Swift InFlux was created by [Karol S. Mazur](https://github.com/ksm) during [Swi
 
 ___
 
+* [Changed in Xcode 6.1 GM Seed 2](#changed-in-xcode-61-gm-seed-2)
+
 * [Changed in Xcode 6.1 Beta 3 / Yosemite GM seed](#changed-in-xcode-61-beta-3--yosemite-gm-seed)
  * [`LiteralConvertible` protocols use constructor](#literalconvertible-protocols-use-constructor)
  * [Other](#other-changes-in-xcode-61-beta--yosemite-gm-seed)
@@ -313,6 +315,14 @@ Also, the ability to specify default values to enum cases might be added:
 Source: https://devforums.apple.com/message/1027499#1027499, https://devforums.apple.com/message/1029151#1029151
 
 ___
+
+## Changed in Xcode 6.1 GM Seed 2
+
+GM Seed 2 doesn't appear to have any developer-facing changes, but it brings a number of bug fixes to the Swift compiler.
+
+* [Standard library diff](https://github.com/radex/swift_stdlib/commit/6350539ae8f8a3712c214258f26180cfe97d6759)
+* [Fixed compiler crashes](https://github.com/practicalswift/swift-compiler-crashes/commit/768c5bdfa21e01e286022a75e9586f1df8b7012d)
+* [Xcode release notes](http://ksm.github.io/SwiftInFlux/docs/6.1-gm-seed2.pdf)
 
 ## Changed in Xcode 6.1 Beta 3 / Yosemite GM seed
 
