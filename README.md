@@ -328,12 +328,21 @@ GM Seed 2 doesn't appear to have any developer-facing changes, but it brings a n
 
 Beta 3 brought a number of standard library changes and compiler bug fixes, but most importantly, a huge amount of new documentation comments was added to the stdlib header.
 
-Beta 3 was renamed to "GM seed" shortly after release to indicate that the OS X SDK is GM (and you can use it to ship Yosemite apps). It is not the final seed of Xcode 6.1.
-
 * [Standard library diff](https://github.com/radex/swift_stdlib/commit/41b16dcb61fc8dba15ee6385777dc6c2daadcc51.diff)
 * [Fixed compiler crashes](https://github.com/practicalswift/swift-compiler-crashes/commit/c3c374d3ff3c9a6d8864537550529d12d19a4abb)
 * [Xcode release notes](http://ksm.github.io/SwiftInFlux/docs/6.1-beta3.pdf)
 * [Airspeed Velocity](http://airspeedvelocity.net/2014/10/01/changes-to-the-swift-standard-library-in-1-1-beta-3/)
+
+Beta 3 was renamed to "GM seed" shortly after release to indicate that the OS X SDK is GM (and you can use it to ship Yosemite apps). It is not the final seed of Xcode 6.1.
+
+> The nomenclature is admittedly confusing here.  I'd recommend that you ignore the label, and work with a functional description:
+>
+> What you need to know:
+>  - Xcode 6.1b3 has been renamed on the website to GM Seed, to indicate that you can use it to build and submit apps to the Mac App Store, using the Yosemite SDK.
+>  - This beta includes the iOS 8.1 beta SDK, but you cannot submit apps to the iOS app store with this Xcode build.
+>  - Further updates of 6.1 are expected before the "final GM seed" is released on the Mac App Store.
+>
+> — [Chris Lattner](https://devforums.apple.com/message/1052305#1052305)
 
 ### `LiteralConvertible` protocols use constructor
 
