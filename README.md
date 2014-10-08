@@ -24,6 +24,7 @@ Swift InFlux was created by [Karol S. Mazur](https://github.com/ksm) during [Swi
 * [Improvements to optional unwrapping](#improvements-to-optional-unwrapping)
  * [Flow-sensitive optional unwrapping](#flow-sensitive-optional-unwrapping)
 * [Optionals in imported Objective-C frameworks](#optionals-in-imported-objective-c-frameworks)
+* [Optional methods in pure-Swift protocols](#optional-methods-in-pure-swift-protocols)
 * [Overriding declarations from extensions](#overriding-declarations-from-extensions)
 * [Reflection](#reflection)
 * [Static libraries](#static-libraries)
@@ -216,6 +217,14 @@ As of Xcode 6.0.1 and 6.1 GM Seed 2, relatively few APIs have been audited for o
 > — Xcode 6.1 GM Seed 2 release notes
 
 Sources: [Xcode 6.1 GM Seed 2 release notes](http://ksm.github.io/SwiftInFlux/docs/6.1-gm-seed2.pdf)
+
+## Optional methods in pure-Swift protocols
+
+> Optional methods in protocols are limited to @objc protocols only because we haven't implemented them in native protocols yet. This is something we plan to support. We've gotten a number of requests for abstract/pure virtual classes and methods too.
+>
+> — Joe Groff
+
+Source: https://devforums.apple.com/message/1051431#1051431
 
 ### Overriding declarations from extensions
 
