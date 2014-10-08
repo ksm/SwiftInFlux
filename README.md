@@ -326,7 +326,14 @@ GM Seed 2 doesn't appear to have any developer-facing changes, but it brings a n
 
 ## Changed in Xcode 6.1 Beta 3 / GM Seed 1
 
-Beta 3 was renamed to "GM seed" shortly after release to indicate that the OS X SDK is GM. It is not the final seed of Xcode 6.1.
+Beta 3 brought a number of standard library changes and compiler bug fixes, but most importantly, a huge amount of new documentation comments was added to the stdlib header.
+
+Beta 3 was renamed to "GM seed" shortly after release to indicate that the OS X SDK is GM (and you can use it to ship Yosemite apps). It is not the final seed of Xcode 6.1.
+
+* [Standard library diff](https://github.com/radex/swift_stdlib/commit/41b16dcb61fc8dba15ee6385777dc6c2daadcc51.diff)
+* [Fixed compiler crashes](https://github.com/practicalswift/swift-compiler-crashes/commit/c3c374d3ff3c9a6d8864537550529d12d19a4abb)
+* [Xcode release notes](http://ksm.github.io/SwiftInFlux/docs/6.1-beta3.pdf)
+* [Airspeed Velocity](http://airspeedvelocity.net/2014/10/01/changes-to-the-swift-standard-library-in-1-1-beta-3/)
 
 ### `LiteralConvertible` protocols use constructor
 
