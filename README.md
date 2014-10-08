@@ -30,6 +30,7 @@ Swift InFlux was created by [Karol S. Mazur](https://github.com/ksm) during [Swi
 * [Swift 1.1 scope](#swift-11-scope)
 * [`switch` and `if` as expressions](#switch-and-if-as-expressions)
 * [Systems programming features](#systems-programming-features)
+* [Date of the next release](#date-of-the-next-release)
 * [Enumeration case value labels](#enumeration-case-value-labels)
 
 ___
@@ -285,6 +286,17 @@ Source: https://devforums.apple.com/message/1040049#1040049
 > — Chris Lattner
 
 Source: https://devforums.apple.com/message/1007178#1007178
+
+### Date of the next release
+
+It's unclear when the next version of Swift after 1.1 will be released, but it has been hinted that it might occur sooner than next summer:
+
+
+> When there is more to say about the compiler release plan, we'll say it.  However, I'll point out that we have historically updated Clang more than once a year.
+>
+> — Chris Lattner
+
+Source: https://devforums.apple.com/message/1025424#1025424
 
 ### Enumeration case value labels
 
