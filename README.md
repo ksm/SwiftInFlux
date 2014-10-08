@@ -291,12 +291,15 @@ Source: https://devforums.apple.com/message/1007178#1007178
 
 It's unclear when the next version of Swift after 1.1 will be released, but it has been hinted that it might occur sooner than next summer:
 
-
+> (...) We plan to fix most of these in the next major swift update, and though we don't go into details of future releases, you won't have to wait until next summer to get it.
+> 
+> — Chris Lattner
+>
 > When there is more to say about the compiler release plan, we'll say it.  However, I'll point out that we have historically updated Clang more than once a year.
 >
 > — Chris Lattner
 
-Source: https://devforums.apple.com/message/1025424#1025424
+Source: https://devforums.apple.com/message/1052086#1052086 https://devforums.apple.com/message/1025424#1025424
 
 ### Enumeration case value labels
 
