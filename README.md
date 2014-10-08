@@ -36,9 +36,9 @@ ___
 
 * [Changed in Xcode 6.1 GM Seed 2](#changed-in-xcode-61-gm-seed-2)
 
-* [Changed in Xcode 6.1 Beta 3 / Yosemite GM seed](#changed-in-xcode-61-beta-3--yosemite-gm-seed)
+* [Changed in Xcode 6.1 Beta 3 / GM Seed 1](#changed-in-xcode-61-beta-3--gm-seed-1)
  * [`LiteralConvertible` protocols use constructor](#literalconvertible-protocols-use-constructor)
- * [Other](#other-changes-in-xcode-61-beta--yosemite-gm-seed)
+ * [Other](#other-changes-in-xcode-61-beta-3--gm-seed-1)
 
 * [Changed in Xcode 6.1 Beta 2](#changed-in-xcode-61-beta-2)
  * [Failable initializers in Objective-C frameworks](#failable-initializers-in-objective-c-frameworks)
@@ -324,7 +324,7 @@ GM Seed 2 doesn't appear to have any developer-facing changes, but it brings a n
 * [Fixed compiler crashes](https://github.com/practicalswift/swift-compiler-crashes/commit/768c5bdfa21e01e286022a75e9586f1df8b7012d)
 * [Xcode release notes](http://ksm.github.io/SwiftInFlux/docs/6.1-gm-seed2.pdf)
 
-## Changed in Xcode 6.1 Beta 3 / Yosemite GM seed
+## Changed in Xcode 6.1 Beta 3 / GM Seed 1
 
 Beta 3 was renamed to "GM seed" shortly after release to indicate that the OS X SDK is GM. It is not the final seed of Xcode 6.1.
 
@@ -341,7 +341,7 @@ protocol BooleanLiteralConvertible {
 }
 ```
 
-### Other changes in Xcode 6.1 Beta / Yosemite GM seed
+### Other changes in Xcode 6.1 Beta 3 / GM Seed 1
 
 * `Any` can now refer to functions.
 
