@@ -208,13 +208,13 @@ Source: https://devforums.apple.com/message/1005148#1005148
 
 ### Optionals in imported Objective-C frameworks
 
-As of Xcode 6 GM and 6.1 Beta 2, relatively few APIs have been audited for optional conformance. More improvements are expected to come in the future.
+As of Xcode 6.0.1 and 6.1 GM Seed 2, relatively few APIs have been audited for optional conformance. More improvements are expected to come in the future.
 
 > A large number of Foundation, UIKit, CoreData, SceneKit, SpriteKit, Metal APIs have been audited for optional conformance, removing a significant number of implicitly unwrapped optionals from their interfaces. This clarifies the nullability of their properties, arguments and return values of their methods. This is an ongoing effort that started shipping in beta 5.
 >
-> — Xcode 6.1 Beta 2 release notes
+> — Xcode 6.1 GM Seed 2 release notes
 
-Sources: [Xcode 6.1 Beta 2 release notes](http://ksm.github.io/SwiftInFlux/docs/6.1-beta2.pdf)
+Sources: [Xcode 6.1 GM Seed 2 release notes](http://ksm.github.io/SwiftInFlux/docs/6.1-gm-seed2.pdf)
 
 ### Overriding declarations from extensions
 
