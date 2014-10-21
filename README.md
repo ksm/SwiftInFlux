@@ -28,7 +28,6 @@ Swift InFlux was created by [Karol S. Mazur](https://github.com/ksm) during [Swi
 * [Overriding declarations from extensions](#overriding-declarations-from-extensions)
 * [Reflection](#reflection)
 * [Static libraries](#static-libraries)
-* [Swift 1.1 scope](#swift-11-scope)
 * [`switch` and `if` as expressions](#switch-and-if-as-expressions)
 * [Systems programming features](#systems-programming-features)
 * [Date of the next release](#date-of-the-next-release)
@@ -271,16 +270,6 @@ Sources: http://inessential.com/2014/07/13/swift_reflection https://gist.github.
 > — Xcode 6.0 beta 5 release notes
 
 Source: [Xcode 6.0 Beta 5 release notes](http://ksm.github.io/SwiftInFlux/docs/beta5.pdf)
-
-### Swift 1.1 scope
-
-> Swift 1.1 is a small scope release primarily aimed to improve quality, fix bugs, and address a couple of outstanding performance issues.  There are some small "features", and they will roll out in the Xcode release notes.  The first one is support for failable initializers as mentioned in the beta 1 release notes.
-> 
-> To set expectations, this is not a large release in the feature department :-)
-> 
-> -Chris
-
-Source: https://devforums.apple.com/message/1040097#1040097
 
 ### `switch` and `if` as expressions
 
