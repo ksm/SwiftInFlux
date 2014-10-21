@@ -35,7 +35,7 @@ Swift InFlux was created by [Karol S. Mazur](https://github.com/ksm) during [Swi
 
 ___
 
-* [Changed in Xcode 6.1 GM Seed 2](#changed-in-xcode-61-gm-seed-2)
+* [Changed in Xcode 6.1 GM Seed 2 / 6.1](#changed-in-xcode-61-gm-seed-2--61)
 
 * [Changed in Xcode 6.1 Beta 3 / GM Seed 1](#changed-in-xcode-61-beta-3--gm-seed-1)
  * [`LiteralConvertible` protocols use constructor](#literalconvertible-protocols-use-constructor)
@@ -217,7 +217,7 @@ As of Xcode 6.1, relatively few APIs have been audited for optional conformance.
 >
 > — Xcode 6.1 release notes
 
-Sources: [Xcode 6.1 release notes](https://developer.apple.com/library/ios/releasenotes/DeveloperTools/RN-Xcode/Chapters/Introduction.html)
+Sources: [Xcode 6.1 release notes](https://developer.apple.com/library/ios/releasenotes/DeveloperTools/RN-Xcode/Chapters/xc6_release_notes.html#//apple_ref/doc/uid/TP40001051-CH4-SW1)
 
 ## Optional methods in pure-Swift protocols
 
@@ -339,6 +339,8 @@ GM Seed 2 doesn't appear to have any developer-facing changes ([no changes to th
 * [Xcode release notes](http://ksm.github.io/SwiftInFlux/docs/6.1-gm-seed2.pdf)
 
 The final version of Xcode 6.1 doesn't seem to have any changes in Swift compiler or standard library since GM Seed 2, however there have been minor updates to [optional conformance](#optionals-in-imported-objective-c-frameworks) in iOS and OS X SDKs.
+
+* [Xcode release notes](https://developer.apple.com/library/ios/releasenotes/DeveloperTools/RN-Xcode/Chapters/xc6_release_notes.html#//apple_ref/doc/uid/TP40001051-CH4-SW1)
 
 ## Changed in Xcode 6.1 Beta 3 / GM Seed 1
 
