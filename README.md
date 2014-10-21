@@ -210,13 +210,15 @@ Source: https://devforums.apple.com/message/1005148#1005148
 
 ### Optionals in imported Objective-C frameworks
 
-As of Xcode 6.0.1 and 6.1 GM Seed 2, relatively few APIs have been audited for optional conformance. More improvements are expected to come in the future.
+As of Xcode 6.1, relatively few APIs have been audited for optional conformance. There has been considerable progress since Xcode 6.0 betas and more improvements are expected to come in the future.
 
-> A large number of Foundation, UIKit, CoreData, SceneKit, SpriteKit, Metal APIs have been audited for optional conformance, removing a significant number of implicitly unwrapped optionals from their interfaces. This clarifies the nullability of their properties, arguments and return values of their methods. This is an ongoing effort that started shipping in beta 5.
+> A large number of AppKit APIs have been audited for optional conformance in addition to WebKit, Foundation, UIKit, CoreData, SceneKit, SpriteKit, and Metal APIs. As a result, a significant number of implicitly unwrapped optionals have been removed from their interfaces. These changes clarify the nullability of properties, arguments, and return values in the APIs. The audit effort is ongoing.
 >
-> — Xcode 6.1 GM Seed 2 release notes
+> The API changes replace T! with either T? or T depending on whether or not the value can be null, respectively.
+>
+> — Xcode 6.1 release notes
 
-Sources: [Xcode 6.1 GM Seed 2 release notes](http://ksm.github.io/SwiftInFlux/docs/6.1-gm-seed2.pdf)
+Sources: [Xcode 6.1 release notes](https://developer.apple.com/library/ios/releasenotes/DeveloperTools/RN-Xcode/Chapters/Introduction.html)
 
 ## Optional methods in pure-Swift protocols
 
