@@ -331,13 +331,14 @@ Source: https://devforums.apple.com/message/1027499#1027499, https://devforums.a
 
 ___
 
-## Changed in Xcode 6.1 GM Seed 2
+## Changed in Xcode 6.1 GM Seed 2 / 6.1
 
-GM Seed 2 doesn't appear to have any developer-facing changes, but it brings a number of bug fixes to the Swift compiler.
+GM Seed 2 doesn't appear to have any developer-facing changes ([no changes to the standard library](https://github.com/radex/swift_stdlib/commit/6350539ae8f8a3712c214258f26180cfe97d6759#commitcomment-8090096)), but it brings a number of bug fixes to the Swift compiler.
 
-* [Standard library diff](https://github.com/radex/swift_stdlib/commit/6350539ae8f8a3712c214258f26180cfe97d6759)
 * [Fixed compiler crashes](https://github.com/practicalswift/swift-compiler-crashes/commit/768c5bdfa21e01e286022a75e9586f1df8b7012d)
 * [Xcode release notes](http://ksm.github.io/SwiftInFlux/docs/6.1-gm-seed2.pdf)
+
+The final version of Xcode 6.1 doesn't seem to have any changes in Swift compiler or standard library since GM Seed 2, however there have been minor updates to [optional conformance](#optionals-in-imported-objective-c-frameworks) in iOS and OS X SDKs.
 
 ## Changed in Xcode 6.1 Beta 3 / GM Seed 1
 
