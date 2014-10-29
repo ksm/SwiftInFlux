@@ -204,8 +204,12 @@ if exists x {
 > We're definitely aware of the advantages of control-flow sensitive type refinement for optionals (and also for other subtype relationships).  This would be particularly handy in ternary operators, but isn't something on the books for 1.0.  We have several radars requesting that and tracking it for consideration in a future release.
 >
 > — Chris Lattner
+>
+> Flow-sensitive type refinement like this is something that may happen in a future release of Swift
+>
+> — CFM
 
-Source: https://devforums.apple.com/message/1005148#1005148
+Source: https://devforums.apple.com/message/1005148#1005148 https://devforums.apple.com/message/1066436#1066436
 
 ### Optionals in imported Objective-C frameworks
 
