@@ -27,6 +27,7 @@ Swift InFlux was created by [Karol S. Mazur](https://github.com/ksm) during [Swi
 * [Optional methods in pure-Swift protocols](#optional-methods-in-pure-swift-protocols)
 * [Overriding declarations from extensions](#overriding-declarations-from-extensions)
 * [Reflection](#reflection)
+* [Runtime dynamic libraries](#runtime-dynamic-libraries)
 * [Static libraries](#static-libraries)
 * [`switch` and `if` as expressions](#switch-and-if-as-expressions)
 * [Systems programming features](#systems-programming-features)
@@ -266,6 +267,56 @@ Source: https://devforums.apple.com/message/1022374#1022374
 No official word from anyone inside Apple as to whether it's gonna go public before 1.0.
 
 Sources: http://inessential.com/2014/07/13/swift_reflection https://gist.github.com/peebsjs/9288f79322ed3119ece4
+
+### Runtime dynamic libraries
+
+> Products that use Swift need to come with their own copies of the swift
+> runtime. This is currently necessary for a variety of reasons. Xcode directly
+> supports this for the following scenarios:
+> 
+> - When you build an application that uses Swift, Xcode will automatically
+>   embeds the swift runtime dynamic libraries inside the app wrapper in the
+>   Frameworks folder. Application targets should also be automatically
+>   configured with rpath entries that will locate them there.
+> - When you build a command line tool that uses Swift, Xcode will statically
+>   link the swift runtime into the command line tool's binary
+> - When you build other product types (e.g. frameworks or app extensions) that
+>   use Swift, they are set up to expect to find the swift libraries embedded
+>   in the application that they are themselves embedded in
+>
+> — mferris
+
+This is done for several reasons:
+
+> Swift's runtime and libraries are not (yet) included in the operating system,
+> so must be included in each app.
+>
+> — CFM
+>
+> The runtime is bundled with your app in order to prevent incompatible language
+> changes from affecting deployed apps. Changes to the language, runtime
+> implementation, or how frameworks get imported won't affect your
+> already-compiled app — any ABI-level dependencies are between the runtime
+> dylibs in your bundle and the main executable.
+>
+> — Joe Groff
+
+Given this, you will hit issues if your are creating an OS X command line tool
+that uses a framework written in Swift.
+
+> In your case, the swift standard libraries are being statically linked into
+> your command line tool. The problem is that the framework cannot see that, and
+> it expects to find them in an app wrapper that it is inside of. Xcode
+> currently has no direct support for a standalone framework using swift that is
+> not embedded in an application.
+>
+> — mferris
+
+Sources:
+
+- https://devforums.apple.com/message/1038413#1038413
+- https://devforums.apple.com/message/1003269#1003269
+- https://devforums.apple.com/message/1057293#1057293
 
 ### Static libraries
 
