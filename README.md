@@ -16,6 +16,7 @@ Swift InFlux was created by [Karol S. Mazur](https://github.com/ksm) during [Swi
 * [Absence of math.h macros](#absence-of-mathh-macros)
 * [Abstract methods](#abstract-methods)
 * [Access control](#limitations-of-current-access-control-design)
+* [ABI stability](#abi-stability)
 * [Better error handling](#better-error-handling-features-possibly-exceptions)
 * [Class variables](#class-variables)
 * [C++ support](#c-support)
@@ -128,6 +129,31 @@ Swift [added access control](#access-control) in Xcode 6.0 Beta 4, but there are
 At the moment, one workaround is to mark all tested entities as public, another is to move tests to the same target as the application code. However, the former ruins the benefits of access control and the latter — of code modularization.
 
 Sources: https://devforums.apple.com/message/1010766#1010766 [Xcode 6.0 Beta 4 release notes](http://ksm.github.io/SwiftInFlux/docs/beta4.pdf)
+
+### ABI stability
+
+> Swift currently offers no ABI stability for any code and provides no ABI
+> non-fragility for framework authors.
+>
+> — Greg Parker
+>
+> gparker [Greg Parker] is right, and this is important.
+> 
+> Swift 1.0 is not guaranteed to be binary compatible with "swift 2.0" (or
+> whatever). We guarantee that compiled and distributed *apps* and their
+> frameworks are binary compatible with the OS and will continue to work well
+> into the future, but a Swift framework today will not work in the future.
+> 
+> We expect to lock this down, but not by the final release of swift this Fall.
+> This means that all swift code in an app (including frameworks it uses) should
+> be built by the same version of Xcode.
+> 
+> — Chris Lattner
+
+Sources: 
+
+- https://devforums.apple.com/message/986618#986618
+- https://devforums.apple.com/message/989931#989931
 
 ### Better error handling features (possibly exceptions)
 
