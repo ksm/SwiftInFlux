@@ -24,6 +24,7 @@ Swift InFlux was created by [Karol S. Mazur](https://github.com/ksm) during [Swi
 * [Enumerating enum types](#enumerating-enum-types)
 * [Improvements to optional unwrapping](#improvements-to-optional-unwrapping)
  * [Flow-sensitive optional unwrapping](#flow-sensitive-optional-unwrapping)
+* [Open source possibility](#open-source-possibility)
 * [Optionals in imported Objective-C frameworks](#optionals-in-imported-objective-c-frameworks)
 * [Optional methods in pure-Swift protocols](#optional-methods-in-pure-swift-protocols)
 * [Overriding declarations from extensions](#overriding-declarations-from-extensions)
@@ -237,6 +238,32 @@ if exists x {
 > — CFM
 
 Source: https://devforums.apple.com/message/1005148#1005148 https://devforums.apple.com/message/1066436#1066436
+
+### Open source possibility
+
+At this point in time, there is yet to be a decision on whether or not the
+language will be made open source ([LLVM](http://www.llvm.org) front-end, etc.).
+There is a good chance that it will happen however, given that both the
+[Objective-C](http://opensource.apple.com/source/objc4/) runtime (which Swift
+uses) and [Clang](http://clang.llvm.org) are open source. This would probably
+be once Apple has _"completed"_ it (language has stabilized and locked in -
+syntax, ABI, etc.), which would almost certainly be at the very least, Swift 2.0
+or later.
+
+> Guys, feel free to make up your own dragons if you want, but your speculation
+> is just that: speculation.  We literally have not even discussed this yet,
+> because we have a ton of work to do to respond to the huge volume of feedback
+> we're getting, and have to get a huge number of things (e.g. access control!)
+> done before the 1.0 release this fall.  You can imagine that many of us want
+> it to be open source and part of llvm, but the discussion hasn't happened yet,
+> and won't for some time.
+> 
+> Sorry to leave you all hanging, but there is just far too much to deal with
+> right now.
+> 
+> — Chris Lattner
+
+Source: http://lists.cs.uiuc.edu/pipermail/llvmdev/2014-June/073698.html
 
 ### Optionals in imported Objective-C frameworks
 
