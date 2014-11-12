@@ -35,6 +35,7 @@ Swift InFlux was created by [Karol S. Mazur](https://github.com/ksm) during [Swi
 * [Systems programming features](#systems-programming-features)
 * [Date of the next release](#date-of-the-next-release)
 * [Enumeration case value labels](#enumeration-case-value-labels)
+* [First-class `Set` type](#first-class-set-type)
 
 ___
 
@@ -436,6 +437,22 @@ Also, the ability to specify default values to enum cases might be added:
 > — Doug Gregor
 
 Source: https://devforums.apple.com/message/1027499#1027499, https://devforums.apple.com/message/1029151#1029151
+
+### First-class `Set` type
+
+At the moment, there is no built-in collection type with set semantics. This will likely be rectified in a future release
+
+> Right, you have a couple of different short-term solutions here, with different tradeoffs:
+>
+> 1. Just use NSSet: it continues to work great for what it was designed for.  Just remember that it has reference semantics, not value semantics like Array and Dictionary.  It also can't hold values of non-class type.
+> 2. You can use Dictionary<T,()>.  The disadvantage here is that you have to use dictionary-like APIs instead of set-like APIs.
+> 3. You can roll your own or find something online.
+> 
+> Beyond Swift 1.1, we consider this a serious omission and are extremely likely to add a first class Set type (with full bridging for Set <-> NSSet).
+>
+> — Chris Lattner
+
+Sources: https://devforums.apple.com/message/1071191#1071191
 
 ___
 
