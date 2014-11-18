@@ -36,6 +36,7 @@ Swift InFlux was created by [Karol S. Mazur](https://github.com/ksm) during [Swi
 * [Date of the next release](#date-of-the-next-release)
 * [Enumeration case value labels](#enumeration-case-value-labels)
 * [First-class `Set` type](#first-class-set-type)
+* [Dynamic binding of default arguments](#dynamic-binding-of-default-arguments)
 
 ___
 
@@ -453,6 +454,33 @@ At the moment, there is no built-in collection type with set semantics. This wil
 > — Chris Lattner
 
 Sources: https://devforums.apple.com/message/1071191#1071191
+
+### Dynamic binding of default arguments
+
+The value of default arguments is currently determined statically.
+
+```swift
+class Parent {
+    func f(string: String = "I'm a parent") -> String {
+        return string
+    }
+}
+
+class Child: Parent {
+    override func f(string: String = "I'm a child") -> String {
+        return string
+    }
+}
+
+let x: Parent = Child()
+x.f() // "I'm a parent"
+```
+
+> This is a bug—default arguments are intended to be dynamically bound. Please file a radar.
+>
+> — jckarter
+
+Sources: https://devforums.apple.com/message/984772#984772
 
 ___
 
