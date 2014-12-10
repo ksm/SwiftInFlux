@@ -322,7 +322,10 @@ Source: https://devforums.apple.com/message/1022374#1022374
 
 No official word from anyone inside Apple as to whether it's gonna go public before 1.0.
 
-Sources: http://inessential.com/2014/07/13/swift_reflection https://gist.github.com/peebsjs/9288f79322ed3119ece4
+Sources: 
+- http://inessential.com/2014/07/13/swift_reflection 
+- https://gist.github.com/peebsjs/9288f79322ed3119ece4
+- http://freecake.yayuhh.com/simple-reflection-in-swift/
 
 ### Runtime dynamic libraries
 
