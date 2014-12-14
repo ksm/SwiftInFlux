@@ -280,7 +280,7 @@ As of Xcode 6.1, relatively few APIs have been audited for optional conformance.
 
 Sources: [Xcode 6.1 release notes](https://developer.apple.com/library/ios/releasenotes/DeveloperTools/RN-Xcode/Chapters/xc6_release_notes.html#//apple_ref/doc/uid/TP40001051-CH4-SW1)
 
-## Optional methods in pure-Swift protocols
+### Optional methods in pure-Swift protocols
 
 > Optional methods in protocols are limited to @objc protocols only because we haven't implemented them in native protocols yet. This is something we plan to support. We've gotten a number of requests for abstract/pure virtual classes and methods too.
 >
