@@ -28,6 +28,7 @@ Swift InFlux was created by [Karol S. Mazur](https://github.com/ksm) during [Swi
 * [Optionals in imported Objective-C frameworks](#optionals-in-imported-objective-c-frameworks)
 * [Optional methods in pure-Swift protocols](#optional-methods-in-pure-swift-protocols)
 * [Overriding declarations from extensions](#overriding-declarations-from-extensions)
+* [Passing initializers as functions](#passing-initializers-as-functions)
 * [Reflection](#reflection)
 * [Runtime dynamic libraries](#runtime-dynamic-libraries)
 * [Static libraries](#static-libraries)
@@ -312,6 +313,18 @@ class Sub: Base {
 > — Chris Lattner
 
 Source: https://devforums.apple.com/message/1022374#1022374
+
+### Passing initializers as functions
+
+> > [Is there any] specific reason why you can't reference initializers like a function?
+>
+> No particular reason, it's just not implemented.
+>
+> — Joe Groff
+
+Referencing initializers to pass as an argument would be useful for [currying](http://www.objc.io/snippets/6.html).
+
+Source: https://twitter.com/jckarter/status/542032426298392576
 
 ### Reflection
 
