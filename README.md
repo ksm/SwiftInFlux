@@ -316,11 +316,13 @@ Source: https://devforums.apple.com/message/1022374#1022374
 
 ### Reflection
 
+At the moment, Swift has only very limited reflection capabilities. In addition to built-in syntax for checking variable types, there's a `reflect()` function that can tell the names an types of object's properties. It is, however, poorly documented. It's unclear whether or not reflection capabilities will be expanded in future releases.
+
+Further reading: [Simple Reflection in Swift](http://freecake.yayuhh.com/simple-reflection-in-swift/)
+
 > Though it’s not documented in the Swift Standard Library Reference — and is subject to change, and could disappear entirely — Swift has a reflection API.
 >
 > — Brent Simmons
-
-No official word from anyone inside Apple as to whether it's gonna go public before 1.0.
 
 Sources: http://inessential.com/2014/07/13/swift_reflection https://gist.github.com/peebsjs/9288f79322ed3119ece4
 
