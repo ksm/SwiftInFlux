@@ -17,7 +17,6 @@ Swift InFlux was created by [Karol S. Mazur](https://github.com/ksm) during [Swi
 * [Abstract methods](#abstract-methods)
 * [Access control](#limitations-of-current-access-control-design)
 * [ABI stability](#abi-stability)
-* [Allowing more functions to be methods](#allowing-more-functions-to-be-methods)
 * [Better error handling](#better-error-handling-features-possibly-exceptions)
 * [Class variables](#class-variables)
 * [C++ support](#c-support)
@@ -26,6 +25,7 @@ Swift InFlux was created by [Karol S. Mazur](https://github.com/ksm) during [Swi
 * [Enumerating enum types](#enumerating-enum-types)
 * [Improvements to optional unwrapping](#improvements-to-optional-unwrapping)
  * [Flow-sensitive optional unwrapping](#flow-sensitive-optional-unwrapping)
+* [Moving functionality from global functions to methods](#moving-functionality-from-global-functions-to-methods)
 * [Open source possibility](#open-source-possibility)
 * [Optionals in imported Objective-C frameworks](#optionals-in-imported-objective-c-frameworks)
 * [Optional methods in pure-Swift protocols](#optional-methods-in-pure-swift-protocols)
@@ -159,18 +159,6 @@ Sources: https://devforums.apple.com/message/1010766#1010766 [Xcode 6.0 Beta 4 r
 
 Sources: https://devforums.apple.com/message/986618#986618 https://devforums.apple.com/message/989931#989931
 
-### Allowing more functions to be methods
-
-> We'll have to evaluate this in more detail when we have time to explore the design space, but here are some thoughts:
->
-> We'd prefer to build out the language to allow more things to be methods, instead of more things as global functions.  In general, methods are better than global functions because they work better for code completion, and scoped better, and more consistent with other methods.  
-> 
-> We currently have limitations in the type system and implementation that force some things (e.g. countElements and many others) to be global functions instead of methods, but we consider this a deficiency, not a feature.
->
-> — Chris Lattner
-
-Source: https://devforums.apple.com/message/1074064#1074064
-
 ### Better error handling features (possibly exceptions)
 
 >We're aware of the opportunity and also desire better error handling features in Swift, but they didn't make it in time for 1.0.
@@ -267,6 +255,18 @@ if exists x {
 > — CFM
 
 Source: https://devforums.apple.com/message/1005148#1005148 https://devforums.apple.com/message/1066436#1066436
+
+### Moving functionality from global functions to methods
+
+> We'll have to evaluate this in more detail when we have time to explore the design space, but here are some thoughts:
+>
+> We'd prefer to build out the language to allow more things to be methods, instead of more things as global functions.  In general, methods are better than global functions because they work better for code completion, and scoped better, and more consistent with other methods.  
+> 
+> We currently have limitations in the type system and implementation that force some things (e.g. countElements and many others) to be global functions instead of methods, but we consider this a deficiency, not a feature.
+>
+> — Chris Lattner
+
+Source: https://devforums.apple.com/message/1074064#1074064
 
 ### Open source possibility
 
