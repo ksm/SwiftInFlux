@@ -460,11 +460,11 @@ Sources: https://devforums.apple.com/message/1071191#1071191
 
 ___
 
-## Changed in Xcode 6.2 Beta 1
+## Changed in Xcode 6.2 Beta 1 and Beta 2
 
-As of Beta 1, Xcode 6.2 doesn't include any changes to Swift except for [nullability audit](#optionals-in-imported-objective-c-frameworks) of the WatchKit framework.
+As of Beta 2, Xcode 6.2 doesn't include any changes to Swift except for [nullability audit](#optionals-in-imported-objective-c-frameworks) of the WatchKit framework.
 
-Source: https://devforums.apple.com/message/1074584#1074584
+Source: https://devforums.apple.com/message/1074584#1074584 https://devforums.apple.com/message/1082641#1082641
 
 ## Changed in Xcode 6.1 GM Seed 2 / 6.1
 
