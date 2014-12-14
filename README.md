@@ -34,7 +34,6 @@ Swift InFlux was created by [Karol S. Mazur](https://github.com/ksm) during [Swi
 * [`switch` and `if` as expressions](#switch-and-if-as-expressions)
 * [Systems programming features](#systems-programming-features)
 * [Date of the next release](#date-of-the-next-release)
-* [Enumeration case value labels](#enumeration-case-value-labels)
 * [First-class `Set` type](#first-class-set-type)
 
 ___
@@ -413,34 +412,6 @@ It's unclear when the next version of Swift after 1.1 will be released, but it h
 > — Chris Lattner
 
 Source: https://devforums.apple.com/message/1052086#1052086 https://devforums.apple.com/message/1025424#1025424
-
-### Enumeration case value labels
-
-Xcode 6.0 Beta 6 [removed the ability](#other-changes-in-xcode-60-beta-6) to label the value of a 1-tuple. Because the associated values of enumeration cases act like a tuple, the following code is now illegal:
-
-```swift
-enum SomeEnum {
-  case SomeCase(label: SomeValue)
-}
-```
-
-Confusingly, it's valid to label the associated values if there's more than one. This will be fixed:
-
-> We've found that single-element labeled tuples caused more confusion than they provided benefits, because one sometimes expects that they be equivalent to (or convertible to) the value of their single element type, and other times is surprised by the inter-convertibility between the single element type and a single-element labeled tuple.
->
-> As for the enumeration case that started this thread, we're going to bring back support for the label in the single-element case. The user view of the enumeration case is generally function-like, because one calls them like functions, which favors the use of labels.
->
-> — Doug Gregor
-
-Also, the ability to specify default values to enum cases might be added:
-
-> > And what about default parameter values for those enums?
->
-> That would be a reasonable extension that follows from considering enum cases to be function-like.
->
-> — Doug Gregor
-
-Source: https://devforums.apple.com/message/1027499#1027499, https://devforums.apple.com/message/1029151#1029151
 
 ### First-class `Set` type
 
