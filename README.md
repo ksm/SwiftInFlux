@@ -464,7 +464,22 @@ ___
 
 As of Beta 2, Xcode 6.2 doesn't include any changes to Swift except for [nullability audit](#optionals-in-imported-objective-c-frameworks) of the WatchKit framework.
 
-Source: https://devforums.apple.com/message/1074584#1074584 https://devforums.apple.com/message/1082641#1082641
+Sources: https://devforums.apple.com/message/1074584#1074584 https://devforums.apple.com/message/1082641#1082641
+
+## Changed in Xcode 6.1.1
+
+Xcode 6.1.1 was a maintenance release with only minor improvements and bug fixes to Swift, including:
+
+* Passing class objects for pure Swift class to `AnyObject` values no longer causes a crash
+* Class methods and initializers that satisfy protocol requirements now properly invoke subclass overrides when called in generic contexts
+* Some causes of SourceKit crashes have been fixed
+* Minor changes to [nullability](#optionals-in-imported-objective-c-frameworks) in Objective-C frameworks.
+
+There have been [no changes to the standard library header](https://github.com/radex/swift_stdlib/commit/aa038f863d2ec866c7452ecbf68a4f71f5894eca) and [no significant compiler crash fixes](https://github.com/practicalswift/swift-compiler-crashes/commit/404c6243194383c09585ee64ad2ae2d940c37459).
+
+There have been [no significant differences](https://devforums.apple.com/message/1079865#1079865) between the 6.1.1 GM seed and the final version.
+
+Source: [Xcode 6.1.1 Release Notes](https://developer.apple.com/library/ios/releasenotes/DeveloperTools/RN-Xcode/Chapters/Introduction.html#//apple_ref/doc/uid/TP40001051)
 
 ## Changed in Xcode 6.1 GM Seed 2 / 6.1
 
