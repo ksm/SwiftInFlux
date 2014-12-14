@@ -21,6 +21,7 @@ Swift InFlux was created by [Karol S. Mazur](https://github.com/ksm) during [Swi
 * [Class variables](#class-variables)
 * [C++ support](#c-support)
 * [C union support](#c-union-support)
+* [Dynamic dispatch of operators](#dynamic-dispatch-of-operators)
 * [Enumerating enum types](#enumerating-enum-types)
 * [Improvements to optional unwrapping](#improvements-to-optional-unwrapping)
  * [Flow-sensitive optional unwrapping](#flow-sensitive-optional-unwrapping)
@@ -201,6 +202,21 @@ Source: https://devforums.apple.com/thread/228324?start=50&tstart=0
 > — Joe Groff
 
 Source: https://devforums.apple.com/message/1002630#1002630
+
+### Dynamic dispatch of operators
+
+> FWIW, we're not happy with this either.  Among other things, we've seen confusion where people define something like:
+>
+     func ==(lhs : MyBaseClass, rhs : MyBaseClass) {...}
+     func ==(lhs : MyDerivedClass, rhs : MyDerivedClass) {...}
+>
+> ... and are surprised when they don't get dynamic dispatch.
+>  
+> We have not had a chance to fully revisit this, but it is very likely that we'll allow operators to be defined inside of types (i.e. as methods) as well as at global scope (necessary for mixed type operators).  When defined as a non-final member of a class, these operators would be dynamically dispatched just like any other method.
+>
+> — Chris Lattner
+
+Source: https://devforums.apple.com/message/1074064#1074064
 
 ### Enumerating enum types
 
