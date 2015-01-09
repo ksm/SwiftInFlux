@@ -25,6 +25,7 @@ Swift InFlux was created by [Karol S. Mazur](https://github.com/ksm) during [Swi
 * [Enumerating enum types](#enumerating-enum-types)
 * [Improvements to optional unwrapping](#improvements-to-optional-unwrapping)
  * [Flow-sensitive optional unwrapping](#flow-sensitive-optional-unwrapping)
+* [Incremental builds](#incremental-builds) 
 * [Moving functionality from global functions to methods](#moving-functionality-from-global-functions-to-methods)
 * [Open source possibility](#open-source-possibility)
 * [Optionals in imported Objective-C frameworks](#optionals-in-imported-objective-c-frameworks)
@@ -255,6 +256,16 @@ if exists x {
 > — CFM
 
 Source: https://devforums.apple.com/message/1005148#1005148 https://devforums.apple.com/message/1066436#1066436
+
+### Incremental builds
+
+> We are aware of this problem (lack of incremental builds), and consider it one of the highest priority things to fix.  We can't comment on future releases, but this is understood to be a serious problem for swift adoption and we are taking it seriously.
+>
+> — Chris Lattner
+
+At the moment, making even the smallest change in a Swift project requires all source files to be recompiled, which makes the compiler seem very sluggish.
+
+Source: https://devforums.apple.com/message/1090468#1090468
 
 ### Moving functionality from global functions to methods
 
