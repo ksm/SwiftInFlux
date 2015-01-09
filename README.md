@@ -44,6 +44,8 @@ ___
 
 * [Changed in Xcode 6.2 Beta 1](#changed-in-xcode-62-beta-1)
 
+* [Changed in Xcode 6.1.1](#changed-in-xcode-611)
+
 * [Changed in Xcode 6.1 GM Seed 2 / 6.1](#changed-in-xcode-61-gm-seed-2--61)
 
 * [Changed in Xcode 6.1 Beta 3 / GM Seed 1](#changed-in-xcode-61-beta-3--gm-seed-1)
