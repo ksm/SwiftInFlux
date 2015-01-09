@@ -42,7 +42,7 @@ Swift InFlux was created by [Karol S. Mazur](https://github.com/ksm) during [Swi
 
 ___
 
-* [Changed in Xcode 6.2 Beta 1](#changed-in-xcode-62-beta-1)
+* [Changed in Xcode 6.2 Beta 1, 2, and 3](#changed-in-xcode-62-beta-1-2-and-3)
 
 * [Changed in Xcode 6.1.1](#changed-in-xcode-611)
 
@@ -483,7 +483,7 @@ Sources: https://devforums.apple.com/message/1071191#1071191
 
 ___
 
-## Changed in Xcode 6.2 Beta 1, 2 and 3
+## Changed in Xcode 6.2 Beta 1, 2, and 3
 
 As of Beta 3, Xcode 6.2 doesn't include any changes to Swift except for [nullability audit](#optionals-in-imported-objective-c-frameworks) of the WatchKit framework.
 
