@@ -432,8 +432,12 @@ Sources:
 > Xcode does not support building static libraries that include Swift code.
 >
 > — Xcode 6.0 beta 5 release notes
+>
+> The current runtime doesn't ship with the OS, so static libs would lead to multiple runtimes in the final executable. A statically linked runtime would be much more difficult to patch for compatibility with newer OS or Swift.
+>
+> — Joe Groff
 
-Source: [Xcode 6.0 Beta 5 release notes](http://ksm.github.io/SwiftInFlux/docs/beta5.pdf)
+Sources: [Xcode 6.0 Beta 5 release notes](http://ksm.github.io/SwiftInFlux/docs/beta5.pdf) https://twitter.com/jckarter/status/555061575623507969
 
 ### `switch` and `if` as expressions
 
