@@ -491,7 +491,11 @@ ___
 
 As of Beta 4, Xcode 6.2 doesn't include any significant changes to Swift except for [nullability audit](#optionals-in-imported-objective-c-frameworks) of the WatchKit framework.
 
-Sources: https://devforums.apple.com/message/1074584#1074584 https://devforums.apple.com/message/1082641#1082641
+> Yeah, 6.2's (almost) all about WatchKit.
+>
+> — Joe Groff
+
+Sources: https://devforums.apple.com/message/1074584#1074584 https://devforums.apple.com/message/1082641#1082641 https://twitter.com/jckarter/status/555059438944387072
 
 ## Changed in Xcode 6.1.1
 
