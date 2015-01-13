@@ -42,7 +42,7 @@ Swift InFlux was created by [Karol S. Mazur](https://github.com/ksm) during [Swi
 
 ___
 
-* [Changed in Xcode 6.2 Beta 14](#changed-in-xcode-62-beta-1-4)
+* [Changed in Xcode 6.2 Beta 1—4](#changed-in-xcode-62-beta-14)
 
 * [Changed in Xcode 6.1.1](#changed-in-xcode-611)
 
