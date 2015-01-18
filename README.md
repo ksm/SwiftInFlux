@@ -469,7 +469,13 @@ It's unclear when the next version of Swift after 1.1 will be released, but it h
 >
 > — Chris Lattner
 
-Source: https://devforums.apple.com/message/1052086#1052086 https://devforums.apple.com/message/1025424#1025424
+Having said that, it's unlikely that we'll see any significant changes or improvements to Swift in Xcode 6.2:
+
+> Yeah, 6.2's (almost) all about WatchKit.
+>
+> — Joe Groff
+
+Source: https://devforums.apple.com/message/1052086#1052086 https://devforums.apple.com/message/1025424#1025424 https://twitter.com/jckarter/status/555059438944387072
 
 ### First-class `Set` type
 
