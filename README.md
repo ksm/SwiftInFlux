@@ -343,6 +343,8 @@ class Sub: Base {
 }
 ```
 
+Note: it is possible to override entities from extensions [if they are marked as `@objc`](http://stackoverflow.com/a/27109202/195691), but it's likely to be an accidental side-effect of Objective-C runtime implementation and it might break in the future.
+
 > Declarations from extensions cannot be overriden yet.
 >
 > — Swift compiler error
