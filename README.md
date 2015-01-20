@@ -278,8 +278,12 @@ Source: https://devforums.apple.com/message/1090468#1090468
 > We currently have limitations in the type system and implementation that force some things (e.g. countElements and many others) to be global functions instead of methods, but we consider this a deficiency, not a feature.
 >
 > — Chris Lattner
+>
+> The prevalence of generic free functions is more about current language limitations than an intentional stylistic direction
+>
+> — CFM
 
-Source: https://devforums.apple.com/message/1074064#1074064
+Source: https://devforums.apple.com/message/1074064#1074064  https://devforums.apple.com/message/1094312#1094312
 
 ### Open source possibility
 
