@@ -23,6 +23,7 @@ Swift InFlux was created by [Karol S. Mazur](https://github.com/ksm) during [Swi
 * [C union support](#c-union-support)
 * [Dynamic dispatch of operators](#dynamic-dispatch-of-operators)
 * [Enumerating enum types](#enumerating-enum-types)
+* [Generic subscripts](#generic-subscripts)
 * [Improvements to optional unwrapping](#improvements-to-optional-unwrapping)
  * [Flow-sensitive optional unwrapping](#flow-sensitive-optional-unwrapping)
 * [Incremental builds](#incremental-builds) 
@@ -228,6 +229,16 @@ Source: https://devforums.apple.com/message/1074064#1074064
 > — Chris Lattner
 
 Source: https://devforums.apple.com/message/1003674#1003674
+
+### Generic subscripts
+
+> Lack of generic subscripts is a known limitation.  We'll look at improving this at some point when it bubbles up in the priority list.
+> 
+> — Chris Lattner
+
+Currently, generic subscripts are allowed only for generic types (e.g. `Array`, `Dictionary`).
+
+Source: https://devforums.apple.com/message/1100335#1100335
 
 ### Improvements to optional unwrapping
 
