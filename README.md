@@ -43,6 +43,10 @@ Swift InFlux was created by [Karol S. Mazur](https://github.com/ksm) during [Swi
 
 ___
 
+* [Changed in Xcode 6.3 Beta 1](#changed-in-xcode-63-beta-1)
+
+___
+
 * [Changed in Xcode 6.2 Beta 1—4](#changed-in-xcode-62-beta-14)
 
 * [Changed in Xcode 6.1.1](#changed-in-xcode-611)
@@ -507,6 +511,16 @@ At the moment, there is no built-in collection type with set semantics. This wil
 > — Chris Lattner
 
 Sources: https://devforums.apple.com/message/1071191#1071191
+
+___
+
+## Changed in Xcode 6.3 Beta 1
+
+Xcode 6.3 brings a large number of changes, bug fixes and new features to Swift, which is now version 1.2.
+
+More information:
+* [Post on official Swift Blog](https://developer.apple.com/swift/blog/?id=22)
+* [Xcode 6.3 Beta 1 Release Notes](http://ksm.github.io/SwiftInFlux/docs/6.3-beta1.pdf)
 
 ___
 
