@@ -585,6 +585,24 @@ use(x)
 
 In previous versions this would require using `var`, even though no mutation is taking place.
 
+### Importing Swift enums into Objective-C
+
+Simple enums (not using generics or associated values) can now be exported to Objective-C by marking them as `@objc` and setting `Int` as the raw value. For instance:
+
+```swift
+@objc enum Bear: Int {
+    case Black, Grizzly, Polar
+}
+```
+
+imports into Objective-C as:
+
+```objc
+typedef NS_ENUM(NSInteger, Bear) {
+    BearBlack, BearGrizzly, BearPolar
+};
+```
+
 ___
 
 ## Changed in Xcode 6.2 Beta 1—4
