@@ -522,6 +522,15 @@ More information:
 * [Post on official Swift Blog](https://developer.apple.com/swift/blog/?id=22)
 * [Xcode 6.3 Beta 1 Release Notes](http://ksm.github.io/SwiftInFlux/docs/6.3-beta1.pdf)
 
+### Compiler improvements
+
+According to the Swift team, the compiler got a lot of under-the-hood improvements, which give us:
+
+* **Incremental builds** — files that haven't changed won't have to be recompiled every time, speeding up the process
+* **Faster executables** — Swift binary code is now better optimized, both in Release and Debug modes.
+* **Better diagnostics** — Clearer warning and error messages, as well as new fix-its
+* **Stability improvements** — less compilation and SourceKit crashes
+
 ___
 
 ## Changed in Xcode 6.2 Beta 1—4
