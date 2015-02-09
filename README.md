@@ -531,6 +531,32 @@ According to the Swift team, the compiler got a lot of under-the-hood improvemen
 * **Better diagnostics** — Clearer warning and error messages, as well as new fix-its
 * **Stability improvements** — less compilation and SourceKit crashes
 
+### Nullability annotations in Objective-C
+
+You can now mark method and function parameters, return types, properties and variables in Objective-C as non-nullable (imported to Swift as `T`) or nullable (imported as `T?`). In Objective-C declarations, you can use new `nonnull` and `nullable` qualifiers before the type, for example:
+
+```objc
+-(nullable UITableViewCell *)cellForRowAtIndexPath:(nonnull NSIndexPath)indexPath;
+```
+
+Same keywords can be used with Objective-C property configuration:
+
+```objc
+@property (nonatomic, readwrite, retain, nullable) UIView *backgroundView;
+```
+
+Arbitrary C pointers, block pointers and C++ member pointers can be marked using `__nonnull` and `__nullable`, like so:
+
+```c
+void enumerateStrings(__nonnull CFStringRef (^ __nullable callback)(void));
+```
+
+This will be imported as:
+
+```swift
+func enumerateStrings(callback: (() -> CFString)?)
+```
+
 ___
 
 ## Changed in Xcode 6.2 Beta 1—4
