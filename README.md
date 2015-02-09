@@ -44,6 +44,11 @@ Swift InFlux was created by [Karol S. Mazur](https://github.com/ksm) during [Swi
 ___
 
 * [Changed in Xcode 6.3 Beta 1](#changed-in-xcode-63-beta-1)
+  * [Compiler improvements](#compiler-improvements)
+  * [Nullability annotations in Objective-C](#nullability-annotations-in-objective-c)
+  * [Enhancements to `if let`](#enhancements-to-if-let)
+  * [Constants no longer require immediate initialization](#constants-no-longer-require-immediate-initialization)
+  * [Importing Swift enums into Objective-C](#importing-swift-enums-into-objective-c)
 
 ___
 
