@@ -567,6 +567,23 @@ if let a = foo(), b = bar() where a < b,
 }
 ```
 
+### Constants no longer require immediate initialization
+
+In Xcode 6.2 and before, constants defined using `let` had to be immediately assigned a value. The new rule is that a constant must be initialized before use (and, of course, it must not be reassigned or mutated later).
+
+This allows patterns like:
+
+```swift
+let x: SomeThing
+if condition {
+    x = foo()
+} else {
+    x = bar()
+}
+use(x)
+```
+
+In previous versions this would require using `var`, even though no mutation is taking place.
 
 ___
 
