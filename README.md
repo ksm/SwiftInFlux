@@ -557,6 +557,17 @@ This will be imported as:
 func enumerateStrings(callback: (() -> CFString)?)
 ```
 
+### Enhancements to `if let`
+
+The `if let` construct can now be used to optionally unwrap multiple optionals at once. You can also add a guarding condition with `where`:
+
+```swift
+if let a = foo(), b = bar() where a < b,
+    let c = baz() {
+}
+```
+
+
 ___
 
 ## Changed in Xcode 6.2 Beta 1—4
