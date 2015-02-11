@@ -20,13 +20,11 @@ Swift InFlux was created by [Karol S. Mazur](https://github.com/ksm) during [Swi
 * [Better error handling](#better-error-handling-features-possibly-exceptions)
 * [Class variables](#class-variables)
 * [C++ support](#c-support)
-* [C union support](#c-union-support)
 * [Dynamic dispatch of operators](#dynamic-dispatch-of-operators)
 * [Enumerating enum types](#enumerating-enum-types)
 * [Generic subscripts](#generic-subscripts)
 * [Improvements to optional unwrapping](#improvements-to-optional-unwrapping)
  * [Flow-sensitive optional unwrapping](#flow-sensitive-optional-unwrapping)
-* [Incremental builds](#incremental-builds) 
 * [Moving functionality from global functions to methods](#moving-functionality-from-global-functions-to-methods)
 * [Open source possibility](#open-source-possibility)
 * [Optionals in imported Objective-C frameworks](#optionals-in-imported-objective-c-frameworks)
@@ -38,8 +36,6 @@ Swift InFlux was created by [Karol S. Mazur](https://github.com/ksm) during [Swi
 * [Static libraries](#static-libraries)
 * [`switch` and `if` as expressions](#switch-and-if-as-expressions)
 * [Systems programming features](#systems-programming-features)
-* [Date of the next release](#date-of-the-next-release)
-* [First-class `Set` type](#first-class-set-type)
 
 ___
 
@@ -206,14 +202,6 @@ Sources: https://devforums.apple.com/message/1022374#1022374 https://devforums.a
 
 Source: https://devforums.apple.com/thread/228324?start=50&tstart=0
 
-### C union support
-
-> We'll have at least partial support for importing unions in a future seed.
->
-> — Joe Groff
-
-Source: https://devforums.apple.com/message/1002630#1002630
-
 ### Dynamic dispatch of operators
 
 > FWIW, we're not happy with this either.  Among other things, we've seen confusion where people define something like:
@@ -251,6 +239,8 @@ Source: https://devforums.apple.com/message/1100335#1100335
 
 ### Improvements to optional unwrapping
 
+Xcode 6.3 [brings new syntax](#enhancements-to-if-let) for multiple optional unwrapping and guard conditions, however we might see more improvements down the line.
+
 > There are a variety of improvements to optional unwrapping that we're tracking for consideration in future releases, including allowing "&&" with "if let", allowing something like "if not let" as you describe, and many others.  I expect the situation to improve when time permits.
 >
 > — Chris Lattner
@@ -278,16 +268,6 @@ if exists x {
 > — CFM
 
 Source: https://devforums.apple.com/message/1005148#1005148 https://devforums.apple.com/message/1066436#1066436
-
-### Incremental builds
-
-> We are aware of this problem (lack of incremental builds), and consider it one of the highest priority things to fix.  We can't comment on future releases, but this is understood to be a serious problem for swift adoption and we are taking it seriously.
->
-> — Chris Lattner
-
-At the moment, making even the smallest change in a Swift project requires all source files to be recompiled, which makes the compiler seem very sluggish.
-
-Source: https://devforums.apple.com/message/1090468#1090468
 
 ### Moving functionality from global functions to methods
 
@@ -333,7 +313,9 @@ Source: http://lists.cs.uiuc.edu/pipermail/llvmdev/2014-June/073698.html
 
 ### Optionals in imported Objective-C frameworks
 
-As of Xcode 6.1, relatively few APIs have been audited for optional conformance. There has been considerable progress since Xcode 6.0 betas and more improvements are expected to come in the future.
+As of Xcode 6.3, relatively few APIs have been audited for optional conformance. There has been considerable progress since early Xcode 6 betas and more improvements are expected to come in the future.
+
+Since Xcode 6.3, it is possible for users to [annotate nullability](#nullability-annotations-in-objective-c) (optionality) of Objective-C APIs.
 
 > A large number of AppKit APIs have been audited for optional conformance in addition to WebKit, Foundation, UIKit, CoreData, SceneKit, SpriteKit, and Metal APIs. As a result, a significant number of implicitly unwrapped optionals have been removed from their interfaces. These changes clarify the nullability of properties, arguments, and return values in the APIs. The audit effort is ongoing.
 >
@@ -480,42 +462,6 @@ Source: https://devforums.apple.com/message/1040049#1040049
 > — Chris Lattner
 
 Source: https://devforums.apple.com/message/1007178#1007178
-
-### Date of the next release
-
-It's unclear when the next version of Swift after 1.1 will be released, but it has been hinted that it might occur sooner than next summer:
-
-> (...) We plan to fix most of these in the next major swift update, and though we don't go into details of future releases, you won't have to wait until next summer to get it.
-> 
-> — Chris Lattner
->
-> When there is more to say about the compiler release plan, we'll say it.  However, I'll point out that we have historically updated Clang more than once a year.
->
-> — Chris Lattner
-
-Having said that, it's unlikely that we'll see any significant changes or improvements to Swift in Xcode 6.2:
-
-> Yeah, 6.2's (almost) all about WatchKit.
->
-> — Joe Groff
-
-Source: https://devforums.apple.com/message/1052086#1052086 https://devforums.apple.com/message/1025424#1025424 https://twitter.com/jckarter/status/555059438944387072
-
-### First-class `Set` type
-
-At the moment, there is no built-in collection type with set semantics. This will likely be rectified in a future release
-
-> Right, you have a couple of different short-term solutions here, with different tradeoffs:
->
-> 1. Just use NSSet: it continues to work great for what it was designed for.  Just remember that it has reference semantics, not value semantics like Array and Dictionary.  It also can't hold values of non-class type.
-> 2. You can use Dictionary<T,()>.  The disadvantage here is that you have to use dictionary-like APIs instead of set-like APIs.
-> 3. You can roll your own or find something online.
-> 
-> Beyond Swift 1.1, we consider this a serious omission and are extremely likely to add a first class Set type (with full bridging for Set <-> NSSet).
->
-> — Chris Lattner
-
-Sources: https://devforums.apple.com/message/1071191#1071191
 
 ___
 
