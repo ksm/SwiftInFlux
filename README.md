@@ -525,7 +525,10 @@ Xcode 6.3 brings a large number of changes, bug fixes and new features to Swift,
 
 More information:
 * [Post on official Swift Blog](https://developer.apple.com/swift/blog/?id=22)
-* [Xcode 6.3 Beta 1 Release Notes](http://ksm.github.io/SwiftInFlux/docs/6.3-beta1.pdf)
+* [Xcode Release Notes](http://ksm.github.io/SwiftInFlux/docs/6.3-beta1.pdf)
+* [Standard library header diff](https://github.com/radex/swift_stdlib/commit/1014c4b251019eabe0056a3d8e90818a9a1b20c3.patch)
+* [Changes to Swift Standard Library](http://airspeedvelocity.net/2015/02/11/changes-to-the-swift-standard-library-in-1-2-beta-1/) on Airspeed Velocity
+* [SwiftDoc.org post](http://swiftdoc.org/news/2015/02/swift1.2/)
 
 ### Compiler improvements
 
