@@ -475,6 +475,7 @@ More information:
 * [Standard library header diff](https://github.com/radex/swift_stdlib/commit/1014c4b251019eabe0056a3d8e90818a9a1b20c3.patch)
 * [Changes to Swift Standard Library](http://airspeedvelocity.net/2015/02/11/changes-to-the-swift-standard-library-in-1-2-beta-1/) on Airspeed Velocity
 * [SwiftDoc.org post](http://swiftdoc.org/news/2015/02/swift1.2/)
+* [Fixed Swift compiler crashes](https://github.com/practicalswift/swift-compiler-crashes/commit/f6da30450923afbc313fbcac16a5367c3f88aec3)
 
 ### Compiler improvements
 
@@ -483,7 +484,8 @@ According to the Swift team, the compiler got a lot of under-the-hood improvemen
 * **Incremental builds** — files that haven't changed won't have to be recompiled every time, speeding up the process
 * **Faster executables** — Swift binary code is now better optimized, both in Release and Debug modes.
 * **Better diagnostics** — Clearer warning and error messages, as well as new fix-its
-* **Stability improvements** — less compilation and SourceKit crashes
+* **Stability improvements** — less compilation and SourceKit crashes. 
+ - according to swift-compiler-crashes, 83% of crashing bugs (4200 crashes) [have been fixed](https://github.com/practicalswift/swift-compiler-crashes/commit/f6da30450923afbc313fbcac16a5367c3f88aec3) in this beta
 
 ### Nullability annotations in Objective-C
 
