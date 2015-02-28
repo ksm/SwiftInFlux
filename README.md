@@ -45,6 +45,7 @@ ___
   * [Enhancements to `if let`](#enhancements-to-if-let)
   * [Constants no longer require immediate initialization](#constants-no-longer-require-immediate-initialization)
   * [Importing Swift enums into Objective-C](#importing-swift-enums-into-objective-c)
+  * [First-class `Set` type](#first-class-set-type)
 
 ___
 
