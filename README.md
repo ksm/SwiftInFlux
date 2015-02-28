@@ -559,6 +559,10 @@ typedef NS_ENUM(NSInteger, Bear) {
 };
 ```
 
+### First-class `Set` type
+
+The Swift standard library now includes a fully generic `Set` type that bridges to `NSSet` and has value semantics.
+
 ___
 
 ## Changed in Xcode 6.2 Beta 1—4
