@@ -23,8 +23,7 @@ Swift InFlux was created by [Karol S. Mazur](https://github.com/ksm) during [Swi
 * [Dynamic dispatch of operators](#dynamic-dispatch-of-operators)
 * [Enumerating enum types](#enumerating-enum-types)
 * [Generic subscripts](#generic-subscripts)
-* [Improvements to optional unwrapping](#improvements-to-optional-unwrapping)
- * [Flow-sensitive optional unwrapping](#flow-sensitive-optional-unwrapping)
+* [Flow-sensitive optional unwrapping](#flow-sensitive-optional-unwrapping)
 * [Moving functionality from global functions to methods](#moving-functionality-from-global-functions-to-methods)
 * [Open source possibility](#open-source-possibility)
 * [Optionals in imported Objective-C frameworks](#optionals-in-imported-objective-c-frameworks)
@@ -42,6 +41,7 @@ ___
 * [Changed in Xcode 6.3 Beta 3](#changed-in-xcode-63-beta-3)
 
 * [Changed in Xcode 6.3 Beta 2](#changed-in-xcode-63-beta-2)
+  * [Further enhancements to `if let`](#further-enhancements-to-if-let)
 
 * [Changed in Xcode 6.3 Beta 1](#changed-in-xcode-63-beta-1)
   * [Compiler improvements](#compiler-improvements)
@@ -242,17 +242,7 @@ Currently, generic subscripts are allowed only for generic types (e.g. `Array`, 
 
 Source: https://devforums.apple.com/message/1100335#1100335
 
-### Improvements to optional unwrapping
-
-Xcode 6.3 [brings new syntax](#enhancements-to-if-let) for multiple optional unwrapping and guard conditions, however we might see more improvements down the line.
-
-> There are a variety of improvements to optional unwrapping that we're tracking for consideration in future releases, including allowing "&&" with "if let", allowing something like "if not let" as you describe, and many others.  I expect the situation to improve when time permits.
->
-> — Chris Lattner
-
-Source: https://devforums.apple.com/message/1042776#1042776
-
-#### Flow-sensitive optional unwrapping
+### Flow-sensitive optional unwrapping
 
 It has been suggested that optional types could be implicitly unwrapped in the context of an if-statement checking if an optional has a value, for example:
 
@@ -482,6 +472,16 @@ ___
 * [Playgrounds improvements on the official Swift blog](https://developer.apple.com/swift/blog/?id=24)
 * [Swiftlib changes post on Airspeed Velocity](http://airspeedvelocity.net/2015/03/13/changes-to-the-swift-standard-library-in-1-2-betas-2-and-3/)
 * [Standard library header diff](https://github.com/radex/swift_stdlib/commit/306c91a82982580cea56b2b86d26ee2671125390)
+
+### Further enhancements to `if let`
+
+Following the changes in [Beta 1](#enhancements-to-if-let), the `if let` syntax has been extended to allow a boolean condition preceding a `let` clause. For example:
+
+```swift
+if loggingEnabled, let samples = getLogSamples() where samples.count > 10 {
+    sendLogSamples(samples)
+}
+```
 
 ## Changed in Xcode 6.3 Beta 1
 
