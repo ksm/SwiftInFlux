@@ -465,6 +465,7 @@ ___
 * [Xcode Release Notes](http://ksm.github.io/SwiftInFlux/docs/6.3-beta3.pdf)
 * [SwiftDoc.org post](http://swiftdoc.org/news/2015/03/updated-for-swift-1.2b3/)
 * [Swiftlib changes post on Airspeed Velocity](http://airspeedvelocity.net/2015/03/13/changes-to-the-swift-standard-library-in-1-2-betas-2-and-3/)
+* [Standard library header diff](https://github.com/radex/swift_stdlib/commit/71e6f580528ee2d7a099e9b9bbed87775560ca5b)
 
 ## Changed in Xcode 6.3 Beta 2
 
