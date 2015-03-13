@@ -49,7 +49,7 @@ ___
 
 ___
 
-* [Changed in Xcode 6.2 Beta 1—4](#changed-in-xcode-62-beta-14)
+* [Changed in Xcode 6.2](#changed-in-xcode-62)
 
 * [Changed in Xcode 6.1.1](#changed-in-xcode-611)
 
@@ -566,9 +566,9 @@ The Swift standard library now includes a fully generic `Set` type that bridges 
 
 ___
 
-## Changed in Xcode 6.2 Beta 1—4
+## Changed in Xcode 6.2
 
-As of Beta 4, Xcode 6.2 doesn't include any significant changes to Swift except for [nullability audit](#optionals-in-imported-objective-c-frameworks) of the WatchKit framework.
+Xcode 6.2 doesn't include any significant changes to Swift except for [nullability audit](#optionals-in-imported-objective-c-frameworks) of the WatchKit framework.
 
 > Yeah, 6.2's (almost) all about WatchKit.
 >
