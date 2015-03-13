@@ -39,6 +39,10 @@ Swift InFlux was created by [Karol S. Mazur](https://github.com/ksm) during [Swi
 
 ___
 
+* [Changed in Xcode 6.3 Beta 3](#changed-in-xcode-63-beta-3)
+
+* [Changed in Xcode 6.3 Beta 2](#changed-in-xcode-63-beta-2)
+
 * [Changed in Xcode 6.3 Beta 1](#changed-in-xcode-63-beta-1)
   * [Compiler improvements](#compiler-improvements)
   * [Nullability annotations in Objective-C](#nullability-annotations-in-objective-c)
@@ -465,6 +469,19 @@ Source: https://devforums.apple.com/message/1040049#1040049
 Source: https://devforums.apple.com/message/1007178#1007178
 
 ___
+
+## Changed in Xcode 6.3 Beta 3
+
+* [Xcode Release Notes](http://ksm.github.io/SwiftInFlux/docs/6.3-beta3.pdf)
+* [SwiftDoc.org post](http://swiftdoc.org/news/2015/03/updated-for-swift-1.2b3/)
+* [Swiftlib changes post on Airspeed Velocity](http://airspeedvelocity.net/2015/03/13/changes-to-the-swift-standard-library-in-1-2-betas-2-and-3/)
+
+## Changed in Xcode 6.3 Beta 2
+
+* [Xcode Release Notes](http://ksm.github.io/SwiftInFlux/docs/6.3-beta2.pdf)
+* [Playgrounds improvements on the official Swift blog](https://developer.apple.com/swift/blog/?id=24)
+* [Swiftlib changes post on Airspeed Velocity](http://airspeedvelocity.net/2015/03/13/changes-to-the-swift-standard-library-in-1-2-betas-2-and-3/)
+* [Standard library header diff](https://github.com/radex/swift_stdlib/commit/306c91a82982580cea56b2b86d26ee2671125390)
 
 ## Changed in Xcode 6.3 Beta 1
 
