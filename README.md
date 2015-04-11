@@ -51,6 +51,7 @@ ___
   * [Constants no longer require immediate initialization](#constants-no-longer-require-immediate-initialization)
   * [Importing Swift enums into Objective-C](#importing-swift-enums-into-objective-c)
   * [First-class `Set` type](#first-class-set-type)
+  * [Xcode drops Mavericks support](#xcode-drops-mavericks-support)
 
 ___
 
@@ -609,6 +610,18 @@ typedef NS_ENUM(NSInteger, Bear) {
 ### First-class `Set` type
 
 The Swift standard library now includes a fully generic `Set` type that bridges to `NSSet` and has value semantics.
+
+### Xcode drops Mavericks support
+
+> Xcode 6.3 does require Yosemite, as mentioned in the release notes. This will
+> not be changed in a later beta.
+>
+> — Chris Lattner
+
+Swift can still target Mavericks (10.9), but Xcode itself will no longer support
+it.
+
+Source: https://devforums.apple.com/message/1101275#1101275
 
 ___
 
