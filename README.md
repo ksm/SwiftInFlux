@@ -22,8 +22,8 @@ Swift InFlux was created by [Karol S. Mazur](https://github.com/ksm) during [Swi
 * [C++ support](#c-support)
 * [Dynamic dispatch of operators](#dynamic-dispatch-of-operators)
 * [Enumerating enum types](#enumerating-enum-types)
-* [Generic subscripts](#generic-subscripts)
 * [Flow-sensitive optional unwrapping](#flow-sensitive-optional-unwrapping)
+* [Generic subscripts](#generic-subscripts)
 * [Moving functionality from global functions to methods](#moving-functionality-from-global-functions-to-methods)
 * [Open source possibility](#open-source-possibility)
 * [Optionals in imported Objective-C frameworks](#optionals-in-imported-objective-c-frameworks)
@@ -228,16 +228,6 @@ Source: https://devforums.apple.com/message/1074064#1074064
 
 Source: https://devforums.apple.com/message/1003674#1003674
 
-### Generic subscripts
-
-> Lack of generic subscripts is a known limitation.  We'll look at improving this at some point when it bubbles up in the priority list.
-> 
-> — Chris Lattner
-
-Currently, generic subscripts are allowed only for generic types (e.g. `Array`, `Dictionary`).
-
-Source: https://devforums.apple.com/message/1100335#1100335
-
 ### Flow-sensitive optional unwrapping
 
 It has been suggested that optional types could be implicitly unwrapped in the context of an if-statement checking if an optional has a value, for example:
@@ -259,6 +249,16 @@ if exists x {
 > — CFM
 
 Source: https://devforums.apple.com/message/1005148#1005148 https://devforums.apple.com/message/1066436#1066436
+
+### Generic subscripts
+
+> Lack of generic subscripts is a known limitation.  We'll look at improving this at some point when it bubbles up in the priority list.
+>
+> — Chris Lattner
+
+Currently, generic subscripts are allowed only for generic types (e.g. `Array`, `Dictionary`).
+
+Source: https://devforums.apple.com/message/1100335#1100335
 
 ### Moving functionality from global functions to methods
 
