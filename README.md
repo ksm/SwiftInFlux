@@ -21,6 +21,7 @@ Swift InFlux was created by [Karol S. Mazur](https://github.com/ksm) during [Swi
 * [C++ support](#c-support)
 * [Dynamic dispatch of operators](#dynamic-dispatch-of-operators)
 * [Enumerating enum types](#enumerating-enum-types)
+* [Expanding scope of imported macros](#expanding-scope-of-imported-macros)
 * [Flow-sensitive optional unwrapping](#flow-sensitive-optional-unwrapping)
 * [Generic subscripts](#generic-subscripts)
 * [Imported constant macros carry explicit type](#imported-constant-macros-carry-explicit-type)
@@ -217,6 +218,32 @@ Source: https://devforums.apple.com/message/1074064#1074064
 > — Chris Lattner
 
 Source: https://devforums.apple.com/message/1003674#1003674
+
+### Expanding scope of imported macros
+
+Swift currently only imports simple constant-like macros from C and Objective-C.
+This leaves many key macros unaccessible to Swift, requiring redefinition. For
+example, the `CPU_TYPE` constant type cast macros in `mach/machine.h`.
+
+```c
+#define CPU_TYPE_X86          ((cpu_type_t) 7)
+```
+
+> It's hard to nail Apple down as to what we will or won't do, but I think it's
+> safe to say that improving the way that Swift imports C / Objective-C headers
+> is an important goal.
+>
+> — eskimo1
+
+> Indeed. Improving the experience using imported C/Objective-C APIs is a strong
+> goal for ongoing swift evolution.
+>
+> — Chris Lattner
+
+Sources:
+
+- https://devforums.apple.com/message/1122873#1122873
+- https://devforums.apple.com/message/1123733#1123733
 
 ### Flow-sensitive optional unwrapping
 
