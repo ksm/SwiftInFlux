@@ -13,7 +13,6 @@ Swift InFlux was created by [Karol S. Mazur](https://github.com/ksm) during [Swi
 
 ### Table of Contents
 
-* [Absence of math.h macros](#absence-of-mathh-macros)
 * [Abstract methods](#abstract-methods)
 * [Access control](#limitations-of-current-access-control-design)
 * [ABI stability](#abi-stability)
@@ -24,6 +23,7 @@ Swift InFlux was created by [Karol S. Mazur](https://github.com/ksm) during [Swi
 * [Enumerating enum types](#enumerating-enum-types)
 * [Flow-sensitive optional unwrapping](#flow-sensitive-optional-unwrapping)
 * [Generic subscripts](#generic-subscripts)
+* [Imported constant macros carry explicit type](#imported-constant-macros-carry-explicit-type)
 * [Moving functionality from global functions to methods](#moving-functionality-from-global-functions-to-methods)
 * [Open source possibility](#open-source-possibility)
 * [Optionals in imported Objective-C frameworks](#optionals-in-imported-objective-c-frameworks)
@@ -112,16 +112,6 @@ ___
   * [Range operators](#range-operators)
 
 ---
-
-### Absence of math.h macros
-
-> FWIW, we consider it to be a bug that M_PI (and a variety of other imported constants) get an arbitrary fixed type assigned to them.  This affects integer constants just as much as floating point ones.
->
-> In principle, there could be a way to provide "typeless named literals" in the language, and constants imported from C macros could be imported like that.  I don't know if that's the approach we'll take, but it is one of several different options we'll evaluate down the road to improve this situation.
->
-> — Chris Lattner
-
-Source: https://devforums.apple.com/message/1032523#1032523
 
 ### Abstract methods
 
@@ -259,6 +249,21 @@ Source: https://devforums.apple.com/message/1005148#1005148 https://devforums.ap
 Currently, generic subscripts are allowed only for generic types (e.g. `Array`, `Dictionary`).
 
 Source: https://devforums.apple.com/message/1100335#1100335
+
+### Imported constant macros carry explicit type
+
+Since Swift does not allow implicit type conversion, imported constant C and
+Objective-C macros lose a bit of flexibility in use as they carry an explicit
+type (Swift has no preprocessor). For example, `M_PI` from `math.h` is imported
+as a double.
+
+> FWIW, we consider it to be a bug that M_PI (and a variety of other imported constants) get an arbitrary fixed type assigned to them.  This affects integer constants just as much as floating point ones.
+>
+> In principle, there could be a way to provide "typeless named literals" in the language, and constants imported from C macros could be imported like that.  I don't know if that's the approach we'll take, but it is one of several different options we'll evaluate down the road to improve this situation.
+>
+> — Chris Lattner
+
+Source: https://devforums.apple.com/message/1032523#1032523
 
 ### Moving functionality from global functions to methods
 
