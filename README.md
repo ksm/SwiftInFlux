@@ -115,17 +115,13 @@ ___
 
 ### Absence of math.h macros
 
-> This is a known problem, it will be fixed in later betas.
->
-> — Chris Lattner
->
 > FWIW, we consider it to be a bug that M_PI (and a variety of other imported constants) get an arbitrary fixed type assigned to them.  This affects integer constants just as much as floating point ones.
 >
 > In principle, there could be a way to provide "typeless named literals" in the language, and constants imported from C macros could be imported like that.  I don't know if that's the approach we'll take, but it is one of several different options we'll evaluate down the road to improve this situation.
 >
 > — Chris Lattner
 
-Source: https://devforums.apple.com/message/989902#989902 https://devforums.apple.com/message/1032523#1032523
+Source: https://devforums.apple.com/message/1032523#1032523
 
 ### Abstract methods
 
