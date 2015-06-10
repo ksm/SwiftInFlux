@@ -26,7 +26,7 @@ Swift InFlux was created by [Karol S. Mazur](https://github.com/ksm) during [Swi
 * [Generic subscripts](#generic-subscripts)
 * [Imported constant macros carry explicit type](#imported-constant-macros-carry-explicit-type)
 * [Moving functionality from global functions to methods](#moving-functionality-from-global-functions-to-methods)
-* [Open source possibility](#open-source-possibility)
+* [Open source](#open-source)
 * [Optionals in imported Objective-C frameworks](#optionals-in-imported-objective-c-frameworks)
 * [Optional methods in pure-Swift protocols](#optional-methods-in-pure-swift-protocols)
 * [Overriding declarations from extensions](#overriding-declarations-from-extensions)
@@ -309,16 +309,16 @@ Source: https://devforums.apple.com/message/1032523#1032523
 
 Source: https://devforums.apple.com/message/1074064#1074064  https://devforums.apple.com/message/1094312#1094312
 
-### Open source possibility
+### Open source
 
-At this point in time, there is yet to be a decision on whether or not the
-language will be made open source ([LLVM](http://www.llvm.org) front-end, etc.).
-There is a good chance that it will happen however, given that both the
-[Objective-C](http://opensource.apple.com/source/objc4/) runtime (which Swift
-uses) and [Clang](http://clang.llvm.org) are open source. This would probably
-be once Apple has _"completed"_ it (language has stabilized and locked in -
-syntax, ABI, etc.), which would almost certainly be at the very least, Swift 2.0
-or later.
+Swift will be going open source late 2015 once Apple has shipped the 2.0 GM
+version of the language (Fall). The details that Apple has provided on this so
+far are:
+
+- Source code for the Swift compiler and standard library will be released under
+  an [OSI](http://opensource.org)-approved permissive license
+- Ports for OS X, iOS, and Linux with be provided
+- Contributions will be accepted
 
 > Guys, feel free to make up your own dragons if you want, but your speculation
 > is just that: speculation.  We literally have not even discussed this yet,
@@ -333,7 +333,10 @@ or later.
 > 
 > — Chris Lattner
 
-Source: http://lists.cs.uiuc.edu/pipermail/llvmdev/2014-June/073698.html
+Sources:
+
+- http://lists.cs.uiuc.edu/pipermail/llvmdev/2014-June/073698.html
+- https://developer.apple.com/swift/blog/?id=29
 
 ### Optionals in imported Objective-C frameworks
 
