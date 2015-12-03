@@ -361,11 +361,24 @@ Sources: [Xcode 6.1 release notes](https://developer.apple.com/library/ios/relea
 
 ### Optional methods in pure-Swift protocols
 
-> Optional methods in protocols are limited to @objc protocols only because we haven't implemented them in native protocols yet. This is something we plan to support. We've gotten a number of requests for abstract/pure virtual classes and methods too.
->
-> — Joe Groff
+Using protocol extensions we can now have the optional behaviour of objective-c protocol rather than being dependent on @objc.
 
-Source: https://devforums.apple.com/message/1051431#1051431
+Here is the implementation how we can do this using protocol extension:
+
+```
+protocol SomeCustomProtocol {
+  func nonOptionalMethod()
+  func optionalMethod()
+}
+
+extension SomeCustomProtocol {
+  func optionalMethod() {
+    // this is a default implementation
+    // a better alternative than using @objc and making it optional 
+    // to be overriden only by the class confirming the protocol
+  }
+}
+```
 
 ### Overriding declarations from extensions
 
