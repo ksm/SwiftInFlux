@@ -1,3 +1,10 @@
+## This document is no longer maintained.
+
+
+With Swift [becoming open-source](https://swift.org) - and the [Swift Evolution] (https://github.com/apple/swift-evolution) document being public, this project was made mostly obsolete. However, it still serves as a historical account of Swift's initial evolution.
+
+========
+
 Swift InFlux
 ===========
 The community is creating some incredible analyses and writing about Swift. What I keep asking myself whenever learning and reading about Swift is: how likely is this to change soon?
