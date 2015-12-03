@@ -812,7 +812,13 @@ Xcode 6 GM had no developer-facing Swift changes compared to Beta 7. The golden 
 
 ## Changed in Xcode 6.0 Beta 7
 
-_This section needs expanding. [Please contribute.](#contribute)_
+### + operator for characters removed
+
+The only documented Swift change in Xcode 6.0 Beta 7 is that characters can no longer be concatenated with the + operator. This hasn’t been actually enforced, so [it’s more like the + operator has been deprecated for the characters](https://devforums.apple.com/message/1034784#1034784). Anyway, from now on, you should convert characters to strings in order to concatenate them:
+
+```swift
+String(c1) + String(c2). (18026160)!
+```
 
 ## Changed in Xcode 6.0 Beta 6
 
